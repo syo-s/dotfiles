@@ -2,7 +2,6 @@ echo off
 
 set gitbin=git
 
-d:
 cd %HOME%
 mkdir .vim
 cd .vim

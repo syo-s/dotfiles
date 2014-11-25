@@ -11,8 +11,8 @@ echo
 echo  !-- Now bash version $BASH_VERSION start --!
 echo 
 uname -a 
+echo MSYSTEM = $MSYSTEM
 echo
-echo 
 #----------------------------------------------------------------------
 
 system_name=$(uname -o)
@@ -25,7 +25,23 @@ system_name=$(uname -o)
 ##	export LANG=ja_JP.UTF-8
 #fi
 
-alias wget='wget -c -T 2'
+if [ ! -z "${CHERE_INVOKING}" ]; then
+  unset CHERE_INVOKING
+  if [ -n "${CONEMUWORKDIR}" ]; then
+      echo ${CONEMUWORKDIR}
+      cd ${CONEMUWORKDIR}
+  fi
+else
+  cd "${HOME}" || echo "WARNING: Failed attempt to cd into ${HOME}!"
+fi
+
+app_root="/c/home/app"
+vim_root="$app_root/vim74-kaoriya-win32"
+
+alias vim="$vim_root/vim.exe"
+alias gvim="$vim_root/gvim.exe"
+
+#alias wget='wget -c -T 2'
 alias cp='cp -ip'
 alias mv='mv -i'
 alias rm='rm -i'
@@ -192,6 +208,13 @@ DF_LIST[16]="-x \"\$*\""
 
 alias diffm="diff -ur ${DF_LIST[@]}"
 
+#function find() {
+#    /bin/find ${*} | /bin/cat -
+#}
+
+#function wget() {
+#    /bin/wget ${*} | /bin/cat -
+#}
 
 # end of ~/.bashrc
 #---------------------------------‚±‚±‚Ü‚Å-----------------------------

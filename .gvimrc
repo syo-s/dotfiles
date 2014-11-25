@@ -37,13 +37,6 @@ if has('printer')
 endif
 
 "----------------------------------------------------------------------------
-"全角スペースのハイライト
-"highlight ZenkakuSpace guibg=white
-"match ZenkakuSpace /　/
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
-au BufNewFile,BufRead * match ZenkakuSpace /　/
-
-"----------------------------------------------------------------------------
 "Windowsのgvim日本語入力固定モード設定 
 "
 if has('win32') || has('win64')
@@ -76,14 +69,21 @@ set guioptions-=T
 " ウインドウに関する設定:
 "
 " ウインドウの幅
-set columns=150
+set columns=180
 " ウインドウの高さ
-set lines=60
+set lines=55
 " コマンドラインの高さ(GUI使用時)
 set cmdheight=2
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
 "colorscheme evening
 "colorscheme bluegreen
-colorscheme hybrid
 "colorscheme jellybeans
+colorscheme hybrid
+
+"----------------------------------------------------------------------------
+"全角スペースのハイライト
+"highlight ZenkakuSpace guibg=white
+"match ZenkakuSpace /　/
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
+au BufNewFile,BufRead * match ZenkakuSpace /　/
 
