@@ -106,6 +106,7 @@ else
   NeoBundle 'Shougo/neocomplete.vim.git' " 補完
   NeoBundle 'Shougo/vinarise.vim'        " バイナリ編集
 
+  NeoBundle 'hsitz/VimOrganizer.git'
   NeoBundle 'sgur/unite-everything.git'
   NeoBundle 'ujihisa/unite-colorscheme.git'
   NeoBundle 'ujihisa/unite-rake.git'
