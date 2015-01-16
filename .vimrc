@@ -201,6 +201,7 @@ else
   NeoBundle 'bps/vim-textobj-python.git'
   NeoBundle 'andviro/flake8-vim.git'
   NeoBundle 'hachibeeDI/vim-operator-autopep8.git'
+  " indentÇÃê[Ç≥Ç…êFÇïtÇØÇÈ
   NeoBundle 'nathanaelkane/vim-indent-guides.git'
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -209,6 +210,14 @@ else
   NeoBundle 'tpope/vim-bundler.git'
   NeoBundle 'tpope/vim-rake.git'
   NeoBundle 'tpope/vim-projectionist.git'
+
+  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  "ÅycofeeÅz 
+  " syntax + é©ìÆcompile
+  NeoBundle 'kchmck/vim-coffee-script'
+  " js BDDÉcÅ[Éã
+  NeoBundle 'claco/jasmine.vim'
+
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " table
@@ -302,6 +311,8 @@ endif
 "=============================================================================
 augroup vimrc
   autocmd!
+
+
   autocmd FileType perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
   autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType css  setlocal shiftwidth=4 tabstop=2 softtabstop=2
@@ -311,6 +322,7 @@ augroup vimrc
   autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType python setlocal autoindent smartindent expandtab
   autocmd FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class
+  autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
   autocmd BufRead,BufNewFile *.mu  set filetype=c
   autocmd BufRead,BufNewFile *.dat set filetype=c
   autocmd BufRead,BufNewFile *.ngc setfiletype ngc
@@ -318,6 +330,7 @@ augroup vimrc
   autocmd BufRead,BufNewFile *.csv  set filetype=text
   autocmd BufRead,BufNewFile *.hta  set filetype=html
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  autocmd BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 augroup END
 
 "=============================================================================
@@ -496,11 +509,11 @@ if executable('pt')
 endif
 "
 "let g:unite_converter_file_directory_width =70
-call unite#custom_filters('file_mru',
-      \ ['matcher_file_name', 'sorter_default', 'converter_file_directory'])
-
-call unite#custom_filters('buffer',
-      \ ['matcher_file_name', 'sorter_default', 'converter_file_directory'])
+"call unite#custom_filters('file_mru',
+"      \ ['matcher_file_name', 'sorter_default', 'converter_file_directory'])
+"
+"call unite#custom_filters('buffer',
+"      \ ['matcher_file_name', 'sorter_default', 'converter_file_directory'])
 
 "===================================================================
 " vim-altr
