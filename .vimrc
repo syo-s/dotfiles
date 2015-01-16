@@ -165,7 +165,10 @@ else
   NeoBundle 'mattn/mkdpreview-vim'
   NeoBundle 'mattn/webapi-vim'
   NeoBundle 'kannokanno/previm.git'
-  NeoBundle 'mattn/excitetranslate-vim.git' "–|–ó
+  "------------------------------------------------------------
+  " y–|–óz
+  NeoBundle 'mattn/excitetranslate-vim.git'
+  NeoBundle 'mattn/googletranslate-vim.git'
 
   "------------------------------------------------------------
   " yƒo[ƒWƒ‡ƒ“ŠÇ—z
