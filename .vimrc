@@ -118,7 +118,7 @@ else
   NeoBundle 'thinca/vim-qfreplace.git'
   NeoBundle 'thinca/vim-quickrun.git'
   NeoBundle 'osyo-manga/shabadou.vim.git'
-
+  NeoBundle 'thinca/vim-singleton.git'
 
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'terryma/vim-multiple-cursors.git'
@@ -314,8 +314,6 @@ endif
 "=============================================================================
 augroup vimrc
   autocmd!
-
-
   autocmd FileType perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
   autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType css  setlocal shiftwidth=4 tabstop=2 softtabstop=2
@@ -335,6 +333,12 @@ augroup vimrc
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
   autocmd BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 augroup END
+
+"=============================================================================
+" vim_singletonê›íË
+"=============================================================================
+let g:singleton#opener="e"
+call singleton#enable()
 
 "=============================================================================
 " easy_motionê›íË
