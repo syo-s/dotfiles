@@ -20,6 +20,7 @@
 export HISTFILESIZE=50
 
 #export PATH=/local/bin:/bin:/c/MinGW-new/bin::/c/MinGW-new/crosstool/bin:/c/ruby/ruby187/bin/:$PATH
+export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:~/.gem/ruby:$PATH
 
 export CPATH=/usr/local/include:/usr/local/include/boost-1_55
 #export CPATH=/usr/local/include
