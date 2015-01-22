@@ -24,10 +24,6 @@ let $TEMPDIR = $TEMP
 "       \ " .'C:\cygwin\usr\local\bin;'
 " let $PATH  = $VIM . $PATH
 
-"set shell=bash
-"set shell=c:\cygwin/bin/mintty.exe
-"set shellcmdflag="-c"
-"set shellcmdflag=--login\ -c
 set wildmenu
 set wildmode=longest:full,full
 set tags=tags;
@@ -51,12 +47,17 @@ set browsedir=buffer			  "ファイル保存ダイアログの初期ディレクトリをバッファファ
 "set list				  "タブ文字、行末など不可視文字を表示する
 "set listchars=eol:$,tab:>\ ,extends:<	  "listで表示される文字のフォーマットを指定する
 set helplang=jp				  "日本語help
-set virtualedit& virtualedit+=block			  "矩形選択で自由に移動
+set virtualedit& virtualedit+=block       "矩形選択で自由に移動
 "set makeprg=./make.bat
 "set errorformat=\"%f\"\\,%*[^0-9]%l:\ %m "一般的なCコンパイラ用
 "
 " Vimの補完(Ctrl-P/N)でインクルードされているファイルをスキャンしないようにするCommentsAdd Star
 set complete=.,w,b,u,t
+
+"set shell=c:\msys32\usr\bin\bash.exe
+"set shell=c:\cygwin/bin/mintty.exe
+"set shellcmdflag="-c"
+"set shellcmdflag=--login\ -c
 
 " shellslashの設定
 " shellslashは譲れない。（セパレータが\だと不便。）
@@ -64,7 +65,11 @@ set complete=.,w,b,u,t
 " vimprocを使えば解決できるみたい。だけど...
 "
 " set shellslash  "Windowsでディレクトリパスの区切り文字表示に / を使えるようにする
-"
+
+set nocompatible 
+set encoding=utf-8 
+set fileencodings=ucs-bom,utf8,cp932,sjis,latin1 
+set termencoding=cp932"
 
 "=============================================================================
 " bundles 
