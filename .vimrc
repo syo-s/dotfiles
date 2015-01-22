@@ -67,7 +67,7 @@ set complete=.,w,b,u,t
 " set shellslash  "Windowsでディレクトリパスの区切り文字表示に / を使えるようにする
 
 set nocompatible 
-set encoding=utf-8 
+"set encoding=utf-8 
 set fileencodings=ucs-bom,utf8,cp932,sjis,latin1 
 set termencoding=cp932"
 
