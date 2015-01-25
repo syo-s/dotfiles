@@ -3,6 +3,7 @@ echo off
 set gitbin=git
 
 cd %HOME%
+mkdir .vimbackup
 mkdir .vim
 cd .vim
 mkdir bundle
