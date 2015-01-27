@@ -15,6 +15,15 @@ echo MSYSTEM = $MSYSTEM
 echo
 #----------------------------------------------------------------------
 
+#export PATH=/local/bin:/bin:/c/MinGW-new/bin::/c/MinGW-new/crosstool/bin:/c/ruby/ruby187/bin/:$PATH
+bash_ver=$BASH_VERSION
+if [ "${bash_ver:0:1}" = "3" ]; then
+    MSYS=MSYS1
+else
+    MSYS=MSYS2
+    export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:~/.gem/ruby:$PATH
+fi
+
 system_name=$(uname -o)
 #if [ "$system_name" = "Msys" ]; then
 ##	alias git='/c/git/bin/git.exe'
