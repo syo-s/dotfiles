@@ -378,7 +378,8 @@ noremap <F3> :NERDTreeToggle<CR>
 "=============================================================================
 let g:clang_format#code_style='google'
 let g:clang_format#style_options = {
-            \ "ColumnLimit" : 150 
+            \ "ColumnLimit" : 150 ,
+            \ "BreakBeforeBraces" : "Linux" ,
             \ }
 
 
