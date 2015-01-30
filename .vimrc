@@ -378,8 +378,11 @@ noremap <F3> :NERDTreeToggle<CR>
 "=============================================================================
 let g:clang_format#code_style='google'
 let g:clang_format#style_options = {
-            \ "ColumnLimit" : 150 ,
-            \ "BreakBeforeBraces" : "Linux" ,
+            \ "ColumnLimit"          : 120 ,
+            \ "BreakBeforeBraces"    : "Linux" ,
+            \ "DerivePointerBinding" : "false" ,
+            \ "PointerBindsToType"   : "false" ,
+            \ "IndentCaseLabels"     : "false" ,
             \ }
 
 
@@ -387,7 +390,7 @@ let g:clang_format#style_options = {
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " if you install vim-operator-user
-autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+autocmd FileType c,cpp,objc map <buffer>,x <Plug>(operator-clang-format)
 
 syntax keyword xTodo todo contained
 syntax match xComment /%.*/ contains=xTodo 
