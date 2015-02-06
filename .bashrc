@@ -46,6 +46,7 @@ fi
 
 app_root="/c/home/app"
 vim_root="$app_root/vim74-kaoriya-win32"
+FIND_OPT="-type d -name .git -prune "
 
 alias vim="$vim_root/vim.exe"
 alias gvim="$vim_root/gvim.exe"
@@ -69,19 +70,18 @@ alias tag='ctags -R;'
 alias tag2='ctags -R --langmap=c:+.dat; gtags'
 alias hist='history | less'
 alias lless='dir -alF | less'
-alias muenc1="find -iname '*.mu' -print -maxdepth 1 -exec muencrypt -d {} ./xx/{} \;"
-alias muenc2="find -iname '*.mu' -print -maxdepth 1 -exec muencrypt ./xx/{} {} \;"
+alias muenc1="find . ${FIND_OPT} -o -iname '*.mu' -print -maxdepth 1 -exec muencrypt -d {} ./xx/{} \;"
+alias muenc2="find . ${FIND_OPT} -o -iname '*.mu' -print -maxdepth 1 -exec muencrypt ./xx/{} {} \;"
 
-alias clr1="find . -type d -iname '[Rr]ealase -exec find {} '*.src' -print \; | xargs echo"
-alias clr2="find . -type f -size 0 -iname '[0-9]*' -print"
-
+alias clr1="find . ${FIND_OPT} -o -type d -iname '[Rr]ealase -exec find {} '*.src' -print \; | xargs echo"
+alias clr2="find . ${FIND_OPT} -o -type f -size 0 -iname '[0-9]*' -print"
 
 #----------------------------------------------------------------------
 # 空フォルダに emptyファイル作成
-#alias cre_gitig=" find . -type d -empty -not -path './.git*' -exec touch {}\/.gitignore \;"
-#alias cre_empty=" find . -type d -empty -print -exec touch {}\/empty \;"
-alias cre_keep1="find . -type d -print -empty -exec touch {}\/.gitkeep \;"
-alias cre_keep2="find . -type d -name .git -prune -p -type d -empty -print -exec touch {}/.gitkeep \;"
+#alias cre_gitig="find . ${FIND_OPT} -o -type d -empty -not -path './.git*' -exec touch {}\/.gitignore \;"
+#alias cre_empty="find . ${FIND_OPT} -o -type d -empty -print -exec touch {}\/empty \;"
+alias cre_keep1="find . ${FIND_OPT} -o -type d -print -empty -exec touch {}\/.gitkeep \;"
+alias cre_keep2="find . ${FIND_OPT} -o  -p -type d -empty -print -exec touch {}/.gitkeep \;"
 
 #----------------------------------------------------------------------
 # エディタ一時ファイルクリア
@@ -103,8 +103,8 @@ EF_LIST_L3=${EF_LIST_L1/@/-iname }
 EF_LIST_L4=${EF_LIST_L2//@/-o -iname }
 EF_LIST_A="${EF_LIST_L3} ${EF_LIST_L4}"
 
-alias clrve="find . \( ${EF_LIST_A} \) -print"
-alias clree="find . \( ${EF_LIST_A} \) -print -exec rm {} \;"
+alias clrve="find . ${FIND_OPT} -o  \( ${EF_LIST_A} \) -print"
+alias clree="find . ${FIND_OPT} -o  \( ${EF_LIST_A} \) -print -exec rm {} \;"
 
 #----------------------------------------------------------------------
 # TAGSファイル 一時ファイルクリア
@@ -121,8 +121,8 @@ TF_LIST_L4=${TF_LIST_L2//@/-o -iname }
 
 TF_LIST_A="${TF_LIST_L3} ${TF_LIST_L4}"
 
-alias clrvt="find . \( ${TF_LIST_A} \) -print"
-alias clret="find . \( ${TF_LIST_A} \) -print -exec rm {} \;"
+alias clrvt="find . ${FIND_OPT} -o \( ${TF_LIST_A} \)  -print"
+alias clret="find . ${FIND_OPT} -o \( ${TF_LIST_A} \)  -print -exec rm {} \;"
 
 #----------------------------------------------------------------------
 # PATCH ファイルクリア
@@ -135,8 +135,8 @@ PF_LIST_L3=${PF_LIST_L1/@/-iname }
 PF_LIST_L4=${PF_LIST_L2//@/-o -iname }
 PF_LIST_A="${PF_LIST_L3} ${PF_LIST_L4}"
 
-alias clrvp="find . \( ${PF_LIST_A} \) -print"
-alias clrep="find . \( ${PF_LIST_A} \) -print -exec rm {} \;"
+alias clrvp="find . ${FIND_OPT} -o \( ${PF_LIST_A} \) -print"
+alias clrep="find . ${FIND_OPT} -o \( ${PF_LIST_A} \) -print -exec rm {} \;"
 
 #----------------------------------------------------------------------
 # SHC 一時ファイルクリア
@@ -165,8 +165,8 @@ SF_LIST_L3=${SF_LIST_L1/@/-iname }
 SF_LIST_L4=${SF_LIST_L2//@/-o -iname }
 SF_LIST_A="${SF_LIST_L3} ${SF_LIST_L4}"
 
-alias clrvs="find . \( ${SF_LIST_A} \) -print "
-alias clres="find . \( ${SF_LIST_A} \) -print -exec rm -f {} \;"
+alias clrvs="find . ${FIND_OPT} -o \( ${SF_LIST_A} \) -print "
+alias clres="find . ${FIND_OPT} -o \( ${SF_LIST_A} \) -print -exec rm -f {} \;"
 
 #----------------------------------------------------------------------
 # 調整ツール 一時ファイルクリア
@@ -185,14 +185,14 @@ C_LIST_L3=${C_LIST_L1/@/-iname }
 C_LIST_L4=${C_LIST_L2//@/-o -iname }
 C_LIST_A="${C_LIST_L3} ${C_LIST_L4}"
 
-alias clrvc="find . \( ${C_LIST_A} \) -print "
-alias clrec="find . \( ${C_LIST_A} \) -print -exec rm -f {} \;"
+alias clrvc="find . ${FIND_OPT} -o \( ${C_LIST_A} \) -print "
+alias clrec="find . ${FIND_OPT} -o \( ${C_LIST_A} \) -print -exec rm -f {} \;"
 
 
 #----------------------------------------------------------------------
 # ファイルクリア
-alias clrva="find . \( ${EF_LIST_A} -o ${TF_LIST_A} -o ${PF_LIST_A} -o ${SF_LIST_A} \) -print "
-alias clrea="find . \( ${EF_LIST_A} -o ${TF_LIST_A} -o ${PF_LIST_A} -o ${SF_LIST_A} \) -print -exec rm -f {} \;"
+alias clrva="find . ${FIND_OPT} -o \( ${EF_LIST_A} -o ${TF_LIST_A} -o ${PF_LIST_A} -o ${SF_LIST_A} \) -print "
+alias clrea="find . ${FIND_OPT} -o \( ${EF_LIST_A} -o ${TF_LIST_A} -o ${PF_LIST_A} -o ${SF_LIST_A} \) -print -exec rm -f {} \;"
 
 
 #----------------------------------------------------------------------
