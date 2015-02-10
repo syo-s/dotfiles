@@ -128,6 +128,9 @@ alias clret="find . ${FIND_OPT} -o \( ${TF_LIST_A} \)  -print -exec rm {} \;"
 # PATCH ファイルクリア
 PF_LIST[ 0]="@ '*.rej'" 
 PF_LIST[ 1]="@ '*.orig'" 
+PF_LIST[ 2]="@ '*.*.LOCAL.*'" 
+PF_LIST[ 2]="@ '*.*.REMOTE.*'" 
+PF_LIST[ 2]="@ '*.*.BASE.*'" 
 
 PF_LIST_L1=${PF_LIST[0]}
 PF_LIST_L2=${PF_LIST[@]:1}
