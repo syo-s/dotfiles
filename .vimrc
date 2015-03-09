@@ -43,7 +43,7 @@ set backupdir=$HOME/.vimbackup		  "バックアップファイルを作るディレクトリ
 set directory=$HOME/.vimbackup		  "スワップファイル用のディレクトリ
 set undodir=$HOME/.vimbackup              "undofile用のディレクトリ
 set browsedir=buffer			  "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
-"set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
+set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
 "set list				  "タブ文字、行末など不可視文字を表示する
 "set listchars=eol:$,tab:>\ ,extends:<	  "listで表示される文字のフォーマットを指定する
 set helplang=jp				  "日本語help
@@ -170,6 +170,9 @@ else
   NeoBundle 'mattn/mkdpreview-vim'
   NeoBundle 'mattn/webapi-vim'
   NeoBundle 'kannokanno/previm.git'
+  NeoBundle 'kurocode25/mdforvim.git'
+
+
   "------------------------------------------------------------
   " 【翻訳】
   NeoBundle 'mattn/excitetranslate-vim.git'
@@ -192,7 +195,9 @@ else
   NeoBundle 'kana/vim-textobj-entire.git'  " バッファ全体をtextobj化。
   NeoBundle 'thinca/vim-textobj-between.git' " 任意の区切り文字の間をtextobj化。
   NeoBundle 'thinca/vim-textobj-comment.git' " コメントをtextobj化。
-  NeoBundle 'rhysd/textobj-wiw.git'         " ワード間をtextobj化。カーソル移動にも使えます。
+  NeoBundle 'kana/vim-textobj-function.git' "関数をtextobj化
+  NeoBundle 'kana/vim-textobj-underscore.git' "アンダースコアの間 a_, i_ 
+  NeoBundle 'rhysd/textobj-wiw.git'         " snake_case 上の word a,w, i,w 
   "NeoBundle 'vimtaka/vim-textobj-sigil.git'   " perlの変数とかをtextobj化。
   "NeoBundle 'tpope/vim-surround.git'
 
@@ -513,8 +518,8 @@ nnoremap <silent> [unite]p :<C-u>Unite file_rec<CR>
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 "nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
-"nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
-"nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
+nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
+nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> [unite]cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 nnoremap <silent> [unite]r  :<C-u>UniteResume search-buffer<CR>

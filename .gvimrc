@@ -69,7 +69,7 @@ set guioptions-=T
 " ウインドウに関する設定:
 "
 " ウインドウの幅
-set columns=180
+set columns=120
 " ウインドウの高さ
 set lines=55
 " コマンドラインの高さ(GUI使用時)
