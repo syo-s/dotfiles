@@ -23,6 +23,7 @@ let $TEMPDIR = $TEMP
 "       \ " .'C:\cygwin\bin;'
 "       \ " .'C:\cygwin\usr\local\bin;'
 " let $PATH  = $VIM . $PATH
+let $PATH  = $VIM . ';C:\msys32\usr\bin;' . $PATH
 
 set wildmenu
 set wildmode=longest:full,full
@@ -133,6 +134,7 @@ else
   NeoBundle 'kana/vim-tabpagecd.git'
   "NeoBundle 'scrooloose/nerdtree.git'
   NeoBundle 'itchyny/calendar.vim.git'
+  "NeoBundle 'justinmk/vim-dirvish.git'
   "NeoBundle 'ujihisa/quicklearn.git'
   "NeoBundle 'tanabe/ToggleCase-vim.git'
   "NeoBundle 'hrp/EnhancedCommentify.git'
