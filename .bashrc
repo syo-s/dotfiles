@@ -75,6 +75,7 @@ alias muenc2="find . ${FIND_OPT} -o -iname '*.mu' -print -maxdepth 1 -exec muenc
 
 alias clr1="find . ${FIND_OPT} -o -type d -iname '[Rr]ealase -exec find {} '*.src' -print \; | xargs echo"
 alias clr2="find . ${FIND_OPT} -o -type f -size 0 -iname '[0-9]*' -print"
+alias tmux='rm -rf /tmp/tmux* && tmux'
 
 #----------------------------------------------------------------------
 # 空フォルダに emptyファイル作成
