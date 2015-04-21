@@ -22,8 +22,7 @@ let $TEMPDIR = $TEMP
 "       \ .$PATH
 "       \ " .'C:\cygwin\bin;'
 "       \ " .'C:\cygwin\usr\local\bin;'
-" let $PATH  = $VIM . $PATH
-let $PATH  = $VIM . ';C:\msys32\usr\bin;' . $PATH
+let $PATH  = $VIM . $PATH
 
 set wildmenu
 set wildmode=longest:full,full
@@ -179,6 +178,7 @@ else
   " Åyñ|ñÛÅz
   NeoBundle 'mattn/excitetranslate-vim.git'
   NeoBundle 'mattn/googletranslate-vim.git'
+  NeoBundle 'daisuzu/translategoogle.vim.git'
 
   "------------------------------------------------------------
   " ÅyÉoÅ[ÉWÉáÉìä«óùÅz
@@ -544,6 +544,13 @@ endif
 " vim-altr
 "===================================================================
 "nnoremap <Leader>a <Plug>(altr-forward)
+
+
+"===================================================================
+" translategoogle
+"===================================================================
+let g:translategoogle_default_sl = 'ja'
+let g:translategoogle_default_tl = 'en'
 
 "===================================================================
 " VimShell
