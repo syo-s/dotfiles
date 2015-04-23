@@ -104,20 +104,20 @@ else
   " 【unite】
   NeoBundle 'Shougo/unite.vim.git'       " 本体
   NeoBundle 'Shougo/unite-build.git'     " make build用
-  NeoBundle 'Shougo/neomru.vim'          " ファイル履歴
+  NeoBundle 'Shougo/neomru.vim.git'      " ファイル履歴
 
   NeoBundle 'Shougo/vimshell.git'        " shell
   NeoBundle 'Shougo/vimfiler.git'        " filer
   NeoBundle 'Shougo/neocomplete.vim.git' " 補完
-  NeoBundle 'Shougo/vinarise.vim'        " バイナリ編集
+  NeoBundle 'Shougo/vinarise.vim.git'        " バイナリ編集
 
   NeoBundle 'hsitz/VimOrganizer.git'
   NeoBundle 'sgur/unite-everything.git'
   NeoBundle 'ujihisa/unite-colorscheme.git'
   NeoBundle 'ujihisa/unite-rake.git'
   NeoBundle 'h1mesuke/unite-outline.git'
-  NeoBundle 'basyura/unite-converter-file-directory'
-  NeoBundle 'basyura/unite-matcher-file-name'
+  NeoBundle 'basyura/unite-converter-file-directory.git'
+  NeoBundle 'basyura/unite-matcher-file-name.git'
   NeoBundle 'kmnk/vim-unite-giti.git'
   NeoBundle 'osyo-manga/unite-quickfix.git'
   NeoBundle 'thinca/vim-qfreplace.git'
@@ -128,7 +128,7 @@ else
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'terryma/vim-multiple-cursors.git'
   NeoBundle 'vim-scripts/DoxygenToolkit.vim.git'
-  NeoBundle 'vim-scripts/gtags.vim.git'
+  "NeoBundle 'vim-scripts/gtags.vim.git'
   "NeoBundle 'mhinz/vim-startify.git'
   NeoBundle 'kana/vim-tabpagecd.git'
   "NeoBundle 'scrooloose/nerdtree.git'
@@ -139,8 +139,8 @@ else
   "NeoBundle 'hrp/EnhancedCommentify.git'
   "NeoBundle 'vim-scripts/MultipleSearch.git'
   "NeoBundle 'vim-scripts/YankRing.vim.git'
-  "NeoBundle 'kana/vim-altr'
-  "NeoBundle 'supermomonga/projectlocal.vim'
+  "NeoBundle 'kana/vim-altr.git'
+  "NeoBundle 'supermomonga/projectlocal.vim.git'
   "NeoBundle 'fuenor/qfixhowm.git'
   "NeoBundle 'yuratomo/w3m.vim.git'
   "NeoBundle 'mattn/learn-vimscript.git'
@@ -167,12 +167,12 @@ else
 
   "------------------------------------------------------------
   " 【htmlプレビュー】
-  NeoBundle 'tyru/open-browser.vim'
-  NeoBundle 'mattn/mkdpreview-vim'
-  NeoBundle 'mattn/webapi-vim'
+  NeoBundle 'tyru/open-browser.vim.git'
+  "NeoBundle 'mattn/mkdpreview-vim.git'
+  "NeoBundle 'mattn/webapi-vim.git'
   NeoBundle 'kannokanno/previm.git'
+  "NeoBundle 'tukiyo/previm'
   NeoBundle 'kurocode25/mdforvim.git'
-
 
   "------------------------------------------------------------
   " 【翻訳】
@@ -217,21 +217,21 @@ else
   NeoBundle 'andviro/flake8-vim.git'
   NeoBundle 'hachibeeDI/vim-operator-autopep8.git'
   " indentの深さに色を付ける
-  NeoBundle 'nathanaelkane/vim-indent-guides.git'
+  "NeoBundle 'nathanaelkane/vim-indent-guides.git'
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "【ruby】 
   NeoBundle 'tpope/vim-rails.git'
   NeoBundle 'tpope/vim-bundler.git'
   NeoBundle 'tpope/vim-rake.git'
-  NeoBundle 'tpope/vim-projectionist.git'
+  "NeoBundle 'tpope/vim-projectionist.git'
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "【cofee】 
   " syntax + 自動compile
-  NeoBundle 'kchmck/vim-coffee-script'
+  NeoBundle 'kchmck/vim-coffee-script.git'
   " js BDDツール
-  NeoBundle 'claco/jasmine.vim'
+  NeoBundle 'claco/jasmine.vim.git'
 
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -260,10 +260,10 @@ else
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " colorscheme
-  NeoBundle 'vim-scripts/bluegreen.git'
+  "NeoBundle 'vim-scripts/bluegreen.git'
   NeoBundle 'w0ng/vim-hybrid.git'
-  NeoBundle 'nanotech/jellybeans.vim.git'
-  NeoBundle 'tomasr/molokai'
+  "NeoBundle 'nanotech/jellybeans.vim.git'
+  NeoBundle 'tomasr/molokai.git'
 
   NeoBundle 'bling/vim-airline.git'
 
@@ -545,6 +545,10 @@ endif
 "===================================================================
 "nnoremap <Leader>a <Plug>(altr-forward)
 
+"===================================================================
+" previm
+"===================================================================
+let g:previm_open_cmd = 'start iexplore'
 
 "===================================================================
 " translategoogle
@@ -578,3 +582,4 @@ function! ToggleCheckbox()
     call setline('.', l:result)
   end
 endfunction
+
