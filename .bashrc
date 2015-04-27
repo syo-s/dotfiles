@@ -45,11 +45,11 @@ else
 fi
 
 app_root="/c/home/app"
-vim_root="$app_root/vim74-kaoriya-win32"
 FIND_OPT="-type d -name .git -prune "
 
-alias vim="$vim_root/vim.exe"
-alias gvim="$vim_root/gvim.exe"
+# vim_root="$app_root/vim74-kaoriya-win32"
+# alias vim="$vim_root/vim.exe"
+# alias gvim="$vim_root/gvim.exe"
 
 #alias wget='wget -c -T 2'
 alias cp='cp -ip'
@@ -57,17 +57,10 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias ll='ls -alF --color=auto --show-control-chars'
 alias ls='ls -F --color=auto --show-control-chars -N'
-#alias ll='ls -alF --show-control-chars'
-#alias ls='ls -F --show-control-chars'
-alias work='cd /d/User/prog/Job'
 alias rxvt='rxvt -sl 1000 -fg White -bg Black -sr'
-alias cygget1='wget -N -r -l 1 --no-remove-listing -k -np -c -e robots=off -A.ini,.bz2 http://ftp.iij.ad.jp/pub/cygwin'
-alias cygget2='wget -m -k -np -c -e robots=off -A.bz2 -R "*src.tar*" http://ftp.iij.ad.jp/pub/cygwin/release'
-alias cygget='cygget1;cygget2'
 
 #alias ctags='ctags -R --c-kinds=+p --fields=+S'
 alias tag='ctags -R;'
-alias tag2='ctags -R --langmap=c:+.dat; gtags'
 alias hist='history | less'
 alias lless='dir -alF | less'
 alias muenc1="find . ${FIND_OPT} -o -iname '*.mu' -print -maxdepth 1 -exec muencrypt -d {} ./xx/{} \;"
@@ -79,8 +72,6 @@ alias tmux='rm -rf /tmp/tmux* && tmux'
 
 #----------------------------------------------------------------------
 # 空フォルダに emptyファイル作成
-#alias cre_gitig="find . ${FIND_OPT} -o -type d -empty -not -path './.git*' -exec touch {}\/.gitignore \;"
-#alias cre_empty="find . ${FIND_OPT} -o -type d -empty -print -exec touch {}\/empty \;"
 alias cre_keep1="find . ${FIND_OPT} -o -type d -print -empty -exec touch {}\/.gitkeep \;"
 alias cre_keep2="find . ${FIND_OPT} -o  -p -type d -empty -print -exec touch {}/.gitkeep \;"
 
@@ -201,25 +192,25 @@ alias clrea="find . ${FIND_OPT} -o \( ${EF_LIST_A} -o ${TF_LIST_A} -o ${PF_LIST_
 
 #----------------------------------------------------------------------
 #diff関係
-DF_LIST[0]="-x \"#*#\"" 
-DF_LIST[1]="-x \"*.*~\"" 
-DF_LIST[2]="-x \"*.~*\"" 
-DF_LIST[3]="-x \"*.???\""
-DF_LIST[4]="-x \"*.[Hh][lL]*\"" 
-DF_LIST[5]="-x \"*.[^cChH]*\"" 
-DF_LIST[6]="-x \"*.[cChH]?\"" 
-DF_LIST[7]="-x \"*.[cChH]??\"" 
-DF_LIST[8]="-x \"*.[hH][wW]*\"" 
-DF_LIST[9]="-x \"*.[pw][0-9][0-9]\"" 
-DF_LIST[10]="-x \"*.h[sl][fk]\"" 
-DF_LIST[11]="-x \"*.hw?\"" 
-DF_LIST[12]="-x \"Debug\"" 
-DF_LIST[13]="-x \"Release\"" 
-DF_LIST[14]="-x \"TAGS\"" 
-DF_LIST[15]="-x \"tags\"" 
-DF_LIST[16]="-x \"\$*\"" 
-
-alias diffm="diff -ur ${DF_LIST[@]}"
+# DF_LIST[0]="-x \"#*#\""
+# DF_LIST[1]="-x \"*.*~\"" 
+# DF_LIST[2]="-x \"*.~*\"" 
+# DF_LIST[3]="-x \"*.???\""
+# DF_LIST[4]="-x \"*.[Hh][lL]*\"" 
+# DF_LIST[5]="-x \"*.[^cChH]*\"" 
+# DF_LIST[6]="-x \"*.[cChH]?\"" 
+# DF_LIST[7]="-x \"*.[cChH]??\"" 
+# DF_LIST[8]="-x \"*.[hH][wW]*\"" 
+# DF_LIST[9]="-x \"*.[pw][0-9][0-9]\"" 
+# DF_LIST[10]="-x \"*.h[sl][fk]\"" 
+# DF_LIST[11]="-x \"*.hw?\"" 
+# DF_LIST[12]="-x \"Debug\"" 
+# DF_LIST[13]="-x \"Release\"" 
+# DF_LIST[14]="-x \"TAGS\"" 
+# DF_LIST[15]="-x \"tags\"" 
+# DF_LIST[16]="-x \"\$*\"" 
+# 
+# alias diffm="diff -ur ${DF_LIST[@]}"
 
 #function find() {
 #    /bin/find ${*} | /bin/cat -
