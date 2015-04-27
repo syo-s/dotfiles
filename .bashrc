@@ -71,12 +71,12 @@ alias clr2="find . ${FIND_OPT} -o -type f -size 0 -iname '[0-9]*' -print"
 alias tmux='rm -rf /tmp/tmux* && tmux'
 
 #----------------------------------------------------------------------
-# ‹óƒtƒHƒ‹ƒ_‚É emptyƒtƒ@ƒCƒ‹ì¬
+# ç©ºãƒ•ã‚©ãƒ«ãƒ€ã« emptyãƒ•ã‚¡ã‚¤ãƒ«ä½œæˆ
 alias cre_keep1="find . ${FIND_OPT} -o -type d -print -empty -exec touch {}\/.gitkeep \;"
 alias cre_keep2="find . ${FIND_OPT} -o  -p -type d -empty -print -exec touch {}/.gitkeep \;"
 
 #----------------------------------------------------------------------
-# ƒGƒfƒBƒ^ˆêƒtƒ@ƒCƒ‹ƒNƒŠƒA
+# ã‚¨ãƒ‡ã‚£ã‚¿ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ«ã‚¯ãƒªã‚¢
 EF_LIST[ 0]="@ '*~'" 
 EF_LIST[ 1]="@ '*.~*'" 
 EF_LIST[ 2]="@ '#*#'" 
@@ -99,7 +99,7 @@ alias clrve="find . ${FIND_OPT} -o  \( ${EF_LIST_A} \) -print"
 alias clree="find . ${FIND_OPT} -o  \( ${EF_LIST_A} \) -print -exec rm {} \;"
 
 #----------------------------------------------------------------------
-# TAGSƒtƒ@ƒCƒ‹ ˆêƒtƒ@ƒCƒ‹ƒNƒŠƒA
+# TAGSãƒ•ã‚¡ã‚¤ãƒ« ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ«ã‚¯ãƒªã‚¢
 TF_LIST[ 0]="@ 'tags'" 
 TF_LIST[ 1]="@ 'GPATH'" 
 TF_LIST[ 2]="@ 'GRTAGS'" 
@@ -117,7 +117,7 @@ alias clrvt="find . ${FIND_OPT} -o \( ${TF_LIST_A} \)  -print"
 alias clret="find . ${FIND_OPT} -o \( ${TF_LIST_A} \)  -print -exec rm {} \;"
 
 #----------------------------------------------------------------------
-# PATCH ƒtƒ@ƒCƒ‹ƒNƒŠƒA
+# PATCH ãƒ•ã‚¡ã‚¤ãƒ«ã‚¯ãƒªã‚¢
 PF_LIST[ 0]="@ '*.rej'" 
 PF_LIST[ 1]="@ '*.orig'" 
 PF_LIST[ 2]="@ '*.*.LOCAL.*'" 
@@ -134,7 +134,7 @@ alias clrvp="find . ${FIND_OPT} -o \( ${PF_LIST_A} \) -print"
 alias clrep="find . ${FIND_OPT} -o \( ${PF_LIST_A} \) -print -exec rm {} \;"
 
 #----------------------------------------------------------------------
-# SHC ˆêƒtƒ@ƒCƒ‹ƒNƒŠƒA
+# SHC ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ«ã‚¯ãƒªã‚¢
 SF_LIST[ 0]="@ '*.obj'" 
 SF_LIST[ 1]="@ '*.dwi'" 
 SF_LIST[ 2]="@ '*.sh?'" 
@@ -164,7 +164,7 @@ alias clrvs="find . ${FIND_OPT} -o \( ${SF_LIST_A} \) -print "
 alias clres="find . ${FIND_OPT} -o \( ${SF_LIST_A} \) -print -exec rm -f {} \;"
 
 #----------------------------------------------------------------------
-# ’²®ƒc[ƒ‹ ˆêƒtƒ@ƒCƒ‹ƒNƒŠƒA
+# èª¿æ•´ãƒ„ãƒ¼ãƒ« ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ«ã‚¯ãƒªã‚¢
 C_LIST[ 0]="@ '*.obj*'" 
 C_LIST[ 1]="@ '*.ddp*'" 
 C_LIST[ 2]="@ '*.dfm*'" 
@@ -185,13 +185,13 @@ alias clrec="find . ${FIND_OPT} -o \( ${C_LIST_A} \) -print -exec rm -f {} \;"
 
 
 #----------------------------------------------------------------------
-# ƒtƒ@ƒCƒ‹ƒNƒŠƒA
+# ãƒ•ã‚¡ã‚¤ãƒ«ã‚¯ãƒªã‚¢
 alias clrva="find . ${FIND_OPT} -o \( ${EF_LIST_A} -o ${TF_LIST_A} -o ${PF_LIST_A} -o ${SF_LIST_A} \) -print "
 alias clrea="find . ${FIND_OPT} -o \( ${EF_LIST_A} -o ${TF_LIST_A} -o ${PF_LIST_A} -o ${SF_LIST_A} \) -print -exec rm -f {} \;"
 
 
 #----------------------------------------------------------------------
-#diffŠÖŒW
+#diffé–¢ä¿‚
 # DF_LIST[0]="-x \"#*#\""
 # DF_LIST[1]="-x \"*.*~\"" 
 # DF_LIST[2]="-x \"*.~*\"" 
@@ -221,4 +221,4 @@ alias clrea="find . ${FIND_OPT} -o \( ${EF_LIST_A} -o ${TF_LIST_A} -o ${PF_LIST_
 #}
 
 # end of ~/.bashrc
-#---------------------------------‚±‚±‚Ü‚Å-----------------------------
+#---------------------------------ã“ã“ã¾ã§-----------------------------

@@ -1,55 +1,55 @@
-" vim:set ts=8 sts=2 sw=2 tw=0: (‚±‚Ìs‚ÉŠÖ‚µ‚Ä‚Í:help modeline‚ğQÆ)
+" vim:set ts=8 sts=2 sw=2 tw=0: (ã“ã®è¡Œã«é–¢ã—ã¦ã¯:help modelineã‚’å‚ç…§)
 "---------------------------------------------------------------------------
-" ƒtƒHƒ“ƒgİ’è:
+" ãƒ•ã‚©ãƒ³ãƒˆè¨­å®š:
 "
 if has('win32')
-  " Windows—p
+  " Windowsç”¨
   
   "set enc=utf-8
   "set rop=type:directx
 
-  set guifont=‚l‚r_ƒSƒVƒbƒN:h9:cSHIFTJIS
+  set guifont=ï¼­ï¼³_ã‚´ã‚·ãƒƒã‚¯:h9:cSHIFTJIS
   "set guifont=Ricty_Diminished:h9:cSHIFTJIS
-  " sŠÔŠu‚Ìİ’è
+  " è¡Œé–“éš”ã®è¨­å®š
   set linespace=1
 endif
 
 
 "---------------------------------------------------------------------------
-" ˆóü‚ÉŠÖ‚·‚éİ’è:
+" å°åˆ·ã«é–¢ã™ã‚‹è¨­å®š:
 "
-" ’ß:
-" ˆóü‚ÍGUI‚Å‚È‚­‚Ä‚à‚Å‚«‚é‚Ì‚Åvimrc‚Åİ’è‚µ‚½‚Ù‚¤‚ª—Ç‚¢‚©‚à‚µ‚ê‚È‚¢B‚±‚Ì•Ó
-" ‚è‚ÍWindows‚Å‚Í‚©‚È‚èB–†Bˆê”Ê“I‚Éˆóü‚É‚Í–¾’©A‚ÆŒ¾‚í‚ê‚é‚±‚Æ‚ª‚ ‚é‚ç‚µ
-" ‚¢‚Ì‚ÅƒfƒtƒHƒ‹ƒgƒtƒHƒ“ƒg‚Í–¾’©‚É‚µ‚Ä‚¨‚­BƒSƒVƒbƒN‚ğg‚¢‚½‚¢ê‡‚ÍƒRƒƒ“ƒg
-" ƒAƒEƒg‚µ‚Ä‚ ‚éprintfont‚ğQl‚ÉB
+" æ³¨é‡ˆ:
+" å°åˆ·ã¯GUIã§ãªãã¦ã‚‚ã§ãã‚‹ã®ã§vimrcã§è¨­å®šã—ãŸã»ã†ãŒè‰¯ã„ã‹ã‚‚ã—ã‚Œãªã„ã€‚ã“ã®è¾º
+" ã‚Šã¯Windowsã§ã¯ã‹ãªã‚Šæ›–æ˜§ã€‚ä¸€èˆ¬çš„ã«å°åˆ·ã«ã¯æ˜æœã€ã¨è¨€ã‚ã‚Œã‚‹ã“ã¨ãŒã‚ã‚‹ã‚‰ã—
+" ã„ã®ã§ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒ•ã‚©ãƒ³ãƒˆã¯æ˜æœã«ã—ã¦ãŠãã€‚ã‚´ã‚·ãƒƒã‚¯ã‚’ä½¿ã„ãŸã„å ´åˆã¯ã‚³ãƒ¡ãƒ³ãƒˆ
+" ã‚¢ã‚¦ãƒˆã—ã¦ã‚ã‚‹printfontã‚’å‚è€ƒã«ã€‚
 "
-" Ql:
+" å‚è€ƒ:
 "   :hardcopy
 "   :help 'printfont'
 "   :help printing
 "
-" ˆóü—pƒtƒHƒ“ƒg
+" å°åˆ·ç”¨ãƒ•ã‚©ãƒ³ãƒˆ
 if has('printer')
   if has('win32')
-    set printfont=‚l‚r_ƒSƒVƒbƒN:h9:cSHIFTJIS
+    set printfont=ï¼­ï¼³_ã‚´ã‚·ãƒƒã‚¯:h9:cSHIFTJIS
   endif
 endif
 
 "----------------------------------------------------------------------------
-"Windows‚Ìgvim“ú–{Œê“ü—ÍŒÅ’èƒ‚[ƒhİ’è 
+"Windowsã®gvimæ—¥æœ¬èªå…¥åŠ›å›ºå®šãƒ¢ãƒ¼ãƒ‰è¨­å®š 
 "
 if has('win32') || has('win64')
-  "‘}“üƒ‚[ƒhI—¹‚ÉIMEó‘Ô‚ğ•Û‘¶‚µ‚È‚¢
+  "æŒ¿å…¥ãƒ¢ãƒ¼ãƒ‰çµ‚äº†æ™‚ã«IMEçŠ¶æ…‹ã‚’ä¿å­˜ã—ãªã„
   inoremap <silent> <ESC> <ESC>
   inoremap <silent> <C-[> <ESC>
 
-  "IMEƒ‚[ƒhŒÅ’è
+  "IMEãƒ¢ãƒ¼ãƒ‰å›ºå®š
   inoremap <silent> <C-j> <C-^>
 endif
 
 if has('win32') || has('win64')
-  "fƒRƒ}ƒ“ƒh“™‚Å‚ÌIME‚ğOFF‚É‚·‚é
+  "fã‚³ãƒãƒ³ãƒ‰ç­‰ã§ã®IMEã‚’OFFã«ã™ã‚‹
   let g:IMState = 0
   augroup InsertHookIME
     autocmd!
@@ -59,31 +59,31 @@ if has('win32') || has('win64')
 endif
 
 
-"ƒƒjƒ…[•\¦‚ğíœ‚µ‚½‚¢ê‡‚ÍAŸ‚Ìs‚ğ’Ç‰Á‚·‚éB
+"ãƒ¡ãƒ‹ãƒ¥ãƒ¼è¡¨ç¤ºã‚’å‰Šé™¤ã—ãŸã„å ´åˆã¯ã€æ¬¡ã®è¡Œã‚’è¿½åŠ ã™ã‚‹ã€‚
 " set guioptions-=m 
 
-"ƒc[ƒ‹ƒo[•\¦‚ğíœ‚·‚é‚É‚ÍŸ‚Ìs‚ğ’Ç‰Á‚·‚éB
+"ãƒ„ãƒ¼ãƒ«ãƒãƒ¼è¡¨ç¤ºã‚’å‰Šé™¤ã™ã‚‹ã«ã¯æ¬¡ã®è¡Œã‚’è¿½åŠ ã™ã‚‹ã€‚
 set guioptions-=T 
 
 "---------------------------------------------------------------------------
-" ƒEƒCƒ“ƒhƒE‚ÉŠÖ‚·‚éİ’è:
+" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã«é–¢ã™ã‚‹è¨­å®š:
 "
-" ƒEƒCƒ“ƒhƒE‚Ì•
+" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®å¹…
 set columns=120
-" ƒEƒCƒ“ƒhƒE‚Ì‚‚³
+" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®é«˜ã•
 set lines=55
-" ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì‚‚³(GUIg—p)
+" ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®é«˜ã•(GUIä½¿ç”¨æ™‚)
 set cmdheight=2
-" ‰æ–Ê‚ğ•’n‚É”’‚É‚·‚é (Ÿs‚Ìæ“ª‚Ì " ‚ğíœ‚·‚ê‚Î—LŒø‚É‚È‚é)
+" ç”»é¢ã‚’é»’åœ°ã«ç™½ã«ã™ã‚‹ (æ¬¡è¡Œã®å…ˆé ­ã® " ã‚’å‰Šé™¤ã™ã‚Œã°æœ‰åŠ¹ã«ãªã‚‹)
 "colorscheme evening
 "colorscheme bluegreen
 "colorscheme jellybeans
 colorscheme hybrid
 
 "----------------------------------------------------------------------------
-"‘SŠpƒXƒy[ƒX‚ÌƒnƒCƒ‰ƒCƒg
+"å…¨è§’ã‚¹ãƒšãƒ¼ã‚¹ã®ãƒã‚¤ãƒ©ã‚¤ãƒˆ
 "highlight ZenkakuSpace guibg=white
-"match ZenkakuSpace /@/
+"match ZenkakuSpace /ã€€/
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
-au BufNewFile,BufRead * match ZenkakuSpace /@/
+au BufNewFile,BufRead * match ZenkakuSpace /ã€€/
 

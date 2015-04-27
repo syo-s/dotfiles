@@ -1,7 +1,7 @@
-" vim:set ts=8 sts=2 sw=2 tw=0: (‚±‚Ìs‚ÉŠÖ‚µ‚Ä‚Í:help modeline‚ğQÆ)
+" vim:set ts=8 sts=2 sw=2 tw=0: (ã“ã®è¡Œã«é–¢ã—ã¦ã¯:help modelineã‚’å‚ç…§)
 
 "=============================================================================
-" _vimrc‚Ì•ÒW
+" _vimrcã®ç·¨é›†
 "=============================================================================
 nnoremap <F10> :<C-u>edit$MYVIMRC<CR>
 nnoremap <F11> :<C-u>edit$MYGVIMRC<CR>
@@ -9,7 +9,7 @@ nnoremap <F12> :<C-u>source$MYVIMRC<CR>:source$MYGVIMRC<CR>
 
 
 "=============================================================================
-" ƒIƒvƒVƒ‡ƒ“
+" ã‚ªãƒ—ã‚·ãƒ§ãƒ³
 "=============================================================================
 let $TEMPDIR = $TEMP
 " let $PATH  = $VIM.'\bin;'
@@ -32,26 +32,26 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set hidden
-set noignorecase			  "ŒŸõ‚Ì‘å•¶š,¬•¶š‚ğ‹æ•Ê‚·‚é
+set noignorecase			  "æ¤œç´¢æ™‚ã®å¤§æ–‡å­—,å°æ–‡å­—ã‚’åŒºåˆ¥ã™ã‚‹
 set cindent
 set nowrap
-set number				  " s”Ô†‚ğ”ñ•\¦ (number:•\¦)
+set number				  " è¡Œç•ªå·ã‚’éè¡¨ç¤º (number:è¡¨ç¤º)
 set grepprg=internal			  "
 "set grepprg=pt\ --nocolor\ --nogroup
 "set noundofile
-set backupdir=$HOME/.vim/backup		  "ƒoƒbƒNƒAƒbƒvƒtƒ@ƒCƒ‹‚ğì‚éƒfƒBƒŒƒNƒgƒŠ
-set directory=$HOME/.vim/backup		  "ƒXƒƒbƒvƒtƒ@ƒCƒ‹—p‚ÌƒfƒBƒŒƒNƒgƒŠ
-set undodir=$HOME/.vim/backup              "undofile—p‚ÌƒfƒBƒŒƒNƒgƒŠ
-set browsedir=buffer			  "ƒtƒ@ƒCƒ‹•Û‘¶ƒ_ƒCƒAƒƒO‚Ì‰ŠúƒfƒBƒŒƒNƒgƒŠ‚ğƒoƒbƒtƒ@ƒtƒ@ƒCƒ‹ˆÊ’u‚Éİ’è
-"set clipboard=unnamed			  "ƒNƒŠƒbƒvƒ{[ƒh‚ğWindows‚Æ˜AŒg (”¼Šp/‘SŠp•ÏŠ·‚ªg—p‚Å‚«‚È‚­‚È‚é‚Ì‚Åíœ)
-"set list				  "ƒ^ƒu•¶šAs––‚È‚Ç•s‰Â‹•¶š‚ğ•\¦‚·‚é
-"set listchars=eol:$,tab:>\ ,extends:<	  "list‚Å•\¦‚³‚ê‚é•¶š‚ÌƒtƒH[ƒ}ƒbƒg‚ğw’è‚·‚é
-set helplang=jp				  "“ú–{Œêhelp
-set virtualedit& virtualedit+=block       "‹éŒ`‘I‘ğ‚Å©—R‚ÉˆÚ“®
+set backupdir=$HOME/.vim/backup		  "ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+set directory=$HOME/.vim/backup		  "ã‚¹ãƒ¯ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ç”¨ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+set undodir=$HOME/.vim/backup              "undofileç”¨ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+set browsedir=buffer			  "ãƒ•ã‚¡ã‚¤ãƒ«ä¿å­˜ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã®åˆæœŸãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ãƒãƒƒãƒ•ã‚¡ãƒ•ã‚¡ã‚¤ãƒ«ä½ç½®ã«è¨­å®š
+"set clipboard=unnamed			  "ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã‚’Windowsã¨é€£æº (åŠè§’/å…¨è§’å¤‰æ›ãŒä½¿ç”¨ã§ããªããªã‚‹ã®ã§å‰Šé™¤)
+"set list				  "ã‚¿ãƒ–æ–‡å­—ã€è¡Œæœ«ãªã©ä¸å¯è¦–æ–‡å­—ã‚’è¡¨ç¤ºã™ã‚‹
+"set listchars=eol:$,tab:>\ ,extends:<	  "listã§è¡¨ç¤ºã•ã‚Œã‚‹æ–‡å­—ã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’æŒ‡å®šã™ã‚‹
+set helplang=jp				  "æ—¥æœ¬èªhelp
+set virtualedit& virtualedit+=block       "çŸ©å½¢é¸æŠã§è‡ªç”±ã«ç§»å‹•
 "set makeprg=./make.bat
-"set errorformat=\"%f\"\\,%*[^0-9]%l:\ %m "ˆê”Ê“I‚ÈCƒRƒ“ƒpƒCƒ‰—p
+"set errorformat=\"%f\"\\,%*[^0-9]%l:\ %m "ä¸€èˆ¬çš„ãªCã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ç”¨
 "
-" Vim‚Ì•âŠ®(Ctrl-P/N)‚ÅƒCƒ“ƒNƒ‹[ƒh‚³‚ê‚Ä‚¢‚éƒtƒ@ƒCƒ‹‚ğƒXƒLƒƒƒ“‚µ‚È‚¢‚æ‚¤‚É‚·‚éCommentsAdd Star
+" Vimã®è£œå®Œ(Ctrl-P/N)ã§ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã•ã‚Œã¦ã„ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¹ã‚­ãƒ£ãƒ³ã—ãªã„ã‚ˆã†ã«ã™ã‚‹CommentsAdd Star
 set complete=.,w,b,u,t
 
 "set shell=c:\msys32\usr\bin\bash.exe
@@ -59,12 +59,12 @@ set complete=.,w,b,u,t
 "set shellcmdflag="-c"
 "set shellcmdflag=--login\ -c
 
-" shellslash‚Ìİ’è
-" shellslash‚Í÷‚ê‚È‚¢BiƒZƒpƒŒ[ƒ^‚ª\‚¾‚Æ•s•ÖBj
-" shellslash‚ªİ’è‚³‚ê‚Ä‚¢‚é‚ÆAquickrun‚ªãè‚­‚¢‚©‚È‚¢B
-" vimproc‚ğg‚¦‚Î‰ğŒˆ‚Å‚«‚é‚İ‚½‚¢B‚¾‚¯‚Ç...
+" shellslashã®è¨­å®š
+" shellslashã¯è­²ã‚Œãªã„ã€‚ï¼ˆã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿ãŒ\ã ã¨ä¸ä¾¿ã€‚ï¼‰
+" shellslashãŒè¨­å®šã•ã‚Œã¦ã„ã‚‹ã¨ã€quickrunãŒä¸Šæ‰‹ãã„ã‹ãªã„ã€‚
+" vimprocã‚’ä½¿ãˆã°è§£æ±ºã§ãã‚‹ã¿ãŸã„ã€‚ã ã‘ã©...
 "
-" set shellslash  "Windows‚ÅƒfƒBƒŒƒNƒgƒŠƒpƒX‚Ì‹æØ‚è•¶š•\¦‚É / ‚ğg‚¦‚é‚æ‚¤‚É‚·‚é
+" set shellslash  "Windowsã§ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ‘ã‚¹ã®åŒºåˆ‡ã‚Šæ–‡å­—è¡¨ç¤ºã« / ã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
 
 set nocompatible 
 "set encoding=utf-8 
@@ -85,7 +85,7 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 if neobundle#has_fresh_cache(expand('$MYVIMRC'))
-  NeoBundleLoadCache  " ƒLƒƒƒbƒVƒ…‚Ì“Ç‚İ
+  NeoBundleLoadCache  " ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã®èª­è¾¼ã¿
 else 
 
   NeoBundleFetch 'Shougo/neobundle.vim'
@@ -101,15 +101,15 @@ else
 
 
   "------------------------------------------------------------
-  " yunitez
-  NeoBundle 'Shougo/unite.vim.git'       " –{‘Ì
-  NeoBundle 'Shougo/unite-build.git'     " make build—p
-  NeoBundle 'Shougo/neomru.vim.git'      " ƒtƒ@ƒCƒ‹—š—ğ
+  " ã€uniteã€‘
+  NeoBundle 'Shougo/unite.vim.git'       " æœ¬ä½“
+  NeoBundle 'Shougo/unite-build.git'     " make buildç”¨
+  NeoBundle 'Shougo/neomru.vim.git'      " ãƒ•ã‚¡ã‚¤ãƒ«å±¥æ­´
 
   NeoBundle 'Shougo/vimshell.git'        " shell
   NeoBundle 'Shougo/vimfiler.git'        " filer
-  NeoBundle 'Shougo/neocomplete.vim.git' " •âŠ®
-  NeoBundle 'Shougo/vinarise.vim'        " ƒoƒCƒiƒŠ•ÒW
+  NeoBundle 'Shougo/neocomplete.vim.git' " è£œå®Œ
+  NeoBundle 'Shougo/vinarise.vim'        " ãƒã‚¤ãƒŠãƒªç·¨é›†
 
   NeoBundle 'hsitz/VimOrganizer.git'
   NeoBundle 'sgur/unite-everything.git'
@@ -154,7 +154,7 @@ else
   "NeoBundle 'LucHermitte/local_vimrc', {'depends': 'lh-vim-lib'}
 
   "------------------------------------------------------------
-  " y®Œ`ŠÖŒWz
+  " ã€æ•´å½¢é–¢ä¿‚ã€‘
   NeoBundle 'h1mesuke/vim-alignta.git'
   "NeoBundle 'pix/vim-align.git'
   "NeoBundle 'vim-scripts/Align.git'
@@ -166,7 +166,7 @@ else
 
 
   "------------------------------------------------------------
-  " yhtmlƒvƒŒƒrƒ…[z
+  " ã€htmlãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã€‘
   NeoBundle 'tyru/open-browser.vim.git'
   "NeoBundle 'mattn/mkdpreview-vim.git'
   "NeoBundle 'mattn/webapi-vim.git'
@@ -175,62 +175,62 @@ else
   NeoBundle 'kurocode25/mdforvim.git'
 
   "------------------------------------------------------------
-  " y–|–óz
+  " ã€ç¿»è¨³ã€‘
   NeoBundle 'mattn/excitetranslate-vim.git'
   NeoBundle 'mattn/googletranslate-vim.git'
   NeoBundle 'daisuzu/translategoogle.vim.git'
 
   "------------------------------------------------------------
-  " yƒo[ƒWƒ‡ƒ“ŠÇ—z
-  NeoBundle 'tpope/vim-fugitive.git' " Vim‚©‚çGit‚ğg‚¤‚½‚ß‚Ìƒvƒ‰ƒOƒCƒ“B
-  NeoBundle 'gregsexton/gitv.git'    " git log‘ã‚í‚è‚Ég‚Á‚Ä‚Ü‚·B
-  NeoBundle 'int3/vim-extradite.git' " Git‚ÅŠÇ—‚³‚ê‚Ä‚¢‚éƒtƒ@ƒCƒ‹‚Ì·•ª‚ğ‘f‘‚­Œ©‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B
+  " ã€ãƒãƒ¼ã‚¸ãƒ§ãƒ³ç®¡ç†ã€‘
+  NeoBundle 'tpope/vim-fugitive.git' " Vimã‹ã‚‰Gitã‚’ä½¿ã†ãŸã‚ã®ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã€‚
+  NeoBundle 'gregsexton/gitv.git'    " git logä»£ã‚ã‚Šã«ä½¿ã£ã¦ã¾ã™ã€‚
+  NeoBundle 'int3/vim-extradite.git' " Gitã§ç®¡ç†ã•ã‚Œã¦ã„ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã®å·®åˆ†ã‚’ç´ æ—©ãè¦‹ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
   NeoBundle 'thinca/vim-vcs.git'
 
   "------------------------------------------------------------
-  " ytext-objz
-  NeoBundle 'kana/vim-textobj-user.git'    " –{‘ÌB
-  NeoBundle 'kana/vim-textobj-indent.git'  " ƒCƒ“ƒfƒ“ƒg‚ğtextobj‰»B
-  NeoBundle 'kana/vim-textobj-syntax.git'  " ƒVƒ“ƒ^ƒbƒNƒX‚Å’è‹`‚³‚ê‚½•”•ª‚ğtextobj‰»B
-  NeoBundle 'kana/vim-textobj-line.git'    " s‚ğtextobj‰»B
-  NeoBundle 'kana/vim-textobj-fold.git'    " Ü‚èô‚İ‚ğtextobj‰»B
-  NeoBundle 'kana/vim-textobj-entire.git'  " ƒoƒbƒtƒ@‘S‘Ì‚ğtextobj‰»B
-  NeoBundle 'thinca/vim-textobj-between.git' " ”CˆÓ‚Ì‹æØ‚è•¶š‚ÌŠÔ‚ğtextobj‰»B
-  NeoBundle 'thinca/vim-textobj-comment.git' " ƒRƒƒ“ƒg‚ğtextobj‰»B
-  NeoBundle 'kana/vim-textobj-function.git' "ŠÖ”‚ğtextobj‰»
-  NeoBundle 'kana/vim-textobj-underscore.git' "ƒAƒ“ƒ_[ƒXƒRƒA‚ÌŠÔ a_, i_ 
-  NeoBundle 'rhysd/textobj-wiw.git'         " snake_case ã‚Ì word a,w, i,w 
-  "NeoBundle 'vimtaka/vim-textobj-sigil.git'   " perl‚Ì•Ï”‚Æ‚©‚ğtextobj‰»B
+  " ã€text-objã€‘
+  NeoBundle 'kana/vim-textobj-user.git'    " æœ¬ä½“ã€‚
+  NeoBundle 'kana/vim-textobj-indent.git'  " ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚’textobjåŒ–ã€‚
+  NeoBundle 'kana/vim-textobj-syntax.git'  " ã‚·ãƒ³ã‚¿ãƒƒã‚¯ã‚¹ã§å®šç¾©ã•ã‚ŒãŸéƒ¨åˆ†ã‚’textobjåŒ–ã€‚
+  NeoBundle 'kana/vim-textobj-line.git'    " è¡Œã‚’textobjåŒ–ã€‚
+  NeoBundle 'kana/vim-textobj-fold.git'    " æŠ˜ã‚Šç•³ã¿ã‚’textobjåŒ–ã€‚
+  NeoBundle 'kana/vim-textobj-entire.git'  " ãƒãƒƒãƒ•ã‚¡å…¨ä½“ã‚’textobjåŒ–ã€‚
+  NeoBundle 'thinca/vim-textobj-between.git' " ä»»æ„ã®åŒºåˆ‡ã‚Šæ–‡å­—ã®é–“ã‚’textobjåŒ–ã€‚
+  NeoBundle 'thinca/vim-textobj-comment.git' " ã‚³ãƒ¡ãƒ³ãƒˆã‚’textobjåŒ–ã€‚
+  NeoBundle 'kana/vim-textobj-function.git' "é–¢æ•°ã‚’textobjåŒ–
+  NeoBundle 'kana/vim-textobj-underscore.git' "ã‚¢ãƒ³ãƒ€ãƒ¼ã‚¹ã‚³ã‚¢ã®é–“ a_, i_ 
+  NeoBundle 'rhysd/textobj-wiw.git'         " snake_case ä¸Šã® word a,w, i,w 
+  "NeoBundle 'vimtaka/vim-textobj-sigil.git'   " perlã®å¤‰æ•°ã¨ã‹ã‚’textobjåŒ–ã€‚
   "NeoBundle 'tpope/vim-surround.git'
 
   "------------------------------------------------------------
-  "yoperatorz
-  NeoBundle 'kana/vim-operator-user.git'     " –{‘ÌB
-  NeoBundle 'kana/vim-operator-replace.git'  " ƒŒƒWƒXƒ^‚Ì“à—e‚Å‘I‘ğ”ÍˆÍ‚ğ’uŠ·‚Å‚«‚Ü‚·B
-  NeoBundle 'tyru/operator-camelize.vim.git' " ‘I‘ğ”ÍˆÍ‚ğCamelCase‚É‚µ‚½‚èsnake_case‚É‚µ‚½‚è‚Å‚«‚Ü‚·B
-  NeoBundle 'tyru/operator-reverse.vim.git'  " ‘I‘ğ‚µ‚½s‚â”ÍˆÍ‚ğ‹t‚É‚Å‚«‚Ü‚·B
+  "ã€operatorã€‘
+  NeoBundle 'kana/vim-operator-user.git'     " æœ¬ä½“ã€‚
+  NeoBundle 'kana/vim-operator-replace.git'  " ãƒ¬ã‚¸ã‚¹ã‚¿ã®å†…å®¹ã§é¸æŠç¯„å›²ã‚’ç½®æ›ã§ãã¾ã™ã€‚
+  NeoBundle 'tyru/operator-camelize.vim.git' " é¸æŠç¯„å›²ã‚’CamelCaseã«ã—ãŸã‚Šsnake_caseã«ã—ãŸã‚Šã§ãã¾ã™ã€‚
+  NeoBundle 'tyru/operator-reverse.vim.git'  " é¸æŠã—ãŸè¡Œã‚„ç¯„å›²ã‚’é€†ã«ã§ãã¾ã™ã€‚
   NeoBundle 'rhysd/vim-operator-surround.git'
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  "ypythonz 
+  "ã€pythonã€‘ 
   NeoBundle 'bps/vim-textobj-python.git'
   NeoBundle 'andviro/flake8-vim.git'
   NeoBundle 'hachibeeDI/vim-operator-autopep8.git'
-  " indent‚Ì[‚³‚ÉF‚ğ•t‚¯‚é
+  " indentã®æ·±ã•ã«è‰²ã‚’ä»˜ã‘ã‚‹
   "NeoBundle 'nathanaelkane/vim-indent-guides.git'
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  "yrubyz 
+  "ã€rubyã€‘ 
   NeoBundle 'tpope/vim-rails.git'
   NeoBundle 'tpope/vim-bundler.git'
   NeoBundle 'tpope/vim-rake.git'
   "NeoBundle 'tpope/vim-projectionist.git'
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  "ycofeez 
-  " syntax + ©“®compile
+  "ã€cofeeã€‘ 
+  " syntax + è‡ªå‹•compile
   NeoBundle 'kchmck/vim-coffee-script.git'
-  " js BDDƒc[ƒ‹
+  " js BDDãƒ„ãƒ¼ãƒ«
   NeoBundle 'claco/jasmine.vim.git'
 
 
@@ -267,7 +267,7 @@ else
 
   NeoBundle 'bling/vim-airline.git'
 
-  NeoBundleSaveCache  " ƒLƒƒƒbƒVƒ…‚Ì‘‚İ
+  NeoBundleSaveCache  " ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã®æ›¸è¾¼ã¿
 endif
 
 call neobundle#end()
@@ -278,7 +278,7 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-" ~/neobundle.log ‚ÉƒƒO‚ğo—Í‚·‚é
+" ~/neobundle.log ã«ãƒ­ã‚°ã‚’å‡ºåŠ›ã™ã‚‹
 let g:neobundle#log_filename = $HOME . "/neobundle.log"
 
 
@@ -322,7 +322,7 @@ endif
 
 
 "=============================================================================
-" ƒtƒ@ƒCƒ‹‚ÌŠÖ˜A•t‚¯ 
+" ãƒ•ã‚¡ã‚¤ãƒ«ã®é–¢é€£ä»˜ã‘ 
 "=============================================================================
 augroup vimrc
   autocmd!
@@ -347,18 +347,18 @@ augroup vimrc
 augroup END
 
 "=============================================================================
-" vim_singletonİ’è
+" vim_singletonè¨­å®š
 "=============================================================================
 let g:singleton#opener="e"
 call singleton#enable()
 
 "=============================================================================
-" easy_motionİ’è
+" easy_motionè¨­å®š
 "=============================================================================
 map <Space> <Plug>(easymotion-s2)
 
 "=============================================================================
-" easyalignİ’è
+" easyalignè¨­å®š
 "=============================================================================
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
@@ -381,7 +381,7 @@ nmap <Leader>a <Plug>(EasyAlign)
 "noremap <F3> :NERDTreeToggle<CR>
 
 "=============================================================================
-" clang-formatİ’è
+" clang-formatè¨­å®š
 "=============================================================================
 let g:clang_format#code_style='google'
 let g:clang_format#style_options = {
@@ -403,7 +403,7 @@ syntax keyword xTodo todo contained
 syntax match xComment /%.*/ contains=xTodo 
 
 "=============================================================================
-" Tab‹@”\İ’è
+" Tabæ©Ÿèƒ½è¨­å®š
 "=============================================================================
 "set showtabline=2               " File tabs allways visible
 nmap <C-tab> :tabnext<CR>
@@ -454,20 +454,20 @@ let g:table_mode_corner = '|'
 
 
 "=============================================================================
-"<F9>  •¶“ª‚Éƒ^ƒCƒ€ƒXƒ^ƒ“ƒv‚ğ‘}“ü‚µ‚Äinsertƒ‚[ƒh‚ÖˆÚs
+"<F9>  æ–‡é ­ã«ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—ã‚’æŒ¿å…¥ã—ã¦insertãƒ¢ãƒ¼ãƒ‰ã¸ç§»è¡Œ
 "=============================================================================
 " nmap <F9> <ESC>i----------------------<CR><C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR><CR><Up><Up>
 nmap <F9> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR>----------------------<CR><CR><CR><Up><Up>
 
-"<leader>W‚ÅŒ»İ‚Ìƒtƒ@ƒCƒ‹‚ğFirefox‚ÅŠJ‚­
+"<leader>Wã§ç¾åœ¨ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’Firefoxã§é–‹ã
 "noremap <Leader>W :silent ! start firefox %<CR> 
 nmap gw <Plug>(openbrowser-open)
 
 ""=============================================================================
 ""quickrun.vim
 ""=============================================================================
-" runner/vimproc/updatetime ‚Åo—Íƒoƒbƒtƒ@‚ÌXVŠÔŠu‚ğƒ~ƒŠ•b‚Åİ’è‚Å‚«‚Ü‚·
-" updatetime ‚ªˆê“I‚É‘‚«Š·‚¦‚ç‚ê‚Ä‚µ‚Ü‚¤‚Ì‚Å’ˆÓ‚µ‚Ä‰º‚³‚¢
+" runner/vimproc/updatetime ã§å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã®æ›´æ–°é–“éš”ã‚’ãƒŸãƒªç§’ã§è¨­å®šã§ãã¾ã™
+" updatetime ãŒä¸€æ™‚çš„ã«æ›¸ãæ›ãˆã‚‰ã‚Œã¦ã—ã¾ã†ã®ã§æ³¨æ„ã—ã¦ä¸‹ã•ã„
 let g:quickrun_config = {
       \   "_" : {
       \       "hook/close_unite_quickfix/enable_hook_loaded" : 1,
@@ -506,18 +506,18 @@ nnoremap [unite] <Nop>
  "nmap <Space>f [unite]
 nmap ,u [unite]
    
-""vimfiler‚ğƒfƒtƒHƒ‹ƒg‚Ìƒtƒ@ƒCƒ‹ƒ}ƒl[ƒWƒƒ[‚Éİ’è‚·‚é
+""vimfilerã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã«è¨­å®šã™ã‚‹
 "let g:vimfiler_as_default_explorer = 1
 "let g:vimfiler_safe_mode_by_default = 0
 
 "unite general settings
-"ƒCƒ“ƒT[ƒgƒ‚[ƒh‚ÅŠJn
+"ã‚¤ãƒ³ã‚µãƒ¼ãƒˆãƒ¢ãƒ¼ãƒ‰ã§é–‹å§‹
 "let g:unite_enable_start_insert = 1
 
-"Å‹ßŠJ‚¢‚½ƒtƒ@ƒCƒ‹—š—ğ‚Ì•Û‘¶”
+"æœ€è¿‘é–‹ã„ãŸãƒ•ã‚¡ã‚¤ãƒ«å±¥æ­´ã®ä¿å­˜æ•°
 let g:unite_source_file_mru_limit = 30
  
-"file_mru‚Ì•\¦ƒtƒH[ƒ}ƒbƒg‚ğw’èB‹ó‚É‚·‚é‚Æ•\¦ƒXƒs[ƒh‚ª‚‘¬‰»‚³‚ê‚é
+"file_mruã®è¡¨ç¤ºãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’æŒ‡å®šã€‚ç©ºã«ã™ã‚‹ã¨è¡¨ç¤ºã‚¹ãƒ”ãƒ¼ãƒ‰ãŒé«˜é€ŸåŒ–ã•ã‚Œã‚‹
 let g:unite_source_file_mru_filename_format = ''
 
 let g:unite_update_time = 1000 
@@ -571,11 +571,11 @@ let g:vimshell_prompt_expr = 'getcwd()." > "'
 let g:vimshell_prompt_pattern = '^\f\+ > '
 
 "===================================================================
-" todoƒŠƒXƒg‚ğŠÈ’P‚É“ü—Í‚·‚é
+" todoãƒªã‚¹ãƒˆã‚’ç°¡å˜ã«å…¥åŠ›ã™ã‚‹
 "===================================================================
 abbreviate tl - [ ]
 
-" todoƒŠƒXƒg‚Ìon/off‚ğØ‚è‘Ö‚¦‚é
+" todoãƒªã‚¹ãƒˆã®on/offã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
 "nnoremap <buffer> <Leader><Leader> :call ToggleCheckbox()<CR>
 "nnoremap <Leader><Leader> :call ToggleCheckbox()<CR>
 nnoremap tc :call ToggleCheckbox()<CR>
