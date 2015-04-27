@@ -39,11 +39,11 @@ set number				  " 行番号を非表示 (number:表示)
 set grepprg=internal			  "
 "set grepprg=pt\ --nocolor\ --nogroup
 "set noundofile
-set backupdir=$HOME/.vimbackup		  "バックアップファイルを作るディレクトリ
-set directory=$HOME/.vimbackup		  "スワップファイル用のディレクトリ
-set undodir=$HOME/.vimbackup              "undofile用のディレクトリ
+set backupdir=$HOME/.vim/backup		  "バックアップファイルを作るディレクトリ
+set directory=$HOME/.vim/backup		  "スワップファイル用のディレクトリ
+set undodir=$HOME/.vim/backup              "undofile用のディレクトリ
 set browsedir=buffer			  "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
-set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
+"set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
 "set list				  "タブ文字、行末など不可視文字を表示する
 "set listchars=eol:$,tab:>\ ,extends:<	  "listで表示される文字のフォーマットを指定する
 set helplang=jp				  "日本語help
@@ -109,7 +109,7 @@ else
   NeoBundle 'Shougo/vimshell.git'        " shell
   NeoBundle 'Shougo/vimfiler.git'        " filer
   NeoBundle 'Shougo/neocomplete.vim.git' " 補完
-  NeoBundle 'Shougo/vinarise.vim.git'        " バイナリ編集
+  NeoBundle 'Shougo/vinarise.vim'        " バイナリ編集
 
   NeoBundle 'hsitz/VimOrganizer.git'
   NeoBundle 'sgur/unite-everything.git'
@@ -493,6 +493,14 @@ let g:quickrun_config = {
 ""unite.vim
 ""vimfiler.vim
 ""=============================================================================
+let g:neocomplete#data_directory    = expand('~/.vim/etc/neocomplete')
+let g:vimfiler_data_directory       = expand('~/.vim/etc/vimfiler')
+let g:vimshell_temporary_directory  = expand('~/.vim/etc/VimShell')
+let g:unite_data_directory          = expand('~/.vim/etc/unite')
+let g:neomru#file_mru_path          = expand('~/.vim/etc/neomru/file')
+let g:neomru#directory_mru_path     = expand('~/.vim/etc/neomru/direcroty')
+let g:ref_cache_dir                 = expand('~/.vim/etc/vim_ref_cache')
+let g:yankround_dir                 = expand('~/.vim/etc/.cache/yankround')
 
 nnoremap [unite] <Nop>
  "nmap <Space>f [unite]

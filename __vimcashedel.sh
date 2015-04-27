@@ -3,11 +3,13 @@
 cd ~
 rm -rf neobundle.log
 
-cd .vimbackup
+cd .vim
+cd backup
 rm -rf *
 cd ..
 
-cd .cache
+cd etc 
 rm -rf *
+cd ..
 
 
