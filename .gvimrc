@@ -2,13 +2,13 @@
 "---------------------------------------------------------------------------
 " フォント設定:
 "
-if has('win32')
+if has('win32') || has('win64')
   " Windows用
   
   "set enc=utf-8
   "set rop=type:directx
 
-  set guifont=ＭＳ_ゴシック:h9:cSHIFTJIS
+  set guifont=MS_Gothic:h9:cSHIFTJIS
   "set guifont=Ricty_Diminished:h9:cSHIFTJIS
   " 行間隔の設定
   set linespace=1
@@ -31,8 +31,8 @@ endif
 "
 " 印刷用フォント
 if has('printer')
-  if has('win32')
-    set printfont=ＭＳ_ゴシック:h9:cSHIFTJIS
+  if has('win32') || has('win64')
+    set printfont=MS_Gothic:h9:cSHIFTJIS
   endif
 endif
 

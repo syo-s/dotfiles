@@ -90,26 +90,32 @@ else
 
   NeoBundleFetch 'Shougo/neobundle.vim'
 
-  NeoBundle 'Shougo/vimproc.git', {
-         \ 'build' : {
-         \	    'windows' : 'make -f make_mingw32.mak',
-         \	    'cygwin'  : 'make -f make_cygwin.mak',
-         \	    'mac'     : 'make -f make_mac.mak',
-         \	    'unix'    : 'make -f make_unix.mak',
-         \	   },
-         \ }
-
+  NeoBundle 'Shougo/vimproc.git'
+  "NeoBundle 'Shougo/vimproc.git', {
+  "       \ 'build' : {
+  "       \	    'windows' : 'make -f make_mingw32.mak',
+  "       \	    'cygwin'  : 'make -f make_cygwin.mak',
+  "       \	    'mac'     : 'make -f make_mac.mak',
+  "       \	    'unix'    : 'make -f make_unix.mak',
+  "       \	   },
+  "       \ }
 
   "------------------------------------------------------------
   " 【unite】
-  NeoBundle 'Shougo/unite.vim.git'       " 本体
-  NeoBundle 'Shougo/unite-build.git'     " make build用
-  NeoBundle 'Shougo/neomru.vim.git'      " ファイル履歴
-
-  NeoBundle 'Shougo/vimshell.git'        " shell
-  NeoBundle 'Shougo/vimfiler.git'        " filer
-  NeoBundle 'Shougo/neocomplete.vim.git' " 補完
-  NeoBundle 'Shougo/vinarise.vim'        " バイナリ編集
+  " 本体
+  NeoBundle 'Shougo/unite.vim.git'
+  " make build用
+  NeoBundle 'Shougo/unite-build.git'
+  " ファイル履歴
+  NeoBundle 'Shougo/neomru.vim.git'
+  " shell
+  NeoBundle 'Shougo/vimshell.git'
+  " filer
+  NeoBundle 'Shougo/vimfiler.git'
+  " 補完
+  NeoBundle 'Shougo/neocomplete.vim.git'
+  " バイナリ編集
+  NeoBundle 'Shougo/vinarise.vim'
 
   NeoBundle 'hsitz/VimOrganizer.git'
   NeoBundle 'sgur/unite-everything.git'
@@ -182,33 +188,52 @@ else
 
   "------------------------------------------------------------
   " 【バージョン管理】
-  NeoBundle 'tpope/vim-fugitive.git' " VimからGitを使うためのプラグイン。
-  NeoBundle 'gregsexton/gitv.git'    " git log代わりに使ってます。
-  NeoBundle 'int3/vim-extradite.git' " Gitで管理されているファイルの差分を素早く見ることができます。
+  " VimからGitを使うためのプラグイン。
+  NeoBundle 'tpope/vim-fugitive.git'
+  " git log代わりに使ってます。
+  NeoBundle 'gregsexton/gitv.git'
+  " Gitで管理されているファイルの差分を素早く見ることができます。
+  NeoBundle 'int3/vim-extradite.git'
   NeoBundle 'thinca/vim-vcs.git'
 
   "------------------------------------------------------------
   " 【text-obj】
-  NeoBundle 'kana/vim-textobj-user.git'    " 本体。
-  NeoBundle 'kana/vim-textobj-indent.git'  " インデントをtextobj化。
-  NeoBundle 'kana/vim-textobj-syntax.git'  " シンタックスで定義された部分をtextobj化。
-  NeoBundle 'kana/vim-textobj-line.git'    " 行をtextobj化。
-  NeoBundle 'kana/vim-textobj-fold.git'    " 折り畳みをtextobj化。
-  NeoBundle 'kana/vim-textobj-entire.git'  " バッファ全体をtextobj化。
-  NeoBundle 'thinca/vim-textobj-between.git' " 任意の区切り文字の間をtextobj化。
-  NeoBundle 'thinca/vim-textobj-comment.git' " コメントをtextobj化。
-  NeoBundle 'kana/vim-textobj-function.git' "関数をtextobj化
-  NeoBundle 'kana/vim-textobj-underscore.git' "アンダースコアの間 a_, i_ 
-  NeoBundle 'rhysd/textobj-wiw.git'         " snake_case 上の word a,w, i,w 
-  "NeoBundle 'vimtaka/vim-textobj-sigil.git'   " perlの変数とかをtextobj化。
+  " 本体。
+  NeoBundle 'kana/vim-textobj-user.git'  
+  " インデントをtextobj化。
+  NeoBundle 'kana/vim-textobj-indent.git' 
+  " シンタックスで定義された部分をtextobj化。
+  NeoBundle 'kana/vim-textobj-syntax.git' 
+  " 行をtextobj化。
+  NeoBundle 'kana/vim-textobj-line.git'   
+  " 折り畳みをtextobj化。
+  NeoBundle 'kana/vim-textobj-fold.git'
+  " バッファ全体をtextobj化。
+  NeoBundle 'kana/vim-textobj-entire.git' 
+  " 任意の区切り文字の間をtextobj化。
+  NeoBundle 'thinca/vim-textobj-between.git'
+  " コメントをtextobj化。
+  NeoBundle 'thinca/vim-textobj-comment.git'
+  "関数をtextobj化
+  NeoBundle 'kana/vim-textobj-function.git' 
+  "アンダースコアの間 a_, i_ 
+  NeoBundle 'kana/vim-textobj-underscore.git' 
+  " snake_case 上の word a,w, i,w 
+  NeoBundle 'rhysd/textobj-wiw.git' 
+  " perlの変数とかをtextobj化。
+  "NeoBundle 'vimtaka/vim-textobj-sigil.git' 
   "NeoBundle 'tpope/vim-surround.git'
 
   "------------------------------------------------------------
   "【operator】
-  NeoBundle 'kana/vim-operator-user.git'     " 本体。
-  NeoBundle 'kana/vim-operator-replace.git'  " レジスタの内容で選択範囲を置換できます。
-  NeoBundle 'tyru/operator-camelize.vim.git' " 選択範囲をCamelCaseにしたりsnake_caseにしたりできます。
-  NeoBundle 'tyru/operator-reverse.vim.git'  " 選択した行や範囲を逆にできます。
+  " 本体。
+  NeoBundle 'kana/vim-operator-user.git' 
+  " レジスタの内容で選択範囲を置換できます。
+  NeoBundle 'kana/vim-operator-replace.git' 
+  " 選択範囲をCamelCaseにしたりsnake_caseにしたりできます。
+  NeoBundle 'tyru/operator-camelize.vim.git'
+  " 選択した行や範囲を逆にできます。
+  NeoBundle 'tyru/operator-reverse.vim.git' 
   NeoBundle 'rhysd/vim-operator-surround.git'
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -385,7 +410,7 @@ nmap <Leader>a <Plug>(EasyAlign)
 "=============================================================================
 let g:clang_format#code_style='google'
 let g:clang_format#style_options = {
-            \ "ColumnLimit"          : 120 ,
+            \ "ColumnLimit"          : 150 ,
             \ "BreakBeforeBraces"    : "Linux" ,
             \ "DerivePointerBinding" : "false" ,
             \ "PointerBindsToType"   : "false" ,
