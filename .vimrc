@@ -7,7 +7,6 @@ nnoremap <F10> :<C-u>edit$MYVIMRC<CR>
 nnoremap <F11> :<C-u>edit$MYGVIMRC<CR>
 nnoremap <F12> :<C-u>source$MYVIMRC<CR>:source$MYGVIMRC<CR>
 
-
 "=============================================================================
 " オプション
 "=============================================================================
@@ -22,7 +21,7 @@ let $TEMPDIR = $TEMP
 "       \ .$PATH
 "       \ " .'C:\cygwin\bin;'
 "       \ " .'C:\cygwin\usr\local\bin;'
-let $PATH  = $VIM . $PATH
+let $PATH  = $VIM. ';'. $PATH
 
 set wildmenu
 set wildmode=longest:full,full
@@ -54,7 +53,8 @@ set virtualedit& virtualedit+=block       "矩形選択で自由に移動
 " Vimの補完(Ctrl-P/N)でインクルードされているファイルをスキャンしないようにするCommentsAdd Star
 set complete=.,w,b,u,t
 
-"set shell=c:\msys32\usr\bin\bash.exe
+"set shell=mintty.exe
+"set shell=bash.exe
 "set shell=c:\cygwin/bin/mintty.exe
 "set shellcmdflag="-c"
 "set shellcmdflag=--login\ -c
@@ -84,9 +84,9 @@ endif
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-if neobundle#has_fresh_cache(expand('$MYVIMRC'))
-  NeoBundleLoadCache  " キャッシュの読込み
-else 
+"if neobundle#has_fresh_cache(expand('$MYVIMRC'))
+"  NeoBundleLoadCache  " キャッシュの読込み
+"else 
 
   NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -293,7 +293,7 @@ else
   NeoBundle 'bling/vim-airline.git'
 
   NeoBundleSaveCache  " キャッシュの書込み
-endif
+"endif
 
 call neobundle#end()
 
@@ -482,7 +482,8 @@ let g:table_mode_corner = '|'
 "<F9>  文頭にタイムスタンプを挿入してinsertモードへ移行
 "=============================================================================
 " nmap <F9> <ESC>i----------------------<CR><C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR><CR><Up><Up>
-nmap <F9> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR>----------------------<CR><CR><CR><Up><Up>
+"nmap <F9> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR>----------------------<CR><CR><CR><Up><Up>
+nmap <F9> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) _") <CR><CR>----------------------<CR>00:00-00:00<CR>00:00-00:00<CR><Up><Up>
 
 "<leader>Wで現在のファイルをFirefoxで開く
 "noremap <Leader>W :silent ! start firefox %<CR> 

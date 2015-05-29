@@ -14,4 +14,6 @@ cd bundle
 %gitbin% clone https://github.com/Shougo/neobundle.vim.git
 cd ..
 
+pause
 echo on
+
