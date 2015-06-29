@@ -35,8 +35,8 @@ set noignorecase			  "検索時の大文字,小文字を区別する
 set cindent
 set nowrap
 set number				  " 行番号を非表示 (number:表示)
-set grepprg=internal			  "
-"set grepprg=pt\ --nocolor\ --nogroup
+"set grepprg=internal			  "
+set grepprg=pt\ --nocolor\ --nogroup\ --output-encode\ sjis
 "set noundofile
 set backupdir=$HOME/.vim/backup		  "バックアップファイルを作るディレクトリ
 set directory=$HOME/.vim/backup		  "スワップファイル用のディレクトリ
@@ -273,6 +273,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   "NeoBundle 'plasticboy/vim-markdown.git'
   "NeoBundle 'rcmdnk/vim-markdown.git'
   "NeoBundle 'joker1007/vim-markdown-quote-syntax.git'
+  NeoBundle 'PProvost/vim-ps1'
+
 
   "NeoBundle 'python-mode.git'
   NeoBundle 'aohta/blockdiag.vim.git'
