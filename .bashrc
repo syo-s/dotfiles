@@ -15,7 +15,8 @@ echo MSYSTEM = $MSYSTEM
 echo
 #----------------------------------------------------------------------
 
-export PATH=$PATH:~/dotfiles/
+export PATH=$PATH:~/dotfiles/:$HOME/.hsenv/bin:
+
 bash_ver=$BASH_VERSION
 if [ "${bash_ver:0:1}" = "3" ]; then
     MSYS=MSYS1
@@ -219,6 +220,43 @@ alias clrea="find . ${FIND_OPT} -o \( ${EF_LIST_A} -o ${TF_LIST_A} -o ${PF_LIST_
 #function wget() {
 #    /bin/wget ${*} | /bin/cat -
 #}
+
+#-------------------------------------------------------------------------------- 
+# hsenvが設定されているディレクトリへ入った時、
+# また出た時に自動でactivate/deactivateが動くようにする関数
+precmd() {
+  local search_dir=$PWD
+  while [ $search_dir != "/" ]; do
+    local hsenv_found=false
+    for dir in `cd $search_dir && find . -maxdepth 1 -type d -name ".hsenv*"`; do
+      if $hsenv_found; then
+        echo multiple environments in $search_dir , manual activaton required
+        return        
+      elif [ -n "$dir" ] && [ -e $search_dir/$dir/bin/activate ]; then
+        hsenv_found=true
+      fi
+    done
+    if ! $hsenv_found; then
+      search_dir=`cd $search_dir/.. && pwd`
+      continue
+    fi
+    if [ -n "$HSENV" ] && [ "$HSENV" != "$search_dir" ]; then
+      deactivate_hsenv
+    fi
+    if [ -z "$HSENV" ]; then
+      pwd_backup=$PWD
+      cd $search_dir
+      source .hsenv*/bin/activate
+      cd $pwd_backup
+    fi
+    return
+  done
+  if [ -n "$HSENV" ]; then
+    deactivate_hsenv
+  fi
+}
+export PROMPT_COMMAND=precmd
+
 
 # end of ~/.bashrc
 #---------------------------------ここまで-----------------------------
