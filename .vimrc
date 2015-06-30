@@ -117,10 +117,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   " バイナリ編集
   NeoBundle 'Shougo/vinarise.vim'
 
-  NeoBundle 'hsitz/VimOrganizer.git'
-  NeoBundle 'sgur/unite-everything.git'
+  "NeoBundle 'hsitz/VimOrganizer.git'
+  "NeoBundle 'sgur/unite-everything.git'
   NeoBundle 'ujihisa/unite-colorscheme.git'
-  NeoBundle 'ujihisa/unite-rake.git'
+  "NeoBundle 'ujihisa/unite-rake.git'
   NeoBundle 'h1mesuke/unite-outline.git'
   NeoBundle 'basyura/unite-converter-file-directory.git'
   NeoBundle 'basyura/unite-matcher-file-name.git'
@@ -169,7 +169,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'fuenor/JpFormat.vim.git'
   NeoBundle 'rhysd/vim-clang-format.git'
   NeoBundle 'deris/vim-rengbang.git'
-
 
   "------------------------------------------------------------
   " 【htmlプレビュー】
@@ -239,16 +238,16 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "【python】 
   NeoBundle 'bps/vim-textobj-python.git'
-  NeoBundle 'andviro/flake8-vim.git'
-  NeoBundle 'hachibeeDI/vim-operator-autopep8.git'
+  "NeoBundle 'andviro/flake8-vim.git'
+  "NeoBundle 'hachibeeDI/vim-operator-autopep8.git'
   " indentの深さに色を付ける
-  "NeoBundle 'nathanaelkane/vim-indent-guides.git'
+  NeoBundle 'nathanaelkane/vim-indent-guides.git'
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "【ruby】 
-  NeoBundle 'tpope/vim-rails.git'
-  NeoBundle 'tpope/vim-bundler.git'
-  NeoBundle 'tpope/vim-rake.git'
+  "NeoBundle 'tpope/vim-rails.git'
+  "NeoBundle 'tpope/vim-bundler.git'
+  "NeoBundle 'tpope/vim-rake.git'
   "NeoBundle 'tpope/vim-projectionist.git'
 
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
