@@ -6,6 +6,7 @@ rm -rf neobundle.log
 cd .vim
 cd backup
 rm -rf *
+rm -rf .*~
 cd ..
 
 cd etc 
