@@ -48,6 +48,14 @@ fi
 app_root="/c/home/app"
 FIND_OPT="-type d -name .git -prune "
 
+export proxy_setting="http://Nbr_Shimada%40shi.co.jp:05j151@yksproxy.shi.co.jp:8080"
+export http_proxy=$proxy_setting
+export https_proxy=$proxy_setting
+export ftp_proxy=$proxy_setting
+
+#----------------------------------------------------------------------
+# alias setting
+
 # vim_root="$app_root/vim74-kaoriya-win32"
 # alias vim="$vim_root/vim.exe"
 # alias gvim="$vim_root/gvim.exe"

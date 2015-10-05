@@ -74,10 +74,11 @@ set columns=120
 set lines=55
 " コマンドラインの高さ(GUI使用時)
 set cmdheight=2
+
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
 "colorscheme evening
 "colorscheme bluegreen
-"colorscheme jellybeans
+colorscheme jellybeans
 colorscheme hybrid
 
 "----------------------------------------------------------------------------
