@@ -21,7 +21,11 @@ let $TEMPDIR = $TEMP
 "       \ .$PATH
 "       \ " .'C:\cygwin\bin;'
 "       \ " .'C:\cygwin\usr\local\bin;'
-let $PATH  = $VIM. ';'. $PATH
+"let $PATH  = $VIM. ';'. $PATH
+let $PATH  = $VIM. ';'
+  \ . 'C:\msys32\usr\bin;'
+  \ . 'C:\msys32\mingw32\bin'
+  \ . $PATH
 
 set wildmenu
 set wildmode=longest:full,full
@@ -90,7 +94,15 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
   NeoBundleFetch 'Shougo/neobundle.vim'
 
-  NeoBundle 'Shougo/vimproc.git'
+  NeoBundle 'Shougo/vimproc.git', {
+        \ 'build' : {
+        \     'windows' : 'tools\\update-dll-mingw',
+        \     'cygwin' : 'make -f make_cygwin.mak',
+        \     'mac' : 'make -f make_mac.mak',
+        \     'linux' : 'make',
+        \     'unix' : 'gmake',
+        \    },
+        \ }
   "NeoBundle 'Shougo/vimproc.git', {
   "       \ 'build' : {
   "       \	    'windows' : 'make -f make_mingw32.mak',
@@ -130,7 +142,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'thinca/vim-quickrun.git'
   NeoBundle 'osyo-manga/shabadou.vim.git'
   NeoBundle 'thinca/vim-singleton.git'
-
+  NeoBundle 'vim-scripts/taglist.vim.git'
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'terryma/vim-multiple-cursors.git'
   NeoBundle 'vim-scripts/DoxygenToolkit.vim.git'
