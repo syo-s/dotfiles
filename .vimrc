@@ -27,6 +27,9 @@ let $PATH  = $VIM. ';'
   \ . 'C:\msys32\mingw32\bin'
   \ . $PATH
 
+let $MSYSTEM='MINGW32'
+let $MSYSCON='mintty.exe'
+
 set wildmenu
 set wildmode=longest:full,full
 set tags=tags;
@@ -57,11 +60,16 @@ set virtualedit& virtualedit+=block       "矩形選択で自由に移動
 " Vimの補完(Ctrl-P/N)でインクルードされているファイルをスキャンしないようにするCommentsAdd Star
 set complete=.,w,b,u,t
 
-"set shell=mintty.exe
-"set shell=bash.exe
 "set shell=c:\cygwin/bin/mintty.exe
+"set shell=mintty.exe
+"set shellcmdflag=-i\ /msys2.ico\ /usr/bin/bash\ --login 
+
+"set shell=bash
 "set shellcmdflag="-c"
-"set shellcmdflag=--login\ -c
+"set shellcmdflag=--login\ -i
+"set shellcmdflag=--login
+
+
 
 " shellslashの設定
 " shellslashは譲れない。（セパレータが\だと不便。）
@@ -82,11 +90,12 @@ if has('vim_starting')
   set nocompatible " Be iMproved
 
   " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  "set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('$HOME/.vim/bundle/'))
 
 "if neobundle#has_fresh_cache(expand('$MYVIMRC'))
 "  NeoBundleLoadCache  " キャッシュの読込み
@@ -103,14 +112,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
         \     'unix' : 'gmake',
         \    },
         \ }
-  "NeoBundle 'Shougo/vimproc.git', {
-  "       \ 'build' : {
-  "       \	    'windows' : 'make -f make_mingw32.mak',
-  "       \	    'cygwin'  : 'make -f make_cygwin.mak',
-  "       \	    'mac'     : 'make -f make_mac.mak',
-  "       \	    'unix'    : 'make -f make_unix.mak',
-  "       \	   },
-  "       \ }
 
   "------------------------------------------------------------
   " 【unite】
@@ -318,7 +319,7 @@ NeoBundleCheck
 
 " ~/neobundle.log にログを出力する
 let g:neobundle#log_filename = $HOME . "/neobundle.log"
-
+let g:neobundle#install_max_processes = 1
 
 "set runtimepath+=~/.vim/bundle/vim-addon-manager/
 "call vam#ActivateAddons([])
@@ -387,8 +388,8 @@ augroup END
 "=============================================================================
 " vim_singleton設定
 "=============================================================================
-let g:singleton#opener="e"
-call singleton#enable()
+" let g:singleton#opener="e"
+" call singleton#enable()
 
 "=============================================================================
 " easy_motion設定
