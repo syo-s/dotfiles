@@ -48,10 +48,10 @@ fi
 app_root="/c/home/app"
 FIND_OPT="-type d -name .git -prune "
 
-export proxy_setting="http://Nbr_Shimada%40shi.co.jp:05j151@yksproxy.shi.co.jp:8080"
-export http_proxy=$proxy_setting
-export https_proxy=$proxy_setting
-export ftp_proxy=$proxy_setting
+#export proxy_setting="http://Nbr_Shimada%40shi.co.jp:05j151@yksproxy.shi.co.jp:8080"
+#export http_proxy=$proxy_setting
+#export https_proxy=$proxy_setting
+#export ftp_proxy=$proxy_setting
 
 #----------------------------------------------------------------------
 # alias setting
@@ -77,7 +77,7 @@ alias muenc2="find . ${FIND_OPT} -o -iname '*.mu' -print -maxdepth 1 -exec muenc
 
 alias clr1="find . ${FIND_OPT} -o -type d -iname '[Rr]ealase -exec find {} '*.src' -print \; | xargs echo"
 alias clr2="find . ${FIND_OPT} -o -type f -size 0 -iname '[0-9]*' -print"
-alias tmux='rm -rf /tmp/tmux* && tmux'
+alias tmux_clr='rm -rf /tmp/tmux* && tmux'
 alias wgetu='wget --user-agent="Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko"'
 # Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko
 
@@ -147,12 +147,12 @@ alias clrep="find . ${FIND_OPT} -o \( ${PF_LIST_A} \) -print -exec rm {} \;"
 
 #----------------------------------------------------------------------
 # SHC 一時ファイルクリア
-SF_LIST[ 0]="@ '*.obj'" 
-SF_LIST[ 1]="@ '*.dwi'" 
-SF_LIST[ 2]="@ '*.sh?'" 
-SF_LIST[ 3]="@ '*.lst'" 
+#SF_LIST[ 0]="@ '*.obj'" 
+#SF_LIST[ 1]="@ '*.dwi'" 
+#SF_LIST[ 2]="@ '*.sh?'" 
+#SF_LIST[ 3]="@ '*.lst'" 
 SF_LIST[ 4]="@ '*.[wp][0-9][0-9]'" 
-SF_LIST[ 5]="@ '*.o'" 
+#SF_LIST[ 5]="@ '*.o'" 
 SF_LIST[ 6]="@ 'old_*.hws'" 
 SF_LIST[ 7]="@ 'old_*.hsf'" 
 SF_LIST[ 8]="@ 'old_*.hwp'" 
@@ -162,7 +162,7 @@ SF_LIST[11]="@ '*.hdp'"
 SF_LIST[12]="@ '*.lbk'" 
 SF_LIST[13]="@ '*.lis'" 
 SF_LIST[14]="@ '*.depa'" 
-SF_LIST[15]="@ '*.abs'" 
+#SF_LIST[15]="@ '*.abs'" 
 SF_LIST[16]="@ '*~.nib'"
 #SF_LIST[17]="@ '*.lib'" 
 
