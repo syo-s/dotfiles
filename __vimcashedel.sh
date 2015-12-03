@@ -3,7 +3,7 @@
 cd ~
 rm -rf neobundle.log
 
-cd .vim
+cd _vim
 cd backup
 rm -rf *
 rm -rf .*~

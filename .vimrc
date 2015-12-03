@@ -45,9 +45,9 @@ set number				  " 行番号を非表示 (number:表示)
 set grepprg=internal			  "
 "set grepprg=pt\ --nocolor\ --nogroup\ --output-encode\ sjis
 "set noundofile
-set backupdir=$HOME/.vim/backup		  "バックアップファイルを作るディレクトリ
-set directory=$HOME/.vim/backup		  "スワップファイル用のディレクトリ
-set undodir=$HOME/.vim/backup              "undofile用のディレクトリ
+set backupdir=$HOME/_vim/backup		  "バックアップファイルを作るディレクトリ
+set directory=$HOME/_vim/backup		  "スワップファイル用のディレクトリ
+set undodir=$HOME/_vim/backup              "undofile用のディレクトリ
 set browsedir=buffer			  "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 "set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
 "set list				  "タブ文字、行末など不可視文字を表示する
@@ -90,12 +90,12 @@ if has('vim_starting')
   set nocompatible " Be iMproved
 
   " Required:
-  "set runtimepath+=~/.vim/bundle/neobundle.vim/
-  set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
+  "set runtimepath+=~/_vim/bundle/neobundle.vim/
+  set runtimepath+=$HOME/_vim/bundle/neobundle.vim/
 endif
-
 " Required:
-call neobundle#begin(expand('$HOME/.vim/bundle/'))
+"call neobundle#begin(expand('~/_vim/bundle/'))
+call neobundle#begin(expand('$HOME/_vim/bundle/'))
 
 "if neobundle#has_fresh_cache(expand('$MYVIMRC'))
 "  NeoBundleLoadCache  " キャッシュの読込み
@@ -141,8 +141,8 @@ call neobundle#begin(expand('$HOME/.vim/bundle/'))
   NeoBundle 'osyo-manga/unite-quickfix.git'
   NeoBundle 'thinca/vim-qfreplace.git'
   NeoBundle 'thinca/vim-quickrun.git'
-  NeoBundle 'osyo-manga/shabadou.vim.git'
-  NeoBundle 'thinca/vim-singleton.git'
+  "NeoBundle 'osyo-manga/shabadou.vim.git'
+  "NeoBundle 'thinca/vim-singleton.git'
   NeoBundle 'vim-scripts/taglist.vim.git'
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'terryma/vim-multiple-cursors.git'
@@ -190,13 +190,13 @@ call neobundle#begin(expand('$HOME/.vim/bundle/'))
   "NeoBundle 'mattn/webapi-vim.git'
   NeoBundle 'kannokanno/previm.git'
   "NeoBundle 'tukiyo/previm'
-  NeoBundle 'kurocode25/mdforvim.git'
+  "NeoBundle 'kurocode25/mdforvim.git'
 
   "------------------------------------------------------------
   " 【翻訳】
-  NeoBundle 'mattn/excitetranslate-vim.git'
-  NeoBundle 'mattn/googletranslate-vim.git'
-  NeoBundle 'daisuzu/translategoogle.vim.git'
+  "NeoBundle 'mattn/excitetranslate-vim.git'
+  "NeoBundle 'mattn/googletranslate-vim.git'
+  "NeoBundle 'daisuzu/translategoogle.vim.git'
 
   "------------------------------------------------------------
   " 【バージョン管理】
@@ -217,9 +217,9 @@ call neobundle#begin(expand('$HOME/.vim/bundle/'))
   " シンタックスで定義された部分をtextobj化。
   NeoBundle 'kana/vim-textobj-syntax.git' 
   " 行をtextobj化。
-  NeoBundle 'kana/vim-textobj-line.git'   
+  "NeoBundle 'kana/vim-textobj-line.git'   
   " 折り畳みをtextobj化。
-  NeoBundle 'kana/vim-textobj-fold.git'
+  "NeoBundle 'kana/vim-textobj-fold.git'
   " バッファ全体をtextobj化。
   NeoBundle 'kana/vim-textobj-entire.git' 
   " 任意の区切り文字の間をtextobj化。
@@ -306,7 +306,7 @@ call neobundle#begin(expand('$HOME/.vim/bundle/'))
 
   NeoBundle 'bling/vim-airline.git'
 
-  NeoBundleSaveCache  " キャッシュの書込み
+  "NeoBundleSaveCache  " キャッシュの書込み
 "endif
 
 call neobundle#end()
@@ -533,14 +533,14 @@ let g:quickrun_config = {
 ""unite.vim
 ""vimfiler.vim
 ""=============================================================================
-let g:neocomplete#data_directory    = expand('~/.vim/etc/neocomplete')
-let g:vimfiler_data_directory       = expand('~/.vim/etc/vimfiler')
-let g:vimshell_temporary_directory  = expand('~/.vim/etc/VimShell')
-let g:unite_data_directory          = expand('~/.vim/etc/unite')
-let g:neomru#file_mru_path          = expand('~/.vim/etc/neomru/file')
-let g:neomru#directory_mru_path     = expand('~/.vim/etc/neomru/direcroty')
-let g:ref_cache_dir                 = expand('~/.vim/etc/vim_ref_cache')
-let g:yankround_dir                 = expand('~/.vim/etc/.cache/yankround')
+let g:neocomplete#data_directory    = expand('$HOME/_vim/etc/neocomplete')
+let g:vimfiler_data_directory       = expand('$HOME/_vim/etc/vimfiler')
+let g:vimshell_temporary_directory  = expand('$HOME/_vim/etc/VimShell')
+let g:unite_data_directory          = expand('$HOME/_vim/etc/unite')
+let g:neomru#file_mru_path          = expand('$HOME/_vim/etc/neomru/file')
+let g:neomru#directory_mru_path     = expand('$HOME/_vim/etc/neomru/direcroty')
+let g:ref_cache_dir                 = expand('$HOME/_vim/etc/vim_ref_cache')
+let g:yankround_dir                 = expand('$HOME/_vim/etc/.cache/yankround')
 
 nnoremap [unite] <Nop>
  "nmap <Space>f [unite]
