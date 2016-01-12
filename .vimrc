@@ -171,7 +171,10 @@ call neobundle#begin(expand('$HOME/_vim/bundle/'))
   "NeoBundle 'http://lh-vim.googlecode.com/svn/mu-template/trunk'     ,{'name' : 'mu-template'}  
   "NeoBundle 'http://lh-vim.googlecode.com/svn/refactor/trunk/',{'name': 'lh-refactor' }
   "NeoBundle 'LucHermitte/local_vimrc', {'depends': 'lh-vim-lib'}
+  "
+  "NeoBundle 'sgur/unite-qf.git'
 
+  NeoBundle 'vim-scripts/DirDiff.vim.git'
   "------------------------------------------------------------
   " 【整形関係】
   NeoBundle 'h1mesuke/vim-alignta.git'
@@ -406,6 +409,15 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 
 "=============================================================================
+" JpFormat設定
+"=============================================================================
+ " 原稿文字数(全角の折り返し文字数)
+ let JpCountChars = 39
+ " 原稿行数
+ let JpCountLines = 17
+ " 禁則処理の最大ぶら下がり字数(-1なら全てぶら下げ)
+ let JpCountOverChars = 2
+"=============================================================================
 "" NERDTree configuration
 "=============================================================================
 "let g:NERDTreeChDirMode=2
@@ -575,11 +587,11 @@ nnoremap <silent> [unite]cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-
 nnoremap <silent> [unite]r  :<C-u>UniteResume search-buffer<CR>
 
 
-if executable('pt')
-  let g:unite_source_grep_command = 'pt'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --output-encode sjis'
-  let g:unite_source_grep_recursive_opt = ''
-endif
+"if executable('pt')
+"  let g:unite_source_grep_command = 'pt'
+"  let g:unite_source_grep_default_opts = '--nogroup --nocolor --output-encode sjis'
+"  let g:unite_source_grep_recursive_opt = ''
+"endif
 "
 "let g:unite_converter_file_directory_width =70
 "call unite#custom_filters('file_mru',
