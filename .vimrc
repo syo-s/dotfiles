@@ -3,6 +3,7 @@
 "=============================================================================
 " _vimrcの編集
 "=============================================================================
+nnoremap <F9> :<C-u>edit ~/dotfiles/.bashrc<CR>
 nnoremap <F10> :<C-u>edit$MYVIMRC<CR>
 nnoremap <F11> :<C-u>edit$MYGVIMRC<CR>
 nnoremap <F12> :<C-u>source$MYVIMRC<CR>:source$MYGVIMRC<CR>
@@ -11,20 +12,9 @@ nnoremap <F12> :<C-u>source$MYVIMRC<CR>:source$MYGVIMRC<CR>
 " オプション
 "=============================================================================
 let $TEMPDIR = $TEMP
-" let $PATH  = $VIM.'\bin;'
-"       \ .'C:\MinGW-new\bin;'
-"       \ .'C:\MinGW-new\msys\1.0\bin;'
-"       \ .'C:\Program Files\Microsoft Visual Studio 10.0\VC\bin;'
-"       \ .'C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE;'
-"       \ .'C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE;'
-"       \ .'C:\Program Files\Everything;'
-"       \ .$PATH
-"       \ " .'C:\cygwin\bin;'
-"       \ " .'C:\cygwin\usr\local\bin;'
-"let $PATH  = $VIM. ';'. $PATH
 let $PATH  = $VIM. ';'
   \ . 'C:\msys32\usr\bin;'
-  \ . 'C:\msys32\mingw32\bin'
+  \ . 'C:\msys32\mingw32\bin;'
   \ . $PATH
 
 let $MSYSTEM='MINGW32'
@@ -75,7 +65,6 @@ set complete=.,w,b,u,t
 " shellslashは譲れない。（セパレータが\だと不便。）
 " shellslashが設定されていると、quickrunが上手くいかない。
 " vimprocを使えば解決できるみたい。だけど...
-"
 " set shellslash  "Windowsでディレクトリパスの区切り文字表示に / を使えるようにする
 
 set nocompatible 
@@ -100,7 +89,7 @@ call neobundle#begin(expand('$HOME/_vim/bundle/'))
 "if neobundle#has_fresh_cache(expand('$MYVIMRC'))
 "  NeoBundleLoadCache  " キャッシュの読込み
 "else 
-
+"
   NeoBundleFetch 'Shougo/neobundle.vim'
 
   NeoBundle 'Shougo/vimproc.git', {
@@ -142,7 +131,7 @@ call neobundle#begin(expand('$HOME/_vim/bundle/'))
   NeoBundle 'thinca/vim-qfreplace.git'
   NeoBundle 'thinca/vim-quickrun.git'
   "NeoBundle 'osyo-manga/shabadou.vim.git'
-  "NeoBundle 'thinca/vim-singleton.git'
+  NeoBundle 'thinca/vim-singleton.git'
   NeoBundle 'vim-scripts/taglist.vim.git'
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'terryma/vim-multiple-cursors.git'
@@ -309,7 +298,7 @@ call neobundle#begin(expand('$HOME/_vim/bundle/'))
 
   NeoBundle 'bling/vim-airline.git'
 
-  "NeoBundleSaveCache  " キャッシュの書込み
+"  NeoBundleSaveCache  " キャッシュの書込み
 "endif
 
 call neobundle#end()
@@ -322,18 +311,7 @@ NeoBundleCheck
 
 " ~/neobundle.log にログを出力する
 let g:neobundle#log_filename = $HOME . "/neobundle.log"
-let g:neobundle#install_max_processes = 1
-
-"set runtimepath+=~/.vim/bundle/vim-addon-manager/
-"call vam#ActivateAddons([])
-"VAMActivate tlib matchit.zip
-
-"augroup MYAUTOCMD " {{{2
-"    " todo: scriptId()
-"    autocmd!
-"    autocmd FileType vim
-"    \   let &l:foldtext = string(function('s:vimFoldText')) . '()'
-"augroup END
+let g:neobundle#install_max_processes = 5
 
 if has('win32') || has('win64')
     function! s:hook_quickrun_windows()
@@ -391,8 +369,8 @@ augroup END
 "=============================================================================
 " vim_singleton設定
 "=============================================================================
-" let g:singleton#opener="e"
-" call singleton#enable()
+"let g:singleton#opener="e"
+"call singleton#enable()
 
 "=============================================================================
 " easy_motion設定
@@ -507,9 +485,9 @@ let g:table_mode_corner = '|'
 "=============================================================================
 "<F9>  文頭にタイムスタンプを挿入してinsertモードへ移行
 "=============================================================================
-" nmap <F9> <ESC>i----------------------<CR><C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR><CR><Up><Up>
-"nmap <F9> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR>----------------------<CR><CR><CR><Up><Up>
-nmap <F9> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) _") <CR><CR>----------------------<CR>00:00-00:00<CR>00:00-00:00<CR><Up><Up>
+" nmap <F8> <ESC>i----------------------<CR><C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR><CR><Up><Up>
+"nmap <F8> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR><CR>----------------------<CR><CR><CR><Up><Up>
+nmap <F8> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) _") <CR><CR>----------------------<CR>00:00-00:00<CR>00:00-00:00<CR><Up><Up>
 
 "<leader>Wで現在のファイルをFirefoxで開く
 "noremap <Leader>W :silent ! start firefox %<CR> 

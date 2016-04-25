@@ -4,6 +4,6 @@ mklink %HOME%\.profile %HOME%\dotfiles\.profile
 mklink %HOME%\.inputrc %HOME%\dotfiles\.inputrc
 mklink %HOME%\.bashrc %HOME%\dotfiles\.bashrc
 mklink %HOME%\.bash_profile %HOME%\dotfiles\.bash_profile
-mklink %HOME%\.ptignore %HOME%\dotfiles\..ptignore
+mklink %HOME%\.ptignore %HOME%\dotfiles\.ptignore
 pause
 

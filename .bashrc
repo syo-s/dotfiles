@@ -16,6 +16,7 @@ echo
 #----------------------------------------------------------------------
 
 export PATH=$PATH:~/dotfiles/:$HOME/.hsenv/bin:
+#export LESSCHARSET=sjis
 
 bash_ver=$BASH_VERSION
 if [ "${bash_ver:0:1}" = "3" ]; then
@@ -147,11 +148,11 @@ alias clrep="find . ${FIND_OPT} -o \( ${PF_LIST_A} \) -print -exec rm {} \;"
 
 #----------------------------------------------------------------------
 # SHC 一時ファイルクリア
-#SF_LIST[ 0]="@ '*.obj'" 
-#SF_LIST[ 1]="@ '*.dwi'" 
-#SF_LIST[ 2]="@ '*.sh?'" 
-#SF_LIST[ 3]="@ '*.lst'" 
-SF_LIST[ 4]="@ '*.[wp][0-9][0-9]'" 
+SF_LIST[ 0]="@ '*.[wp][0-9][0-9]'" 
+#SF_LIST[ 1]="@ '*.obj'" 
+#SF_LIST[ 2]="@ '*.dwi'" 
+#SF_LIST[ 3]="@ '*.sh?'" 
+#SF_LIST[ 4]="@ '*.lst'" 
 #SF_LIST[ 5]="@ '*.o'" 
 SF_LIST[ 6]="@ 'old_*.hws'" 
 SF_LIST[ 7]="@ 'old_*.hsf'" 
@@ -267,6 +268,13 @@ precmd() {
   fi
 }
 export PROMPT_COMMAND=precmd
+
+function peco-cd {
+    local dir="$( find . -maxdepth 1 -type d | sed -e 's;\./;;' | peco )"
+    if [ ! -z "$dir" ] ; then
+        cd "$dir"
+    fi
+}
 
 
 # end of ~/.bashrc
