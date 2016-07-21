@@ -15,6 +15,7 @@ echo MSYSTEM = $MSYSTEM
 echo
 #----------------------------------------------------------------------
 
+#echo $PATH
 export PATH=$PATH:~/dotfiles/:$HOME/.hsenv/bin:
 #export LESSCHARSET=sjis
 
@@ -23,7 +24,7 @@ if [ "${bash_ver:0:1}" = "3" ]; then
     MSYS=MSYS1
 else
     MSYS=MSYS2
-    export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:~/.gem/ruby:$PATH
+    export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:~/.gem/ruby:$PATH:~/../app/graphviz/bin
 fi
 
 system_name=$(uname -o)
