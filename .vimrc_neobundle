@@ -1,0 +1,243 @@
+" vim:set ts=8 sts=2 sw=2 tw=0: (この行に関しては:help modelineを参照)
+
+"=============================================================================
+" bundles 
+"=============================================================================
+if has('vim_starting')
+  set nocompatible " Be iMproved
+
+  " Required:
+  "set runtimepath+=~/_vim/bundle/neobundle.vim/
+  set runtimepath+=$HOME/_vim/bundle/neobundle.vim/
+endif
+" Required:
+"call neobundle#begin(expand('~/_vim/bundle/'))
+call neobundle#begin(expand('$HOME/_vim/bundle/'))
+
+"if neobundle#has_fresh_cache(expand('$MYVIMRC'))
+"  NeoBundleLoadCache  " キャッシュの読込み
+"else 
+"
+  NeoBundleFetch 'Shougo/neobundle.vim'
+
+  NeoBundle 'Shougo/vimproc.git', {
+        \ 'build' : {
+        \     'windows' : 'tools\\update-dll-mingw',
+        \     'cygwin' : 'make -f make_cygwin.mak',
+        \     'mac' : 'make -f make_mac.mak',
+        \     'linux' : 'make',
+        \     'unix' : 'gmake',
+        \    },
+        \ }
+
+  "------------------------------------------------------------
+  " 【unite】
+  " 本体
+  NeoBundle 'Shougo/unite.vim.git'
+  " make build用
+  NeoBundle 'Shougo/unite-build.git'
+  " ファイル履歴
+  NeoBundle 'Shougo/neomru.vim.git'
+  " shell
+  NeoBundle 'Shougo/vimshell.git'
+  " filer
+  NeoBundle 'Shougo/vimfiler.git'
+  " 補完
+  NeoBundle 'Shougo/neocomplete.vim.git'
+  " バイナリ編集
+  NeoBundle 'Shougo/vinarise.vim'
+
+  "NeoBundle 'hsitz/VimOrganizer.git'
+  "NeoBundle 'sgur/unite-everything.git'
+  NeoBundle 'ujihisa/unite-colorscheme.git'
+  "NeoBundle 'ujihisa/unite-rake.git'
+  NeoBundle 'h1mesuke/unite-outline.git'
+  NeoBundle 'basyura/unite-converter-file-directory.git'
+  NeoBundle 'basyura/unite-matcher-file-name.git'
+  NeoBundle 'kmnk/vim-unite-giti.git'
+  NeoBundle 'osyo-manga/unite-quickfix.git'
+  NeoBundle 'thinca/vim-qfreplace.git'
+  NeoBundle 'thinca/vim-quickrun.git'
+  "NeoBundle 'osyo-manga/shabadou.vim.git'
+  NeoBundle 'thinca/vim-singleton.git'
+  NeoBundle 'vim-scripts/taglist.vim.git'
+  NeoBundle 'Lokaltog/vim-easymotion'
+  NeoBundle 'terryma/vim-multiple-cursors.git'
+  NeoBundle 'vim-scripts/DoxygenToolkit.vim.git'
+  "NeoBundle 'vim-scripts/gtags.vim.git'
+  "NeoBundle 'mhinz/vim-startify.git'
+  NeoBundle 'kana/vim-tabpagecd.git'
+  "NeoBundle 'scrooloose/nerdtree.git'
+  NeoBundle 'itchyny/calendar.vim.git'
+  "NeoBundle 'justinmk/vim-dirvish.git'
+  "NeoBundle 'ujihisa/quicklearn.git'
+  "NeoBundle 'tanabe/ToggleCase-vim.git'
+  "NeoBundle 'hrp/EnhancedCommentify.git'
+  "NeoBundle 'vim-scripts/MultipleSearch.git'
+  "NeoBundle 'vim-scripts/YankRing.vim.git'
+  "NeoBundle 'kana/vim-altr.git'
+  "NeoBundle 'supermomonga/projectlocal.vim.git'
+  "NeoBundle 'fuenor/qfixhowm.git'
+  "NeoBundle 'yuratomo/w3m.vim.git'
+  "NeoBundle 'mattn/learn-vimscript.git'
+
+  "NeoBundle 'MarcWeber/vim-addon-manager.git'
+  "NeoBundle 'http://lh-vim.googlecode.com/svn/vim-lib/trunk'         ,{'name' : 'lh-vim-lib' }  
+  "NeoBundle 'http://lh-vim.googlecode.com/svn/dev/trunk'             ,{'name' : 'lh-dev'     }  
+  "NeoBundle 'http://lh-vim.googlecode.com/svn/map-tools/trunk'       ,{'name' : 'lh-brackets'}  
+  "NeoBundle 'http://lh-vim.googlecode.com/svn/mu-template/trunk'     ,{'name' : 'mu-template'}  
+  "NeoBundle 'http://lh-vim.googlecode.com/svn/refactor/trunk/',{'name': 'lh-refactor' }
+  "NeoBundle 'LucHermitte/local_vimrc', {'depends': 'lh-vim-lib'}
+  "
+  "NeoBundle 'sgur/unite-qf.git'
+
+  NeoBundle 'vim-scripts/DirDiff.vim.git'
+  "------------------------------------------------------------
+  " 【整形関係】
+  NeoBundle 'h1mesuke/vim-alignta.git'
+  "NeoBundle 'pix/vim-align.git'
+  "NeoBundle 'vim-scripts/Align.git'
+  NeoBundle 'junegunn/vim-easy-align.git'
+  NeoBundle 'bkad/CamelCaseMotion.git'
+  NeoBundle 'fuenor/JpFormat.vim.git'
+  NeoBundle 'rhysd/vim-clang-format.git'
+  NeoBundle 'deris/vim-rengbang.git'
+
+  "------------------------------------------------------------
+  " 【htmlプレビュー】
+  NeoBundle 'tyru/open-browser.vim.git'
+  "NeoBundle 'mattn/mkdpreview-vim.git'
+  "NeoBundle 'mattn/webapi-vim.git'
+  NeoBundle 'kannokanno/previm.git'
+  "NeoBundle 'tukiyo/previm'
+  "NeoBundle 'kurocode25/mdforvim.git'
+
+  "------------------------------------------------------------
+  " 【翻訳】
+  "NeoBundle 'mattn/excitetranslate-vim.git'
+  "NeoBundle 'mattn/googletranslate-vim.git'
+  "NeoBundle 'daisuzu/translategoogle.vim.git'
+
+  "------------------------------------------------------------
+  " 【バージョン管理】
+  " VimからGitを使うためのプラグイン。
+  NeoBundle 'tpope/vim-fugitive.git'
+  " git log代わりに使ってます。
+  NeoBundle 'gregsexton/gitv.git'
+  " Gitで管理されているファイルの差分を素早く見ることができます。
+  NeoBundle 'int3/vim-extradite.git'
+  NeoBundle 'thinca/vim-vcs.git'
+
+  "------------------------------------------------------------
+  " 【text-obj】
+  " 本体。
+  NeoBundle 'kana/vim-textobj-user.git'  
+  " インデントをtextobj化。
+  NeoBundle 'kana/vim-textobj-indent.git' 
+  " シンタックスで定義された部分をtextobj化。
+  NeoBundle 'kana/vim-textobj-syntax.git' 
+  " 行をtextobj化。
+  "NeoBundle 'kana/vim-textobj-line.git'   
+  " 折り畳みをtextobj化。
+  "NeoBundle 'kana/vim-textobj-fold.git'
+  " バッファ全体をtextobj化。
+  NeoBundle 'kana/vim-textobj-entire.git' 
+  " 任意の区切り文字の間をtextobj化。
+  NeoBundle 'thinca/vim-textobj-between.git'
+  " コメントをtextobj化。
+  NeoBundle 'thinca/vim-textobj-comment.git'
+  "関数をtextobj化
+  NeoBundle 'kana/vim-textobj-function.git' 
+  "アンダースコアの間 a_, i_ 
+  NeoBundle 'kana/vim-textobj-underscore.git' 
+  " snake_case 上の word a,w, i,w 
+  NeoBundle 'rhysd/textobj-wiw.git' 
+  " perlの変数とかをtextobj化。
+  "NeoBundle 'vimtaka/vim-textobj-sigil.git' 
+  "NeoBundle 'tpope/vim-surround.git'
+
+  "------------------------------------------------------------
+  "【operator】
+  " 本体。
+  NeoBundle 'kana/vim-operator-user.git' 
+  " レジスタの内容で選択範囲を置換できます。
+  NeoBundle 'kana/vim-operator-replace.git' 
+  " 選択範囲をCamelCaseにしたりsnake_caseにしたりできます。
+  NeoBundle 'tyru/operator-camelize.vim.git'
+  " 選択した行や範囲を逆にできます。
+  NeoBundle 'tyru/operator-reverse.vim.git' 
+  NeoBundle 'rhysd/vim-operator-surround.git'
+
+  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  "【python】 
+  NeoBundle 'bps/vim-textobj-python.git'
+  "NeoBundle 'andviro/flake8-vim.git'
+  "NeoBundle 'hachibeeDI/vim-operator-autopep8.git'
+  " indentの深さに色を付ける
+  NeoBundle 'nathanaelkane/vim-indent-guides.git'
+
+  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  "【ruby】 
+  "NeoBundle 'tpope/vim-rails.git'
+  "NeoBundle 'tpope/vim-bundler.git'
+  "NeoBundle 'tpope/vim-rake.git'
+  "NeoBundle 'tpope/vim-projectionist.git'
+
+  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  "【cofee】 
+  " syntax + 自動compile
+  NeoBundle 'kchmck/vim-coffee-script.git'
+  " js BDDツール
+  NeoBundle 'claco/jasmine.vim.git'
+
+
+  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " table
+  NeoBundle 'godlygeek/tabular.git'
+  NeoBundle 'dhruvasagar/vim-table-mode.git'
+
+  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " syntax
+  NeoBundle 'vim-ruby/vim-ruby.git'
+  NeoBundle 'moqada/autoit.vim--Breland.git'
+  NeoBundle 'tpope/vim-cucumber.git'
+  "NeoBundle 'tpope/vim-markdown.git'
+  "NeoBundle 'plasticboy/vim-markdown.git'
+  "NeoBundle 'rcmdnk/vim-markdown.git'
+  "NeoBundle 'joker1007/vim-markdown-quote-syntax.git'
+  NeoBundle 'PProvost/vim-ps1'
+
+
+  "NeoBundle 'python-mode.git'
+  NeoBundle 'aohta/blockdiag.vim.git'
+  NeoBundle 'aklt/plantuml-syntax.git'
+  "NeoBundle 'vim-scripts/autohotkey-ahk.git'
+  "NeoBundle 'vim-scripts/scilab.vim.git'
+  "NeoBundle 'vim-scripts/csv.vim.git'
+  "NeoBundle 'chrisbra/csv.vim.git'
+
+
+  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " colorscheme
+  NeoBundle 'vim-scripts/bluegreen.git'
+  NeoBundle 'w0ng/vim-hybrid.git'
+  NeoBundle 'nanotech/jellybeans.vim.git'
+  NeoBundle 'tomasr/molokai.git'
+
+  NeoBundle 'bling/vim-airline.git'
+
+"  NeoBundleSaveCache  " キャッシュの書込み
+"endif
+
+call neobundle#end()
+
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+" ~/neobundle.log にログを出力する
+let g:neobundle#log_filename = $HOME . "/neobundle.log"
+let g:neobundle#install_max_processes = 5
+
