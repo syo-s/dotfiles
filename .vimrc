@@ -15,6 +15,7 @@ let $TEMPDIR = $TEMP
 let $PATH  = $VIM. ';'
   \ . 'C:\msys32\usr\bin;'
   \ . 'C:\msys32\mingw32\bin;'
+  \ . $HOME
   \ . $PATH
 
 let $MSYSTEM='MINGW32'
@@ -72,40 +73,35 @@ set nocompatible
 set fileencodings=ucs-bom,utf8,cp932,sjis,latin1 
 set termencoding=cp932"
 
-"=============================================================================
-" bundles 
-"=============================================================================
 source $HOME/.vimrc_neobundle
+"source $HOME/.vimrc_dein
 
-" ~/neobundle.log にログを出力する
-let g:neobundle#log_filename = $HOME . "/neobundle.log"
-let g:neobundle#install_max_processes = 5
 
-if has('win32') || has('win64')
-    function! s:hook_quickrun_windows()
-        let hook = {
-            \    'name' : 'myHook',
-            \    'kind' : 'hook',
-            \}
-
-        function! hook.init(session)
-            let self.save_shellslash = &shellslash
-            set noshellslash
-        endfunction
-
-        function! hook.sweep()
-            let &shellslash = self.save_shellslash
-            unlet! self.save_shellslash
-        endfunction
-
-        call quickrun#module#register(hook)
-        "autocmd MYAUTOCMD FileType quickrun setl ff=dos
-        autocmd FileType quickrun setl ff=dos
-
-    endfunction
-
-    call s:hook_quickrun_windows()
-endif
+"if has('win32') || has('win64')
+"    function! s:hook_quickrun_windows()
+"        let hook = {
+"            \    'name' : 'myHook',
+"            \    'kind' : 'hook',
+"            \}
+"
+"        function! hook.init(session)
+"            let self.save_shellslash = &shellslash
+"            set noshellslash
+"        endfunction
+"
+"        function! hook.sweep()
+"            let &shellslash = self.save_shellslash
+"            unlet! self.save_shellslash
+"        endfunction
+"
+"        call quickrun#module#register(hook)
+"        "autocmd MYAUTOCMD FileType quickrun setl ff=dos
+"        autocmd FileType quickrun setl ff=dos
+"
+"    endfunction
+"
+"    call s:hook_quickrun_windows()
+"endif
 
 
 
@@ -191,8 +187,9 @@ let g:clang_format#style_options = {
       \ "AllowShortCaseLabelsOnASingleLine"   : "true" ,
       \ "AllowShortIfStatementsOnASingleLine" : "true" ,
       \ "AllowShortLoopsOnASingleLine"        : "true" ,
+      \ "AlignConsecutiveAssignments"         : "true" ,
       \ }
-
+"let g:clang_format#detect_style_file=1
 
 " map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
@@ -271,26 +268,26 @@ nmap gw <Plug>(openbrowser-open)
 ""=============================================================================
 " runner/vimproc/updatetime で出力バッファの更新間隔をミリ秒で設定できます
 " updatetime が一時的に書き換えられてしまうので注意して下さい
-let g:quickrun_config = {
-      \   "_" : {
-      \       "hook/close_unite_quickfix/enable_hook_loaded" : 1,
-      \       "hook/unite_quickfix/enable_failure" : 1,
-      \       "hook/close_quickfix/enable_exit" : 1,
-      \       "hook/close_buffer/enable_failure" : 1,
-      \       "hook/close_buffer/enable_empty_data" : 1,
-      \       "hook/shabadoubi_touch_henshin/enable" : 1,
-      \       "hook/shabadoubi_touch_henshin/wait" : 20,
-      \       "outputter" : "multi:buffer:quickfix",
-      \       "outputter/buffer/split" : ":botright 8sp",
-      \       "outputter/buffer/into" : 1,
-      \       "outputter/buffer/running_mark" : "",
-      \       "runner" : "vimproc",
-      \       "runner/vimproc/updatetime" : 1000,
-      \   },
-      \   "python" : {
-      \       "cmdopt" : "-u"
-      \   },
-      \}
+"let g:quickrun_config = {
+"      \   "_" : {
+"      \       "hook/close_unite_quickfix/enable_hook_loaded" : 1,
+"      \       "hook/unite_quickfix/enable_failure" : 1,
+"      \       "hook/close_quickfix/enable_exit" : 1,
+"      \       "hook/close_buffer/enable_failure" : 1,
+"      \       "hook/close_buffer/enable_empty_data" : 1,
+"      \       "hook/shabadoubi_touch_henshin/enable" : 1,
+"      \       "hook/shabadoubi_touch_henshin/wait" : 20,
+"      \       "outputter" : "multi:buffer:quickfix",
+"      \       "outputter/buffer/split" : ":botright 8sp",
+"      \       "outputter/buffer/into" : 1,
+"      \       "outputter/buffer/running_mark" : "",
+"      \       "runner" : "vimproc",
+"      \       "runner/vimproc/updatetime" : 1000,
+"      \   },
+"      \   "python" : {
+"      \       "cmdopt" : "-u"
+"      \   },
+"      \}
 
 ""=============================================================================
 ""unite.vim

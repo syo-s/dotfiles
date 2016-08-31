@@ -69,6 +69,7 @@ alias rm='rm -i'
 alias ll='ls -alF --color=auto --show-control-chars'
 alias ls='ls -F --color=auto --show-control-chars -N'
 alias rxvt='rxvt -sl 1000 -fg White -bg Black -sr'
+alias vimproccp="mv ~/.cache/dein/repos/github.com/Shougo/vimproc.vim/lib/vimproc_win32.dll ~/.dein/lib/."
 
 #alias ctags='ctags -R --c-kinds=+p --fields=+S'
 alias tag='ctags -R;'
