@@ -75,11 +75,12 @@ augroup vimrc
   autocmd FileType python setlocal autoindent smartindent expandtab
   autocmd FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class
   autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
-  autocmd BufRead,BufNewFile *.mu  set filetype=c
-  autocmd BufRead,BufNewFile *.dat set filetype=c
-  autocmd BufRead,BufNewFile *.csv set filetype=text
-  autocmd BufRead,BufNewFile *.hta set filetype=html
-  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  autocmd BufRead,BufNewFile,BufReadPre *.mu  set filetype=c
+  autocmd BufRead,BufNewFile,BufReadPre *.dat set filetype=c
+  autocmd BufRead,BufNewFile,BufReadPre *.csv set filetype=text
+  autocmd BufRead,BufNewFile,BufReadPre *.hta set filetype=html
+  autocmd BufRead,BufNewFile,BufReadPre *.txt set filetype=markdown
+  autocmd BufRead,BufNewFile,BufReadPre *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
   autocmd BufRead,BufNewFile,BufReadPre *.coffee  set filetype=coffee
 augroup END
 
