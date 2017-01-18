@@ -15,17 +15,16 @@ echo MSYSTEM = $MSYSTEM
 echo
 #----------------------------------------------------------------------
 
-#echo $PATH
-export PATH=$PATH:~/dotfiles/:$HOME/.hsenv/bin:
 #export LESSCHARSET=sjis
-
 bash_ver=$BASH_VERSION
 if [ "${bash_ver:0:1}" = "3" ]; then
     MSYS=MSYS1
 else
     MSYS=MSYS2
-    export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:~/.gem/ruby:$PATH:~/../app/graphviz/bin
+    export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:~/.gem/ruby:$PATH
 fi
+
+export PATH=$PATH:~/dotfiles/:$HOME/.hsenv/bin:~/../app/graphviz/bin
 
 system_name=$(uname -o)
 #if [ "$system_name" = "Msys" ]; then
@@ -48,7 +47,8 @@ else
 fi
 
 app_root="/c/home/app"
-FIND_OPT="-type d -name .git -prune "
+#FIND_OPT="-type d -name .git -prune "
+FIND_OPT="-type f"
 
 #export proxy_setting="http://Nbr_Shimada%40shi.co.jp:05j151@yksproxy.shi.co.jp:8080"
 #export http_proxy=$proxy_setting

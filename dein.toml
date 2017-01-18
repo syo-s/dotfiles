@@ -1,20 +1,10 @@
-[[plugins]]
-repo = 'Shougo/dein.vim'
+[[plugins]] 
+repo = 'Shougo/dein.vim' 
+rtp = '' 
 
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-#hook_post_update = '''
-#  if dein#util#_is_windows()
-#    let cmd = 'tools\\update-dll-mingw'
-#  elseif dein#util#_is_cygwin()
-#    let cmd = 'make -f make_cygwin.mak'
-#  elseif executable('gmake')
-#    let cmd = 'gmake'
-#  else
-#    let cmd = 'make'
-#  endif
-#  let g:dein#plugin.build = cmd
-#'''
+[[plugins]] 
+repo = 'Shougo/vimproc.vim' 
+build = 'make' 
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
@@ -25,162 +15,45 @@ repo = 'Shougo/unite.vim'
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 
-[[plugins]] 
-repo = 'basyura/unite-converter-file-directory'
-
-[[plugins]] 
-repo = 'basyura/unite-matcher-file-name'
-
-[[plugins]]
-repo = 'Shougo/unite-build'
-
-[[plugins]]
-repo = 'kmnk/vim-unite-giti'
-
-[[plugins]]
-repo = 'Shougo/vimshell'
-
-[[plugins]]
-repo = 'Shougo/vimfiler'
-
-[[plugins]]
-repo = 'Shougo/vinarise.vim'
-
-[[plugins]]
-repo = 'thinca/vim-qfreplace'
-
-[[plugins]]
-repo = 'thinca/vim-quickrun'
-
-[[plugins]]
-repo = 'kmnk/vim-unite-giti'
-
-[[plugins]]
-repo = 'Lokaltog/vim-easymotion'
-
-[[plugins]]
-repo = 'terryma/vim-multiple-cursors'
-
-[[plugins]]
-repo = 'itchyny/calendar.vim'
-
-[[plugins]]
-repo = 'junegunn/vim-easy-align'
-
-[[plugins]]
-repo = 'bkad/CamelCaseMotion'
-
-[[plugins]]
-repo = 'fuenor/JpFormat.vim'
-
-[[plugins]]
-repo = 'deris/vim-rengbang'
-
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-
-[[plugins]]
-repo = 'kannokanno/previm'
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'gregsexton/gitv'
-
-[[plugins]]
-repo = 'int3/vim-extradite'
-
-[[plugins]]
-repo = 'thinca/vim-vcs'
-
-[[plugins]]
-repo = 'kana/vim-textobj-user'  
-
-[[plugins]]
-repo = 'kana/vim-textobj-indent' 
-
-[[plugins]]
-repo = 'kana/vim-textobj-syntax' 
-
-[[plugins]]
-repo = 'kana/vim-textobj-entire' 
-
-[[plugins]]
-repo = 'thinca/vim-textobj-between'
-
-[[plugins]]
-repo = 'thinca/vim-textobj-comment'
-
 [[plugins]]
 repo = 'kana/vim-textobj-function' 
-
-[[plugins]]
-repo = 'kana/vim-textobj-underscore' 
-
-[[plugins]]
-repo = 'rhysd/textobj-wiw' 
-
-[[plugins]]
-repo = 'kana/vim-operator-user' 
-
-[[plugins]]
-repo = 'kana/vim-operator-replace' 
-
-[[plugins]]
-repo = 'tyru/operator-camelize.vim'
-
-[[plugins]]
-repo = 'tyru/operator-reverse.vim' 
 
 [[plugins]]
 repo = 'rhysd/vim-operator-surround'
 
 [[plugins]]
-repo = 'godlygeek/tabular'
+repo = 'fuenor/JpFormat.vim'
 
 [[plugins]]
-repo = 'dhruvasagar/vim-table-mode'
+repo = 'terryma/vim-multiple-cursors'
 
 [[plugins]]
-repo = 'vim-ruby/vim-ruby'
+repo = 'tyru/open-browser.vim'
+
 
 [[plugins]]
-repo = 'moqada/autoit.vim--Breland'
+repo = 'kana/vim-textobj-user'  
 
 [[plugins]]
-repo = 'tpope/vim-cucumber'
+repo = 'kana/vim-operator-user' 
 
-[[plugins]]
-repo = 'PProvost/vim-ps1'
 
-[[plugins]]
-repo = 'aohta/blockdiag.vim'
+#[[plugins]]
+# repo = 'rhysd/vim-clang-format.git', { 'rev' : 'b84a2a8' }
+#repo = 'rhysd/vim-clang-format.git'
+#rev = 'b84a2a819'
 
-[[plugins]]
-repo = 'aklt/plantuml-syntax'
 
-[[plugins]]
-repo = 'elzr/vim-json'
-
-[[plugins]]
-repo = 'kannokanno/previm'
-
-[[plugins]]
-repo = 'rhysd/vim-clang-format.git'
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
-
-[[plugins]]
-repo    = 'vim-airline/vim-airline'
-
-[[plugins]]
-repo = 'nanotech/jellybeans.vim'
+#[[plugins]]
+#repo = 'vim-airline/vim-airline-themes'
+#
+#[[plugins]]
+#repo = 'vim-airline/vim-airline'
+#
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
-repo = 'tomasr/molokai.git' 
+repo = 'vim-scripts/louver.vim'
 

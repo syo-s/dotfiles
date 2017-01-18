@@ -1,4 +1,169 @@
 # vim:set ts=8 sts=2 sw=2 tw=0: (この行に関しては:help modelineを参照)
 
+[[plugins]]
+repo = 'Shougo/vimshell'
+on_cmd = 'VimShell'
+
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+on_cmd = 'VimFiler'
+
+
+[[plugins]]
+repo = 'Shougo/unite-build'
+on_cmd = 'UniteBuildClearHighlight'
+
+
+[[plugins]]
+repo = 'Shougo/vinarise.vim'
+on_cmd = 'Vinarise'
+
+
+[[plugins]]
+repo = 'deris/vim-rengbang'
+on_cmd = 'RengBang'
+
+
+[[plugins]]
+repo = 'itchyny/calendar.vim'
+on_cmd = 'Calendar'
+
+
+# [[plugins]]
+# repo = 'bkad/CamelCaseMotion'
+
+
+[[plugins]]
+repo = 'mattn/benchvimrc-vim'
+on_cmd = 'BenchVimrc'
+
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_cmd = 'PrevimOpen'
+
+
+[[plugins]]
+repo = 'thinca/vim-qfreplace'
+on_cmd = 'Qfreplace'
+
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_cmd = 'QuickRun'
+
+
+[[plugins]]
+repo = 'godlygeek/tabular'
+
+
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+
+
+[[plugins]]
+repo = 'Lokaltog/vim-easymotion'
+on_map = '<Plug>(easymotion-s2)'
+
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+on_map = '<Plug>(EasyAlign)'
+
+
+[[plugins]]
+repo = 'shinespark/vim-list2tree' 
+on_cmd = 'List2Tree'
+
+
+#[[plugins]]
+#repo = 'kana/vim-textobj-indent' 
+#
+#
+#[[plugins]]
+#repo = 'kana/vim-textobj-syntax' 
+#
+#
+#[[plugins]]
+#repo = 'kana/vim-textobj-entire' 
+#
+#
+#[[plugins]]
+#repo = 'thinca/vim-textobj-between'
+#
+#
+#[[plugins]]
+#repo = 'thinca/vim-textobj-comment'
+#
+#
+#[[plugins]]
+#repo = 'kana/vim-textobj-underscore' 
+#
+#[[plugins]]
+#repo = 'rhysd/textobj-wiw' 
+#
+#
+#[[plugins]]
+#repo = 'kana/vim-operator-replace' 
+#
+#[[plugins]]
+#repo = 'tyru/operator-camelize.vim'
+#
+#[[plugins]]
+#repo = 'tyru/operator-reverse.vim' 
+
+# -- version control -----------------
+[[plugins]]
+repo = 'kmnk/vim-unite-giti'
+
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+
+[[plugins]]
+repo = 'gregsexton/gitv'
+
+
+#[[plugins]]
+#repo = 'int3/vim-extradite'
+
+
+# [[plugins]]
+# repo = 'thinca/vim-vcs'
+
+
+# -- ft ------------------------------------------
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'moqada/autoit.vim--Breland'
+
+[[plugins]]
+repo = 'tpope/vim-cucumber'
+on_ft = 'cucumber'
+
+[[plugins]]
+repo = 'PProvost/vim-ps1'
+on_ft = 'ps1'
+
+[[plugins]]
+repo = 'aohta/blockdiag.vim'
+on_ft = 'diag'
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+on_ft = 'plantuml'
+
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
 
 

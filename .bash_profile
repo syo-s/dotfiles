@@ -1,7 +1,6 @@
 # ~/.bash_profile: executed by bash for login shells.
 
 
-
 # ~/.bashrc
 # hack against bash-3.*
 

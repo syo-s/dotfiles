@@ -22,8 +22,9 @@ filetype plugin indent on
 "=============================================================================
 let $TEMPDIR = $TEMP
 let $PATH  = $VIM. ';'
-  \ . 'C:\msys32\usr\bin;'
   \ . 'C:\msys32\mingw32\bin;'
+  \ . 'C:\msys32\usr\bin;'
+  \ . 'C:\windows\System32\;'
   \ . $HOME
   \ . $PATH
 
@@ -97,6 +98,8 @@ vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
 nmap <Leader>a <Plug>(EasyAlign)
 
+let g:easy_align_ignore_groups = ['String']
+
 "=============================================================================
 " JpFormat設定
 "=============================================================================
@@ -113,7 +116,7 @@ nmap <Leader>a <Plug>(EasyAlign)
 "=============================================================================
 let g:clang_format#code_style='google'
 let g:clang_format#style_options = {
-            \ "ColumnLimit" : 100,
+            \ "ColumnLimit" : 80,
             \ "BreakBeforeBraces" : "Linux" ,
             \ "DerivePointerBinding" : "false" ,
             \ "PointerBindsToType" : "false" ,

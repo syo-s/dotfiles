@@ -32,7 +32,7 @@ endif
 
 
 "メニュー表示を削除したい場合は、次の行を追加する。
-" set guioptions-=m 
+set guioptions-=m 
 
 "ツールバー表示を削除するには次の行を追加する。
 set guioptions-=T 
@@ -51,12 +51,34 @@ set cmdheight=2
 
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
 set background=dark
-"colorscheme jellybeans
-"colorscheme molokai
+""colorscheme jellybeans
+""colorscheme molokai
 colorscheme hybrid
+
+"----------------------------------------------------------------------------
+"80桁目に印を付ける
+"set colorcolumn=80
+"execute "set colorcolumn=" . join(range(81, 9999), ',')
 
 "----------------------------------------------------------------------------
 "全角スペースのハイライト
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
 
+function! ScProjectorDark()
+  set guifont=MS_Gothic:h12:cSHIFTJIS
+  set background=dark
+  colorscheme hybrid 
+endfunction
+
+function! ScProjectorLight()
+  set guifont=MS_Gothic:h12:cSHIFTJIS
+  set background=light
+  colorscheme louver
+endfunction
+
+function! ScDisplay()
+  set guifont=MS_Gothic:h9:cSHIFTJIS
+  set background=dark
+  colorscheme hybrid 
+endfunction

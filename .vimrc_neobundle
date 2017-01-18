@@ -126,7 +126,7 @@ call neobundle#begin(expand('$HOME/_vim/bundle/'))
   NeoBundle 'gregsexton/gitv.git'
   " Gitで管理されているファイルの差分を素早く見ることができます。
   NeoBundle 'int3/vim-extradite.git'
-  NeoBundle 'thinca/vim-vcs.git'
+  "NeoBundle 'thinca/vim-vcs.git'
 
   "------------------------------------------------------------
   " 【text-obj】
