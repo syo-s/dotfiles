@@ -9,6 +9,21 @@ nnoremap <F11> :<C-u>edit$MYGVIMRC<CR>
 "nnoremap <F12> :<C-u>source$MYVIMRC<CR>:source$MYGVIMRC<CR>
 nnoremap <F12> :<C-u>source$MYVIMRC<CR>
 
+let g:cache_home = empty($XDG_CACHE_HOME) ? expand('~/_vim') : $XDG_CACHE_HOME
+let g:backupdir = expand(g:cache_home.'/backup')
+let &backupdir = g:backupdir  "バックアップファイルを作るディレクトリ
+let &directory = g:backupdir  "スワップファイル用のディレクトリ
+let &undodir = g:backupdir    "undofile用のディレクトリ
+let g:neocomplete#data_directory    = expand(g:cache_home.'/etc/neocomplete')
+let g:vimfiler_data_directory       = expand(g:cache_home.'/etc/vimfiler')
+let g:vimshell_temporary_directory  = expand(g:cache_home.'/etc/VimShell')
+let g:unite_data_directory          = expand(g:cache_home.'/etc/unite')
+let g:neomru#file_mru_path          = expand(g:cache_home.'/etc/neomru/file')
+let g:neomru#directory_mru_path     = expand(g:cache_home.'/etc/neomru/direcroty')
+let g:ref_cache_dir                 = expand(g:cache_home.'/etc/vim_ref_cache')
+let g:yankround_dir                 = expand(g:cache_home.'/etc/yankround')
+
+
 "=============================================================================
 " Plugin
 "=============================================================================
@@ -44,9 +59,6 @@ set cindent
 set nowrap
 set number				  " 行番号を非表示 (number:表示)
 set grepprg=internal			  "
-set backupdir=$HOME/_vim/backup		  "バックアップファイルを作るディレクトリ
-set directory=$HOME/_vim/backup		  "スワップファイル用のディレクトリ
-set undodir=$HOME/_vim/backup              "undofile用のディレクトリ
 set browsedir=buffer			  "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 "set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
 set helplang=jp				  "日本語help
@@ -190,15 +202,6 @@ nmap <F8> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) _") <CR><CR>----------------------
 ""unite.vim
 ""vimfiler.vim
 ""=============================================================================
-let g:neocomplete#data_directory    = expand('$HOME/_vim/etc/neocomplete')
-let g:vimfiler_data_directory       = expand('$HOME/_vim/etc/vimfiler')
-let g:vimshell_temporary_directory  = expand('$HOME/_vim/etc/VimShell')
-let g:unite_data_directory          = expand('$HOME/_vim/etc/unite')
-let g:neomru#file_mru_path          = expand('$HOME/_vim/etc/neomru/file')
-let g:neomru#directory_mru_path     = expand('$HOME/_vim/etc/neomru/direcroty')
-let g:ref_cache_dir                 = expand('$HOME/_vim/etc/vim_ref_cache')
-let g:yankround_dir                 = expand('$HOME/_vim/etc/.cache/yankround')
-
 nnoremap [unite] <Nop>
 nmap ,u [unite]
    
