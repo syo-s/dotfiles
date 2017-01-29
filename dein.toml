@@ -57,3 +57,8 @@ repo = 'w0ng/vim-hybrid'
 [[plugins]]
 repo = 'vim-scripts/louver.vim'
 
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+
