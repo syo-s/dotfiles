@@ -15,6 +15,7 @@ repo = 'Shougo/unite-build'
 on_cmd = 'UniteBuildClearHighlight'
 
 
+
 [[plugins]]
 repo = 'Shougo/vinarise.vim'
 on_cmd = 'Vinarise'
