@@ -1,6 +1,5 @@
 [[plugins]] 
 repo = 'Shougo/dein.vim' 
-rtp = '' 
 
 [[plugins]] 
 repo = 'Shougo/vimproc.vim' 
@@ -33,33 +32,28 @@ repo = 'terryma/vim-multiple-cursors'
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
-
 [[plugins]]
 repo = 'kana/vim-textobj-user'  
 
 [[plugins]]
 repo = 'kana/vim-operator-user' 
 
+[[plugins]]
+repo = 'tyru/operator-camelize.vim'
+
+[[plugins]]
+repo = 'cocopon/vaffle.vim'
 
 #[[plugins]]
 # repo = 'rhysd/vim-clang-format.git', { 'rev' : 'b84a2a8' }
 #repo = 'rhysd/vim-clang-format.git'
 #rev = 'b84a2a819'
 
-
-#[[plugins]]
-#repo = 'vim-airline/vim-airline-themes'
-#
-#[[plugins]]
-#repo = 'vim-airline/vim-airline'
-#
-
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
 repo = 'vim-scripts/louver.vim'
-
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'

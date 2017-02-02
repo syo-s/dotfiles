@@ -4,17 +4,13 @@
 repo = 'Shougo/vimshell'
 on_cmd = 'VimShell'
 
-
-[[plugins]]
-repo = 'Shougo/vimfiler'
-on_cmd = 'VimFiler'
-
+# [[plugins]]
+# repo = 'Shougo/vimfiler'
+# on_cmd = 'VimFiler'
 
 [[plugins]]
 repo = 'Shougo/unite-build'
 on_cmd = 'UniteBuildClearHighlight'
-
-
 
 [[plugins]]
 repo = 'Shougo/vinarise.vim'
@@ -44,24 +40,19 @@ on_cmd = 'BenchVimrc'
 repo = 'kannokanno/previm'
 on_cmd = 'PrevimOpen'
 
-
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
 on_cmd = 'Qfreplace'
-
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 on_cmd = 'QuickRun'
 
-
 [[plugins]]
 repo = 'godlygeek/tabular'
 
-
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
-
 
 [[plugins]]
 repo = 'Lokaltog/vim-easymotion'
@@ -107,9 +98,6 @@ on_cmd = 'List2Tree'
 #
 #[[plugins]]
 #repo = 'kana/vim-operator-replace' 
-#
-#[[plugins]]
-#repo = 'tyru/operator-camelize.vim'
 #
 #[[plugins]]
 #repo = 'tyru/operator-reverse.vim' 
