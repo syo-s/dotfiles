@@ -44,10 +44,17 @@ repo = 'tyru/operator-camelize.vim'
 [[plugins]]
 repo = 'cocopon/vaffle.vim'
 
+[[plugins]]
+repo = 'vim-scripts/taglist.vim' 
+
 #[[plugins]]
-# repo = 'rhysd/vim-clang-format.git', { 'rev' : 'b84a2a8' }
+#repo = 'vim-syntastic/syntastic'
+
+#[[plugins]]
+#repo = 'maksimr/vim-jsbeautify'
+
+#[[plugins]]
 #repo = 'rhysd/vim-clang-format.git'
-#rev = 'b84a2a819'
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
@@ -58,4 +65,8 @@ repo = 'vim-scripts/louver.vim'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
+[[plugins]]
+repo = 'jremmen/vim-ripgrep'
 
+[[plugins]]
+repo = 'LeafCage/foldCC.vim'

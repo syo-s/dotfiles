@@ -70,7 +70,7 @@ set complete=.,w,b,u,t
 set nocompatible 
 set fileencodings=ucs-bom,utf8,cp932,sjis,latin1 
 set termencoding=cp932"
-
+set formatoptions-=or "改行での自動コメントアウトを無効にする 
 
 "=============================================================================
 " ファイルの関連付け 
@@ -96,6 +96,45 @@ augroup vimrc
   autocmd BufRead,BufNewFile,BufReadPre *.coffee  set filetype=coffee
 augroup END
 
+"=============================================================================
+" hz_ja.vim  覚書
+"  Visualモード:
+"   gHL 可能な文字を全て半角に変換する
+"   gZL 可能な文字を全て全角に変換する
+"   gHA ASCII文字を全て半角に変換する 
+"   gHH ASCII文字を全て半角に変換する 
+"   gZA ASCII文字を全て全角に変換する 
+"   gHM 記号を全て半角に変換する      
+"   gZM 記号を全て全角に変換する      
+"   gHW 英数字を全て半角に変換する    
+"   gZW 英数字を全て全角に変換する    
+"   gHJ カタカナを全て半角に変換する  
+"   gZJ カタカナを全て全角に変換する  
+"   gZZ カタカナを全て全角に変換する  
+" :[range]HzjaConvert {target}"
+"   han_all 全ての全角文字→半角 
+"   han_ascii 全角アスキー→半角 
+"   han_kana 全角カタカナ→半角 
+"   han_eisu 全角英数→半角 
+"   han_kigou 全角記号→半角 
+"   zen_all 全ての半角文字→全角 
+"   zen_ascii 半角アスキー→全角 
+"   zen_kana 半角カタカナ→全角 
+"   zen_eisu 半角英数→全角 
+"   zen_kigou 半角記号→全角 
+"=============================================================================
+
+"=============================================================================
+" \ から / へ置換
+vnoremap <silent> <Leader>/ :s/\\/\//g<CR>:nohlsearch<CR>
+nnoremap <silent> <Leader>/ :s/\\/\//g<CR>:nohlsearch<CR>
+
+
+"=============================================================================
+set foldtext=FoldCCtext()
+set foldcolumn=5
+set fillchars=vert:\|
+"set foldmethod=indent
 
 "=============================================================================
 " easy_motion設定
@@ -116,7 +155,10 @@ let g:easy_align_ignore_groups = ['String']
 "=============================================================================
 " operator-camelize
 "=============================================================================
-map <leader>c <plug>(operator-camelize-toggle)
+map ,c <plug>(operator-camelize-toggle)
+"map <leader>c <plug>(operator-camelize)
+"map <leader>C <plug>(operator-decamelize)
+
 
 "=============================================================================
 " JpFormat設定
@@ -166,6 +208,23 @@ map <F6> :cn<CR>
 map <F7> :cp<CR>
 autocmd QuickFixCmdPost *grep* cwindow
 
+
+"=============================================================================
+" vim-syntastic
+"=============================================================================
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_c_compiler = 'clang'
+let g:syntastic_cpp_compiler = 'clang'
+
+command Prettify :%s/></>\r</g | filetype indent on | setf xml | normal gg=G
 
 "=============================================================================
 " vim-table-mode
