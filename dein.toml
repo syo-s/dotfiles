@@ -70,3 +70,13 @@ repo = 'jremmen/vim-ripgrep'
 
 [[plugins]]
 repo = 'LeafCage/foldCC.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'rhysd/vim-clang-format.git'
+
