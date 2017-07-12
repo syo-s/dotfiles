@@ -32,7 +32,7 @@ endif
 
 
 "メニュー表示を削除したい場合は、次の行を追加する。
-set guioptions-=m 
+"set guioptions-=m 
 
 "ツールバー表示を削除するには次の行を追加する。
 set guioptions-=T 
@@ -50,10 +50,15 @@ set lines=55
 set cmdheight=2
 
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
-set background=dark
-""colorscheme jellybeans
-""colorscheme molokai
-colorscheme hybrid
+"set background=dark
+"colorscheme jellybeans
+"colorscheme molokai
+"colorscheme hybrid
+colorscheme onedark
+
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
 
 "----------------------------------------------------------------------------
 "80桁目に印を付ける

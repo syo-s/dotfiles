@@ -77,6 +77,20 @@ repo = 'osyo-manga/vim-over'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'rhysd/vim-clang-format.git'
+#[[plugins]]
+#repo = 'rhysd/vim-clang-format.git'
 
+#[[plugins]]
+#repo = 'chrisbra/csv.vim'
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'joshdick/onedark.vim'
