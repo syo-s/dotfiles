@@ -91,7 +91,7 @@ augroup vimrc
   autocmd BufRead,BufNewFile,BufReadPre *.dat set filetype=c
   autocmd BufRead,BufNewFile,BufReadPre *.csv set filetype=text
   autocmd BufRead,BufNewFile,BufReadPre *.hta set filetype=html
-  autocmd BufRead,BufNewFile,BufReadPre *.txt set filetype=markdown
+  autocmd BufRead,BufNewFile,BufReadPre *.txt set filetype=text
   autocmd BufRead,BufNewFile,BufReadPre *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
   autocmd BufRead,BufNewFile,BufReadPre *.coffee  set filetype=coffee
 augroup END
