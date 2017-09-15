@@ -1,6 +1,7 @@
 mklink %HOME%\.vimrc %HOME%\dotfiles\.vimrc
 mklink %HOME%\.vimrc_neobundle %HOME%\dotfiles\.vimrc_neobundle
 mklink %HOME%\.vimrc_dein %HOME%\dotfiles\.vimrc_dein
+mklink %HOME%\.vimrc_minpac %HOME%\dotfiles\.vimrc_minpac
 mklink %HOME%\.gvimrc %HOME%\dotfiles\.gvimrc
 mklink %HOME%\.profile %HOME%\dotfiles\.profile
 mklink %HOME%\.inputrc %HOME%\dotfiles\.inputrc

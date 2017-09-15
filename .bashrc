@@ -24,7 +24,7 @@ else
     export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:~/.gem/ruby:$PATH
 fi
 
-export PATH=$PATH:~/dotfiles/:~/../app/graphviz/bin
+export PATH=$PATH:~/dotfiles/:~/../app/graphviz/bin:~/../app/MinGit-2.14.1-64-bit/cmd
 
 system_name=$(uname -o)
 #if [ "$system_name" = "Msys" ]; then

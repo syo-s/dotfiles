@@ -8,6 +8,7 @@ nnoremap <F10> :<C-u>edit$MYVIMRC<CR>
 nnoremap <F11> :<C-u>edit$MYGVIMRC<CR>
 "nnoremap <F12> :<C-u>source$MYVIMRC<CR>:source$MYGVIMRC<CR>
 nnoremap <F12> :<C-u>source$MYVIMRC<CR>
+set shellslash " (Windows向け)パス区切りをスラッシュに
 
 let g:cache_home = empty($XDG_CACHE_HOME) ? expand('~/_vim') : $XDG_CACHE_HOME
 let g:backupdir = expand(g:cache_home.'/backup')
@@ -28,7 +29,8 @@ let g:yankround_dir                 = expand(g:cache_home.'/etc/yankround')
 " Plugin
 "=============================================================================
 "source $HOME/.vimrc_neobundle
-source $HOME/.vimrc_dein
+"source $HOME/.vimrc_dein
+source $HOME/.vimrc_minpac
 
 filetype plugin indent on
 
@@ -71,6 +73,7 @@ set nocompatible
 set fileencodings=ucs-bom,utf8,cp932,sjis,latin1 
 set termencoding=cp932"
 set formatoptions-=or "改行での自動コメントアウトを無効にする 
+"set shellcmdflag=-c
 
 "=============================================================================
 " ファイルの関連付け 
