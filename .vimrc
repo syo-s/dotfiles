@@ -39,8 +39,6 @@ filetype plugin indent on
 "=============================================================================
 let $TEMPDIR = $TEMP
 let $PATH  = $VIM. ';'
-  \ . 'C:\msys32\mingw32\bin;'
-  \ . 'C:\msys32\usr\bin;'
   \ . 'C:\windows\System32\;'
   \ . $HOME
   \ . $PATH
@@ -128,12 +126,6 @@ augroup END
 "=============================================================================
 
 "=============================================================================
-" \ から / へ置換
-vnoremap <silent> <Leader>/ :s/\\/\//g<CR>:nohlsearch<CR>
-nnoremap <silent> <Leader>/ :s/\\/\//g<CR>:nohlsearch<CR>
-
-
-"=============================================================================
 set foldtext=FoldCCtext()
 set foldcolumn=5
 set fillchars=vert:\|
@@ -179,7 +171,7 @@ map ,c <plug>(operator-camelize-toggle)
 "=============================================================================
 let g:clang_format#code_style='google'
 let g:clang_format#style_options = {
-            \ "ColumnLimit" : 80,
+            \ "ColumnLimit" : 100,
             \ "BreakBeforeBraces" : "Linux" ,
             \ "DerivePointerBinding" : "false" ,
             \ "PointerBindsToType" : "false" ,
@@ -238,32 +230,6 @@ let g:table_mode_corner = '|'
 "<F9>  文頭にタイムスタンプを挿入してinsertモードへ移行
 "=============================================================================
 nmap <F8> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) _") <CR><CR>----------------------<CR>00:00-00:00<CR>00:00-00:00<CR><Up><Up>
-
-""=============================================================================
-""quickrun.vim
-""=============================================================================
-" runner/vimproc/updatetime で出力バッファの更新間隔をミリ秒で設定できます
-" updatetime が一時的に書き換えられてしまうので注意して下さい
-"let g:quickrun_config = {
-"      \   "_" : {
-"      \       "hook/close_unite_quickfix/enable_hook_loaded" : 1,
-"      \       "hook/unite_quickfix/enable_failure" : 1,
-"      \       "hook/close_quickfix/enable_exit" : 1,
-"      \       "hook/close_buffer/enable_failure" : 1,
-"      \       "hook/close_buffer/enable_empty_data" : 1,
-"      \       "hook/shabadoubi_touch_henshin/enable" : 1,
-"      \       "hook/shabadoubi_touch_henshin/wait" : 20,
-"      \       "outputter" : "multi:buffer:quickfix",
-"      \       "outputter/buffer/split" : ":botright 8sp",
-"      \       "outputter/buffer/into" : 1,
-"      \       "outputter/buffer/running_mark" : "",
-"      \       "runner" : "vimproc",
-"      \       "runner/vimproc/updatetime" : 1000,
-"      \   },
-"      \   "python" : {
-"      \       "cmdopt" : "-u"
-"      \   },
-"      \}
 
 ""=============================================================================
 ""unite.vim
