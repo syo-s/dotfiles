@@ -85,5 +85,15 @@ endfunction
 function! ScDisplay()
   set guifont=MS_Gothic:h9:cSHIFTJIS
   set background=dark
-  colorscheme hybrid 
+  colorscheme onedark
+
+  " ウインドウの幅
+  set columns=120
+
+  " ウインドウの高さ
+  set lines=55
+
+  " コマンドラインの高さ(GUI使用時)
+  set cmdheight=2
+
 endfunction

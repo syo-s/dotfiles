@@ -18,6 +18,7 @@ if exists('*minpac#init')
   " Additional plugins here.
   "call minpac#add('vim-jp/syntax-vim-ex')
   call minpac#add('Shougo/unite.vim')
+  call minpac#add('Shougo/denite.nvim')
   "call minpac#add('Shougo/unite-build')
   call minpac#add('h1mesuke/unite-outline')
   call minpac#add('Shougo/neomru.vim')
@@ -90,6 +91,7 @@ if exists('*minpac#init')
   call minpac#add('itchyny/lightline.vim')
   call minpac#add('w0ng/vim-hybrid')
   call minpac#add('joshdick/onedark.vim')
+  call minpac#add('vim-scripts/louver.vim')
 
 endif
 

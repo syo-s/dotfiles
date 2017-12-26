@@ -34,11 +34,16 @@ source $HOME/.vimrc_minpac
 
 filetype plugin indent on
 
+set runtimepath+=$VIM
+set pythonthreedll=$VIM/python3/python35.dll
+
 "=============================================================================
 " オプション
 "=============================================================================
 let $TEMPDIR = $TEMP
 let $PATH  = $VIM. ';'
+  \ . 'C:\msys32\mingw32\bin;'
+  \ . 'C:\msys32\usr\bin;'
   \ . 'C:\windows\System32\;'
   \ . $HOME
   \ . $PATH
@@ -219,7 +224,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_cpp_compiler = 'clang'
 
-command Prettify :%s/></>\r</g | filetype indent on | setf xml | normal gg=G
+"command Prettify :%s/></>\r</g | filetype indent on | setf xml | normal gg=G
 
 "=============================================================================
 " vim-table-mode
@@ -229,7 +234,7 @@ let g:table_mode_corner = '|'
 "=============================================================================
 "<F9>  文頭にタイムスタンプを挿入してinsertモードへ移行
 "=============================================================================
-nmap <F8> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) _") <CR><CR>----------------------<CR>00:00-00:00<CR>00:00-00:00<CR><Up><Up>
+"nmap <F8> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) _") <CR><CR>----------------------<CR>00:00-00:00<CR>00:00-00:00<CR><Up><Up>
 
 ""=============================================================================
 ""unite.vim
@@ -246,25 +251,57 @@ nmap ,u [unite]
 "let g:unite_enable_start_insert = 1
 
 "最近開いたファイル履歴の保存数
-let g:unite_source_file_mru_limit = 50
+let g:unite_source_file_mru_limit = 30
  
 "file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
 let g:unite_source_file_mru_filename_format = ''
 
-let g:unite_update_time = 1000 
+let g:unite_update_time = 100 
 
-nnoremap <silent> [unite]v :<C-u>VimFiler<CR>
-nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> [unite]p :<C-u>Unite file_rec<CR>
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-"nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
-nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
-nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> [unite]cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-nnoremap <silent> [unite]r  :<C-u>UniteResume search-buffer<CR>
 
+let s:unite_ignore_file_rec_patterns=
+      \ ''
+      \ .'vendor/bundle\|.bundle/\|\.sass-cache/\|'
+      \ .'node_modules/\|bower_components/\|'
+      \ .'RELEASE/\|C2Proj/\|'
+      \ .'\.\(bmp\|gif\|jpe\?g\|png\|webp\|ai\|psd\)"\?$'
+
+"call unite#custom#source(
+"      \ 'file_rec/async,file_rec/git',
+"      \ 'ignore_pattern',
+"      \ s:unite_ignore_file_rec_patterns)
+"
+
+""=============================================================================
+""Denite.vim
+""=============================================================================
+nnoremap [denite] <Nop>
+nmap ,d [denite]
+nnoremap <silent> [denite]p :<C-u>Denite file_rec<CR>
+nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
+nnoremap <silent> [denite]m :<C-u>Denite file_mru<CR>
+nnoremap <silent> [denite]g  :<C-u>Denite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> [denite]cg :<C-u>Denite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+
+" call denite#custom#option('default', 'prompt', '>')
+" 
+" " unite っぽいキーバインドに近づける
+" " denite/insert モードのときは，C- で移動できるようにする
+" call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
+" call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
+" 
+" " tabopen や vsplit のキーバインドを割り当て
+" "call denite#custom#map('insert', "<C-t>", '<denite:do_action:tabopen>')
+" "call denite#custom#map('insert', "<C-v>", '<denite:do_action:vsplit>')
+" "call denite#custom#map('normal', "v", '<denite:do_action:vsplit>')
+" 
+" " jj で denite/insert を抜けるようにする
+" call denite#custom#map('insert', 'jj', '<denite:enter_mode:normal>')
 
 "===================================================================
 " VimShell
