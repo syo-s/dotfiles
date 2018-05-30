@@ -42,8 +42,13 @@ set pythonthreedll=$VIM/python3/python35.dll
 "=============================================================================
 let $TEMPDIR = $TEMP
 let $PATH  = $VIM. ';'
-  \ . 'C:\msys32\mingw32\bin;'
+  \ . 'C:\home\app\MinGit\cmd;'
+  \ . 'C:\home\app\MinGit\mingw64\bin;'
+  \ . 'C:\home\app\MinGit\usr\bin;'
   \ . 'C:\msys32\usr\bin;'
+  \ . 'C:\msys32\mingw32\bin;'
+  \ . 'C:\msys64\usr\bin;'
+  \ . 'C:\msys64\mingw64\bin;'
   \ . 'C:\windows\System32\;'
   \ . $HOME
   \ . $PATH
@@ -65,7 +70,7 @@ set nowrap
 set number				  " 行番号を非表示 (number:表示)
 set grepprg=internal			  "
 set browsedir=buffer			  "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
-"set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
+set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
 set helplang=jp				  "日本語help
 set virtualedit& virtualedit+=block       "矩形選択で自由に移動
 "
@@ -88,6 +93,7 @@ augroup vimrc
   autocmd FileType css  setlocal shiftwidth=4 tabstop=2 softtabstop=2
   autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType markdown setlocal shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType python setlocal autoindent smartindent expandtab
@@ -340,3 +346,11 @@ xmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
+
+
+"===================================================================
+" kaoriya cmdex.vimから、
+"===================================================================
+" :CdCurrent
+"   Change current directory to current file's one.
+command! -nargs=0 CdCurrent cd %:p:h

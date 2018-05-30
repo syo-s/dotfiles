@@ -92,6 +92,8 @@ if exists('*minpac#init')
   call minpac#add('w0ng/vim-hybrid')
   call minpac#add('joshdick/onedark.vim')
   call minpac#add('vim-scripts/louver.vim')
+  call minpac#add('mattn/emmet-vim')
+  call minpac#add('maksimr/vim-jsbeautify')
 
 endif
 
