@@ -45,10 +45,10 @@ let $PATH  = $VIM. ';'
   \ . 'C:\home\app\MinGit\cmd;'
   \ . 'C:\home\app\MinGit\mingw64\bin;'
   \ . 'C:\home\app\MinGit\usr\bin;'
-  \ . 'C:\msys32\usr\bin;'
-  \ . 'C:\msys32\mingw32\bin;'
   \ . 'C:\msys64\usr\bin;'
   \ . 'C:\msys64\mingw64\bin;'
+  \ . 'C:\msys32\usr\bin;'
+  \ . 'C:\msys32\mingw32\bin;'
   \ . 'C:\windows\System32\;'
   \ . $HOME
   \ . $PATH
@@ -73,7 +73,7 @@ set browsedir=buffer			  "ファイル保存ダイアログの初期ディレク
 set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
 set helplang=jp				  "日本語help
 set virtualedit& virtualedit+=block       "矩形選択で自由に移動
-"
+
 " Vimの補完(Ctrl-P/N)でインクルードされているファイルをスキャンしないようにするCommentsAdd Star
 set complete=.,w,b,u,t
 
@@ -82,6 +82,7 @@ set fileencodings=ucs-bom,utf8,cp932,sjis,latin1
 set termencoding=cp932"
 set formatoptions-=or "改行での自動コメントアウトを無効にする 
 "set shellcmdflag=-c
+"
 
 "=============================================================================
 " ファイルの関連付け 
@@ -294,6 +295,12 @@ nnoremap <silent> [denite]m :<C-u>Denite file_mru<CR>
 nnoremap <silent> [denite]g  :<C-u>Denite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> [denite]cg :<C-u>Denite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 
+"packadd denite
+"call denite#custom#source(
+"	\ 'file_mru', 'matchers', ['matcher/substring', 'matcher/project_files'])
+"call denite#custom#source(
+"	\ 'file/rec', 'matchers', ['matcher/cpsm'])
+"
 " call denite#custom#option('default', 'prompt', '>')
 " 
 " " unite っぽいキーバインドに近づける
@@ -354,3 +361,4 @@ nmap <C-n> <Plug>(yankround-next)
 " :CdCurrent
 "   Change current directory to current file's one.
 command! -nargs=0 CdCurrent cd %:p:h
+

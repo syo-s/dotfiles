@@ -55,10 +55,21 @@ set cmdheight=2
 "colorscheme molokai
 "colorscheme hybrid
 colorscheme onedark
+"colorscheme louver
 
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
+"let g:lightline = {
+"  \ 'colorscheme': 'onedark',
+"  \ }
+
+"=============================================================================
+" カレント行ハイライトON
+"=============================================================================
+set cursorline
+"" アンダーラインを引く(color terminal)
+"highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+"" アンダーラインを引く(gui)
+"highlight CursorLine gui=underline guibg=white guifg=black
+highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 "----------------------------------------------------------------------------
 "80桁目に印を付ける

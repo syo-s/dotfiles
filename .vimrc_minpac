@@ -14,18 +14,18 @@ if exists('*minpac#init')
   " minpac is loaded.
   call minpac#init()
   call minpac#add('k-takata/minpac', {'type': 'opt'})
+  "call minpac#add('Shougo/denite.nvim', {'type': 'opt'})
+  call minpac#add('Shougo/denite.nvim')
 
   " Additional plugins here.
   "call minpac#add('vim-jp/syntax-vim-ex')
-  call minpac#add('Shougo/unite.vim')
-  call minpac#add('Shougo/denite.nvim')
+  "call minpac#add('Shougo/unite.vim')
   "call minpac#add('Shougo/unite-build')
-  call minpac#add('h1mesuke/unite-outline')
+  "call minpac#add('h1mesuke/unite-outline')
   call minpac#add('Shougo/neomru.vim')
   "call minpac#add('Shougo/vimproc.vim' )
   "call minpac#add('Shougo/vimshell')
   "call minpac#add('Shougo/vimfiler')
-  "call minpac#add('Shougo/denite.nvim')
   call minpac#add('Shougo/neocomplete.vim')
   call minpac#add('fuenor/JpFormat.vim')
   call minpac#add('terryma/vim-multiple-cursors')
@@ -48,7 +48,7 @@ if exists('*minpac#init')
   call minpac#add('tyru/operator-camelize.vim')
   call minpac#add('thinca/vim-qfreplace')
 
-  call minpac#add('cocopon/vaffle.vim')
+  "call minpac#add('cocopon/vaffle.vim')
   "call minpac#add('vim-scripts/taglist.vim' )
   call minpac#add('rhysd/vim-clang-format')
   "call minpac#add('jremmen/vim-ripgrep')
@@ -56,7 +56,7 @@ if exists('*minpac#init')
   call minpac#add('LeafCage/yankround.vim')
   "call minpac#add('tyru/caw.vim')
 
-  call minpac#add('Shougo/vinarise.vim')
+  "call minpac#add('Shougo/vinarise.vim')
   call minpac#add('deris/vim-rengbang')
   call minpac#add('itchyny/calendar.vim')
   "call minpac#add('bkad/CamelCaseMotion')
@@ -94,7 +94,9 @@ if exists('*minpac#init')
   call minpac#add('vim-scripts/louver.vim')
   call minpac#add('mattn/emmet-vim')
   call minpac#add('maksimr/vim-jsbeautify')
-
+  "call minpac#add('vim-syntastic/syntastic')
+  call minpac#add('tomasr/molokai')
+  
 endif
 
 " Plugin settings here.
