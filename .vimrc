@@ -69,6 +69,12 @@ set cindent
 set nowrap
 set number				  " 行番号を非表示 (number:表示)
 set grepprg=internal			  "
+
+"if executable('rg')
+"    set grepprg=rg\ --vimgrep\ --no-heading
+"    set grepformat=%f:%l:%c:%m,%f:%l:%m
+"endif
+
 set browsedir=buffer			  "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
 set helplang=jp				  "日本語help
@@ -91,6 +97,7 @@ augroup vimrc
   autocmd!
   autocmd FileType perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
   autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType css  setlocal shiftwidth=4 tabstop=2 softtabstop=2
   autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -183,7 +190,7 @@ map ,c <plug>(operator-camelize-toggle)
 "=============================================================================
 let g:clang_format#code_style='google'
 let g:clang_format#style_options = {
-            \ "ColumnLimit" : 100,
+            \ "ColumnLimit" : 120,
             \ "BreakBeforeBraces" : "Linux" ,
             \ "DerivePointerBinding" : "false" ,
             \ "PointerBindsToType" : "false" ,
@@ -345,14 +352,14 @@ nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!
 "===================================================================
 " yankroud 
 "===================================================================
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
+"nmap p <Plug>(yankround-p)
+"xmap p <Plug>(yankround-p)
+"nmap P <Plug>(yankround-P)
+"nmap gp <Plug>(yankround-gp)
+"xmap gp <Plug>(yankround-gp)
+"nmap gP <Plug>(yankround-gP)
+"nmap <C-p> <Plug>(yankround-prev)
+"nmap <C-n> <Plug>(yankround-next)
 
 
 "===================================================================

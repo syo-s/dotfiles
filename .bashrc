@@ -21,7 +21,7 @@ if [ "${bash_ver:0:1}" = "3" ]; then
     MSYS=MSYS1
 else
     MSYS=MSYS2
-    export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:~/.gem/ruby:$PATH
+    export PATH=$(ruby -r rubygems -e "puts Gem.user_dir")/bin:~/.gem/ruby:$PATH
 fi
 
 export PATH=$PATH:~/dotfiles/:~/../app/graphviz/bin:~/../app/MinGit-2.14.1-64-bit/cmd
