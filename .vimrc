@@ -118,7 +118,7 @@ augroup END
 
 "=============================================================================
 if has('win32') || has('win64')
-  let g:fzf_command_prefix = 'Fzf
+  let g:fzf_command_prefix = 'Fzf'
   command! -bang -nargs=* FzfRg
     \ call fzf#vim#grep(
     \   'rg --column --line-number --no-heading --color=always --smart-case "'.<q-args>.'"', 1,
