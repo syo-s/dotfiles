@@ -42,9 +42,9 @@ set pythonthreedll=$VIM/python3/python35.dll
 "=============================================================================
 let $TEMPDIR = $TEMP
 let $PATH  = $VIM. ';'
-  \ . 'C:\home\app\MinGit\cmd;'
-  \ . 'C:\home\app\MinGit\mingw64\bin;'
-  \ . 'C:\home\app\MinGit\usr\bin;'
+  \ . $HOME .'\..\app\MinGit\cmd;'
+  \ . $HOME .'\..\app\MinGit\mingw64\bin;'
+  \ . $HOME .'\..\app\MinGit\usr\bin;'
   \ . 'C:\msys64\usr\bin;'
   \ . 'C:\msys64\mingw64\bin;'
   \ . 'C:\msys32\usr\bin;'
@@ -70,10 +70,10 @@ set nowrap
 set number				  " 行番号を非表示 (number:表示)
 set grepprg=internal			  "
 
-"if executable('rg')
-"    set grepprg=rg\ --vimgrep\ --no-heading
-"    set grepformat=%f:%l:%c:%m,%f:%l:%m
-"endif
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
 
 set browsedir=buffer			  "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set clipboard=unnamed			  "クリップボードをWindowsと連携 (半角/全角変換が使用できなくなるので削除)
@@ -97,7 +97,7 @@ augroup vimrc
   autocmd!
   autocmd FileType perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
   autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-  autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType xml  setlocal shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType css  setlocal shiftwidth=4 tabstop=2 softtabstop=2
   autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -116,6 +116,14 @@ augroup vimrc
   autocmd BufRead,BufNewFile,BufReadPre *.coffee  set filetype=coffee
 augroup END
 
+"=============================================================================
+if has('win32') || has('win64')
+  let g:fzf_command_prefix = 'Fzf
+  command! -bang -nargs=* FzfRg
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always --smart-case "'.<q-args>.'"', 1,
+    \   <bang>0)
+endif
 "=============================================================================
 " hz_ja.vim  覚書
 "  Visualモード:
@@ -190,7 +198,7 @@ map ,c <plug>(operator-camelize-toggle)
 "=============================================================================
 let g:clang_format#code_style='google'
 let g:clang_format#style_options = {
-            \ "ColumnLimit" : 120,
+            \ "ColumnLimit" : 100,
             \ "BreakBeforeBraces" : "Linux" ,
             \ "DerivePointerBinding" : "false" ,
             \ "PointerBindsToType" : "false" ,
@@ -294,13 +302,13 @@ let s:unite_ignore_file_rec_patterns=
 ""=============================================================================
 ""Denite.vim
 ""=============================================================================
-nnoremap [denite] <Nop>
-nmap ,d [denite]
-nnoremap <silent> [denite]p :<C-u>Denite file_rec<CR>
-nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
-nnoremap <silent> [denite]m :<C-u>Denite file_mru<CR>
-nnoremap <silent> [denite]g  :<C-u>Denite grep:. -buffer-name=search-buffer<CR>
-nnoremap <silent> [denite]cg :<C-u>Denite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+"nnoremap [denite] <Nop>
+"nmap ,d [denite]
+"nnoremap <silent> [denite]p :<C-u>Denite file_rec<CR>
+"nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
+"nnoremap <silent> [denite]m :<C-u>Denite file_mru<CR>
+"nnoremap <silent> [denite]g  :<C-u>Denite grep:. -buffer-name=search-buffer<CR>
+"nnoremap <silent> [denite]cg :<C-u>Denite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 
 "packadd denite
 "call denite#custom#source(
@@ -326,8 +334,8 @@ nnoremap <silent> [denite]cg :<C-u>Denite grep:. -buffer-name=search-buffer<CR><
 "===================================================================
 " VimShell
 "===================================================================
-let g:vimshell_prompt_expr = 'getcwd()." > "'
-let g:vimshell_prompt_pattern = '^\f\+ > '
+"let g:vimshell_prompt_expr = 'getcwd()." > "'
+"let g:vimshell_prompt_pattern = '^\f\+ > '
 
 "===================================================================
 " caw コメントアウト
@@ -339,27 +347,27 @@ vmap <Leader>c <Plug>(caw:i:toggle)
 "===================================================================
 " vim-over 置換
 "===================================================================
-" over.vimの起動
-nnoremap <silent> <Leader>m :OverCommandLine<CR>
-
-" カーソル下の単語をハイライト付きで置換
-nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
-
-" コピーした文字列をハイライト付きで置換
-nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+"" over.vimの起動
+"nnoremap <silent> <Leader>m :OverCommandLine<CR>
+"
+"" カーソル下の単語をハイライト付きで置換
+"nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+"
+"" コピーした文字列をハイライト付きで置換
+"nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 
 
 "===================================================================
 " yankroud 
 "===================================================================
-"nmap p <Plug>(yankround-p)
-"xmap p <Plug>(yankround-p)
-"nmap P <Plug>(yankround-P)
-"nmap gp <Plug>(yankround-gp)
-"xmap gp <Plug>(yankround-gp)
-"nmap gP <Plug>(yankround-gP)
-"nmap <C-p> <Plug>(yankround-prev)
-"nmap <C-n> <Plug>(yankround-next)
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+xmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
 
 
 "===================================================================

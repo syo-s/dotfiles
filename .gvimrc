@@ -1,26 +1,26 @@
-" vim:set ts=8 sts=2 sw=2 tw=0: (ã“ã®è¡Œã«é–¢ã—ã¦ã¯:help modelineã‚’å‚ç…§)
+" vim:set ts=8 sts=2 sw=2 tw=0: (‚±‚Ìs‚ÉŠÖ‚µ‚Ä‚Í:help modeline‚ğQÆ)
 
 if has('win32') || has('win64')
-  " Windowsç”¨
+  " Windows—p
 
   "=============================================================================
-  " ãƒ•ã‚©ãƒ³ãƒˆè¨­å®š:
+  " ƒtƒHƒ“ƒgİ’è:
   "=============================================================================
   set guifont=MS_Gothic:h9:cSHIFTJIS
   set printfont=MS_Gothic:h9:cSHIFTJIS
   set linespace=1
 
   "=============================================================================
-  " IMEè¨­å®š
+  " IMEİ’è
   "=============================================================================
-  "æŒ¿å…¥ãƒ¢ãƒ¼ãƒ‰çµ‚äº†æ™‚ã«IMEçŠ¶æ…‹ã‚’ä¿å­˜ã—ãªã„
+  "‘}“üƒ‚[ƒhI—¹‚ÉIMEó‘Ô‚ğ•Û‘¶‚µ‚È‚¢
   inoremap <silent> <ESC> <ESC>
   inoremap <silent> <C-[> <ESC>
 
-  "IMEãƒ¢ãƒ¼ãƒ‰å›ºå®š
+  "IMEƒ‚[ƒhŒÅ’è
   inoremap <silent> <C-j> <C-^>
 
-  "fã‚³ãƒãƒ³ãƒ‰ç­‰ã§ã®IMEã‚’OFFã«ã™ã‚‹
+  "fƒRƒ}ƒ“ƒh“™‚Å‚ÌIME‚ğOFF‚É‚·‚é
   let g:IMState = 0
   augroup InsertHookIME
     autocmd!
@@ -31,25 +31,25 @@ if has('win32') || has('win64')
 endif
 
 
-"ãƒ¡ãƒ‹ãƒ¥ãƒ¼è¡¨ç¤ºã‚’å‰Šé™¤ã—ãŸã„å ´åˆã¯ã€æ¬¡ã®è¡Œã‚’è¿½åŠ ã™ã‚‹ã€‚
+"ƒƒjƒ…[•\¦‚ğíœ‚µ‚½‚¢ê‡‚ÍAŸ‚Ìs‚ğ’Ç‰Á‚·‚éB
 "set guioptions-=m 
 
-"ãƒ„ãƒ¼ãƒ«ãƒãƒ¼è¡¨ç¤ºã‚’å‰Šé™¤ã™ã‚‹ã«ã¯æ¬¡ã®è¡Œã‚’è¿½åŠ ã™ã‚‹ã€‚
+"ƒc[ƒ‹ƒo[•\¦‚ğíœ‚·‚é‚É‚ÍŸ‚Ìs‚ğ’Ç‰Á‚·‚éB
 set guioptions-=T 
 
 "---------------------------------------------------------------------------
-" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã«é–¢ã™ã‚‹è¨­å®š:
+" ƒEƒCƒ“ƒhƒE‚ÉŠÖ‚·‚éİ’è:
 "
-" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®å¹…
+" ƒEƒCƒ“ƒhƒE‚Ì•
 set columns=120
 
-" ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®é«˜ã•
+" ƒEƒCƒ“ƒhƒE‚Ì‚‚³
 set lines=55
 
-" ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®é«˜ã•(GUIä½¿ç”¨æ™‚)
+" ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì‚‚³(GUIg—p)
 set cmdheight=2
 
-" ç”»é¢ã‚’é»’åœ°ã«ç™½ã«ã™ã‚‹ (æ¬¡è¡Œã®å…ˆé ­ã® " ã‚’å‰Šé™¤ã™ã‚Œã°æœ‰åŠ¹ã«ãªã‚‹)
+" ‰æ–Ê‚ğ•’n‚É”’‚É‚·‚é (Ÿs‚Ìæ“ª‚Ì " ‚ğíœ‚·‚ê‚Î—LŒø‚É‚È‚é)
 "set background=dark
 "colorscheme jellybeans
 "colorscheme molokai
@@ -62,49 +62,49 @@ colorscheme onedark
 "  \ }
 
 "=============================================================================
-" ã‚«ãƒ¬ãƒ³ãƒˆè¡Œãƒã‚¤ãƒ©ã‚¤ãƒˆON
+" ƒJƒŒƒ“ƒgsƒnƒCƒ‰ƒCƒgON
 "=============================================================================
 set cursorline
-"" ã‚¢ãƒ³ãƒ€ãƒ¼ãƒ©ã‚¤ãƒ³ã‚’å¼•ã(color terminal)
+"" ƒAƒ“ƒ_[ƒ‰ƒCƒ“‚ğˆø‚­(color terminal)
 "highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
-"" ã‚¢ãƒ³ãƒ€ãƒ¼ãƒ©ã‚¤ãƒ³ã‚’å¼•ã(gui)
+"" ƒAƒ“ƒ_[ƒ‰ƒCƒ“‚ğˆø‚­(gui)
 "highlight CursorLine gui=underline guibg=white guifg=black
 highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 "----------------------------------------------------------------------------
-"80æ¡ç›®ã«å°ã‚’ä»˜ã‘ã‚‹
+"80Œ…–Ú‚Éˆó‚ğ•t‚¯‚é
 "set colorcolumn=80
 "execute "set colorcolumn=" . join(range(81, 9999), ',')
 
 "----------------------------------------------------------------------------
-"å…¨è§’ã‚¹ãƒšãƒ¼ã‚¹ã®ãƒã‚¤ãƒ©ã‚¤ãƒˆ
+"‘SŠpƒXƒy[ƒX‚ÌƒnƒCƒ‰ƒCƒg
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
-au BufNewFile,BufRead * match ZenkakuSpace /ã€€/
+au BufNewFile,BufRead * match ZenkakuSpace /@/
 
-function! ScProjectorDark()
+function! DispProjectorDark()
   set guifont=MS_Gothic:h12:cSHIFTJIS
   set background=dark
   colorscheme hybrid 
 endfunction
 
-function! ScProjectorLight()
+function! DispProjectorLight()
   set guifont=MS_Gothic:h12:cSHIFTJIS
   set background=light
   colorscheme louver
 endfunction
 
-function! ScDisplay()
+function! DispNormal()
   set guifont=MS_Gothic:h9:cSHIFTJIS
   set background=dark
   colorscheme onedark
 
-  " ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®å¹…
+  " ƒEƒCƒ“ƒhƒE‚Ì•
   set columns=120
 
-  " ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®é«˜ã•
+  " ƒEƒCƒ“ƒhƒE‚Ì‚‚³
   set lines=55
 
-  " ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®é«˜ã•(GUIä½¿ç”¨æ™‚)
+  " ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì‚‚³(GUIg—p)
   set cmdheight=2
 
 endfunction
