@@ -116,6 +116,7 @@ augroup vimrc
   autocmd BufRead,BufNewFile,BufReadPre *.coffee  set filetype=coffee
 augroup END
 
+let mapleader = ","
 "=============================================================================
 if has('win32') || has('win64')
   let g:fzf_command_prefix = 'Fzf'
@@ -124,6 +125,12 @@ if has('win32') || has('win64')
     \   'rg --column --line-number --no-heading --color=always --smart-case "'.<q-args>.'"', 1,
     \   <bang>0)
 endif
+
+noremap <silent> <Leader>ff :<C-u>FzfFiles<CR>
+noremap <silent> <Leader>fh :<C-u>FzfHistory<CR>
+noremap <silent> <Leader>fb :<C-u>FzfBuffers<CR>
+noremap          <Leader>fg :<C-u>FzfRg
+
 "=============================================================================
 " hz_ja.vim  覚書
 "  Visualモード:
@@ -175,9 +182,9 @@ nmap <Leader>a <Plug>(EasyAlign)
 let g:easy_align_ignore_groups = ['String']
 
 "=============================================================================
-" operator-camelize
+" operator-camelize (name change)
 "=============================================================================
-map ,c <plug>(operator-camelize-toggle)
+map <Leader>n <plug>(operator-camelize-toggle)
 "map <leader>c <plug>(operator-camelize)
 "map <leader>C <plug>(operator-decamelize)
 
@@ -214,9 +221,9 @@ let g:clang_format#style_options = {
 let g:clang_format#detect_style_file=1
 " map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " if you install vim-operator-user
-autocmd FileType c,cpp,objc map <buffer>,x <Plug>(operator-clang-format)
+autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
 
 syntax keyword xTodo todo contained
 syntax match xComment /%.*/ contains=xTodo 
@@ -234,17 +241,17 @@ autocmd QuickFixCmdPost *grep* cwindow
 "=============================================================================
 " vim-syntastic
 "=============================================================================
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_c_compiler = 'clang'
-let g:syntastic_cpp_compiler = 'clang'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+"
+"let g:syntastic_c_compiler = 'clang'
+"let g:syntastic_cpp_compiler = 'clang'
 
 "command Prettify :%s/></>\r</g | filetype indent on | setf xml | normal gg=G
 
