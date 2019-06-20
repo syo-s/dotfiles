@@ -15,13 +15,13 @@ let g:backupdir = expand(g:cache_home.'/backup')
 let &backupdir = g:backupdir  "バックアップファイルを作るディレクトリ
 let &directory = g:backupdir  "スワップファイル用のディレクトリ
 let &undodir = g:backupdir    "undofile用のディレクトリ
-let g:neocomplete#data_directory    = expand(g:cache_home.'/etc/neocomplete')
-let g:vimfiler_data_directory       = expand(g:cache_home.'/etc/vimfiler')
-let g:vimshell_temporary_directory  = expand(g:cache_home.'/etc/VimShell')
-let g:unite_data_directory          = expand(g:cache_home.'/etc/unite')
-let g:neomru#file_mru_path          = expand(g:cache_home.'/etc/neomru/file')
-let g:neomru#directory_mru_path     = expand(g:cache_home.'/etc/neomru/direcroty')
-let g:ref_cache_dir                 = expand(g:cache_home.'/etc/vim_ref_cache')
+"let g:neocomplete#data_directory    = expand(g:cache_home.'/etc/neocomplete')
+"let g:vimfiler_data_directory       = expand(g:cache_home.'/etc/vimfiler')
+"let g:vimshell_temporary_directory  = expand(g:cache_home.'/etc/VimShell')
+"let g:unite_data_directory          = expand(g:cache_home.'/etc/unite')
+"let g:neomru#file_mru_path          = expand(g:cache_home.'/etc/neomru/file')
+"let g:neomru#directory_mru_path     = expand(g:cache_home.'/etc/neomru/direcroty')
+"let g:ref_cache_dir                 = expand(g:cache_home.'/etc/vim_ref_cache')
 let g:yankround_dir                 = expand(g:cache_home.'/etc/yankround')
 
 
@@ -31,11 +31,13 @@ let g:yankround_dir                 = expand(g:cache_home.'/etc/yankround')
 "source $HOME/.vimrc_neobundle
 "source $HOME/.vimrc_dein
 source $HOME/.vimrc_minpac
+"source $HOME/.vimrc_vim_plug
 
 filetype plugin indent on
 
 set runtimepath+=$VIM
-set pythonthreedll=$VIM/python3/python35.dll
+"set runtimepath+=$HOME/_vim
+"set pythonthreedll=$VIM/python3/python35.dll
 
 "=============================================================================
 " オプション
@@ -45,6 +47,7 @@ let $PATH  = $VIM. ';'
   \ . $HOME .'\..\app\MinGit\cmd;'
   \ . $HOME .'\..\app\MinGit\mingw64\bin;'
   \ . $HOME .'\..\app\MinGit\usr\bin;'
+  \ . $HOME .'\..\app\bin;'
   \ . 'C:\msys64\usr\bin;'
   \ . 'C:\msys64\mingw64\bin;'
   \ . 'C:\msys32\usr\bin;'
@@ -56,7 +59,9 @@ let $PATH  = $VIM. ';'
 let $MSYSTEM='MINGW32'
 let $MSYSCON='mintty.exe'
 
-set wildmenu
+source $VIMRUNTIME/defaults.vim
+
+"set wildmenu
 set wildmode=longest:full,full
 set tags=tags;
 set tabstop=4
@@ -84,8 +89,10 @@ set virtualedit& virtualedit+=block       "矩形選択で自由に移動
 set complete=.,w,b,u,t
 
 set nocompatible 
-set fileencodings=ucs-bom,utf8,cp932,sjis,latin1 
-set termencoding=cp932"
+set fileencodings=ucs-bom,utf8,cp932,sjis,latin1
+set termencoding=cp932
+"set makeencoding=char  " システムロケールが使用される
+"set makeencoding=cp932 
 set formatoptions-=or "改行での自動コメントアウトを無効にする 
 "set shellcmdflag=-c
 "
@@ -160,9 +167,9 @@ noremap          <Leader>fg :<C-u>FzfRg
 "=============================================================================
 
 "=============================================================================
-set foldtext=FoldCCtext()
-set foldcolumn=5
-set fillchars=vert:\|
+"set foldtext=FoldCCtext()
+"set foldcolumn=5
+"set fillchars=vert:\|
 "set foldmethod=indent
 
 "=============================================================================
@@ -183,6 +190,7 @@ let g:easy_align_ignore_groups = ['String']
 
 "=============================================================================
 " operator-camelize (name change)
+"   「c」は commnet outで使用しているので nameの「n」
 "=============================================================================
 map <Leader>n <plug>(operator-camelize-toggle)
 "map <leader>c <plug>(operator-camelize)
@@ -225,6 +233,9 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 " if you install vim-operator-user
 autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
 
+"=============================================================================
+" syntax  highligh 「key word」
+"=============================================================================
 syntax keyword xTodo todo contained
 syntax match xComment /%.*/ contains=xTodo 
 
@@ -258,7 +269,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 "=============================================================================
 " vim-table-mode
 "=============================================================================
-let g:table_mode_corner = '|'
+"let g:table_mode_corner = '|'
 
 "=============================================================================
 "<F9>  文頭にタイムスタンプを挿入してinsertモードへ移行
@@ -269,36 +280,36 @@ let g:table_mode_corner = '|'
 ""unite.vim
 ""vimfiler.vim
 ""=============================================================================
-nnoremap [unite] <Nop>
-nmap ,u [unite]
-   
-""vimfilerをデフォルトのファイルマネージャーに設定する
-"let g:vimfiler_as_default_explorer = 1
-"let g:vimfiler_safe_mode_by_default = 0
-
-"インサートモードで開始
-"let g:unite_enable_start_insert = 1
-
-"最近開いたファイル履歴の保存数
-let g:unite_source_file_mru_limit = 30
- 
-"file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
-let g:unite_source_file_mru_filename_format = ''
-
-let g:unite_update_time = 100 
-
-nnoremap <silent> [unite]p :<C-u>Unite file_rec<CR>
-nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
-nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-nnoremap <silent> [unite]cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-
-let s:unite_ignore_file_rec_patterns=
-      \ ''
-      \ .'vendor/bundle\|.bundle/\|\.sass-cache/\|'
-      \ .'node_modules/\|bower_components/\|'
-      \ .'RELEASE/\|C2Proj/\|'
-      \ .'\.\(bmp\|gif\|jpe\?g\|png\|webp\|ai\|psd\)"\?$'
+" nnoremap [unite] <Nop>
+" nmap ,u [unite]
+"    
+" ""vimfilerをデフォルトのファイルマネージャーに設定する
+" "let g:vimfiler_as_default_explorer = 1
+" "let g:vimfiler_safe_mode_by_default = 0
+" 
+" "インサートモードで開始
+" "let g:unite_enable_start_insert = 1
+" 
+" "最近開いたファイル履歴の保存数
+" let g:unite_source_file_mru_limit = 30
+"  
+" "file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
+" let g:unite_source_file_mru_filename_format = ''
+" 
+" let g:unite_update_time = 100 
+" 
+" nnoremap <silent> [unite]p :<C-u>Unite file_rec<CR>
+" nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+" nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+" nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" nnoremap <silent> [unite]cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" 
+" let s:unite_ignore_file_rec_patterns=
+"       \ ''
+"       \ .'vendor/bundle\|.bundle/\|\.sass-cache/\|'
+"       \ .'node_modules/\|bower_components/\|'
+"       \ .'RELEASE/\|C2Proj/\|'
+"       \ .'\.\(bmp\|gif\|jpe\?g\|png\|webp\|ai\|psd\)"\?$'
 
 "call unite#custom#source(
 "      \ 'file_rec/async,file_rec/git',
@@ -345,7 +356,7 @@ let s:unite_ignore_file_rec_patterns=
 "let g:vimshell_prompt_pattern = '^\f\+ > '
 
 "===================================================================
-" caw コメントアウト
+" caw コメントアウト comment の「c」
 "===================================================================
 nmap <Leader>c <Plug>(caw:i:toggle)
 vmap <Leader>c <Plug>(caw:i:toggle)
@@ -367,14 +378,14 @@ vmap <Leader>c <Plug>(caw:i:toggle)
 "===================================================================
 " yankroud 
 "===================================================================
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
+"nmap p <Plug>(yankround-p)
+"xmap p <Plug>(yankround-p)
+"nmap P <Plug>(yankround-P)
+"nmap gp <Plug>(yankround-gp)
+"xmap gp <Plug>(yankround-gp)
+"nmap gP <Plug>(yankround-gP)
+"nmap <C-p> <Plug>(yankround-prev)
+"nmap <C-n> <Plug>(yankround-next)
 
 
 "===================================================================
@@ -382,5 +393,20 @@ nmap <C-n> <Plug>(yankround-next)
 "===================================================================
 " :CdCurrent
 "   Change current directory to current file's one.
-command! -nargs=0 CdCurrent cd %:p:h
+command! -nargs=0 LcdCurrent lcd %:p:h
+
+
+"===================================================================
+" PreVimOpen
+"===================================================================
+"let g:previm_open_cmd = 'open -a Google\ Chrome'
+"let g:previm_open_cmd = 'open -a microsoft-edge:'
+
+"===================================================================
+" 誤操作防止
+"  keymap
+"===================================================================
+nnoremap ,u <Nop>
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
 

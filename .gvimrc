@@ -1,14 +1,17 @@
 " vim:set ts=8 sts=2 sw=2 tw=0: (この行に関しては:help modelineを参照)
 
+
 if has('win32') || has('win64')
   " Windows用
   "=============================================================================
   " フォント設定:
   "=============================================================================
-  set guifont=MS_Gothic:h9:cSHIFTJIS
+  "set guifont=MS_Gothic:h9:cSHIFTJIS
+  set guifont=Myrica_M:h10:cSHIFTJIS
   set printfont=MS_Gothic:h9:cSHIFTJIS
   set linespace=1
 
+  :
   "=============================================================================
   " IME設定
   "=============================================================================
@@ -81,19 +84,19 @@ highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
 
 function! DispProjectorDark()
-  set guifont=MS_Gothic:h12:cSHIFTJIS
+  set guifont=Myrica_M:h12:cSHIFTJIS
   set background=dark
   colorscheme hybrid 
 endfunction
 
 function! DispProjectorLight()
-  set guifont=MS_Gothic:h12:cSHIFTJIS
+  set guifont=Myrica_M:h12:cSHIFTJIS
   set background=light
   colorscheme louver
 endfunction
 
 function! DispNormal()
-  set guifont=MS_Gothic:h9:cSHIFTJIS
+  set guifont=Myrica_M:h10:cSHIFTJIS
   set background=dark
   colorscheme onedark
 
