@@ -1,0 +1,96 @@
+"curl -fLo ~/_vim/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+call plug#begin('~/_vim/plugged')
+
+"Plug 'scrooloose/nerdtree'
+"Plug 'jistr/vim-nerdtree-tabs'
+
+
+"Plug 'Shougo/denite.nvim', {'type': 'opt'}
+"Plug 'Shougo/denite.nvim'
+
+" Additional plugins here.
+"Plug 'vim-jp/syntax-vim-ex'
+"Plug 'Shougo/unite.vim'
+"Plug 'Shougo/unite-build'
+"Plug 'h1mesuke/unite-outline'
+"Plug 'Shougo/neomru.vim'
+"Plug 'Shougo/vimproc.vim' 
+"Plug 'Shougo/vimshell'
+"Plug 'Shougo/vimfiler'
+"Plug 'Shougo/neocomplete.vim'
+"Plug 'cocopon/vaffle.vim'
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'Shougo/vinarise.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+"Plug 'osyo-manga/vim-over'
+"Plug 'jremmen/vim-ripgrep'
+Plug 'thinca/vim-qfreplace'
+
+"---------------------------------------------------------------
+" éQçléëóøÅFhttp://d.hatena.ne.jp/osyo-manga/20130717/1374069987
+"Plug 'rhysd/vim-operator-surround'
+Plug 'kana/vim-textobj-user'  
+Plug 'kana/vim-operator-user' 
+Plug 'kana/vim-textobj-function' 
+"Plug 'kana/vim-textobj-entire' 
+"Plug 'kana/vim-textobj-indent' 
+"Plug 'kana/vim-textobj-syntax' 
+"Plug 'kana/vim-textobj-underscore' 
+Plug 'thinca/vim-textobj-between'
+"Plug 'thinca/vim-textobj-comment'
+"Plug 'rhysd/textobj-wiw' 
+Plug 'kana/vim-operator-replace' 
+"Plug 'tyru/operator-reverse.vim' 
+Plug 'tyru/operator-camelize.vim'
+
+
+"Plug 'vim-scripts/taglist.vim' 
+Plug 'tyru/caw.vim'
+Plug 'fuenor/JpFormat.vim'
+Plug 'rhysd/vim-clang-format'
+Plug 'maksimr/vim-jsbeautify'
+"Plug 'LeafCage/foldCC.vim'
+"Plug 'LeafCage/yankround.vim'
+
+Plug 'mattn/emmet-vim'
+"Plug 'deris/vim-rengbang'
+Plug 'itchyny/calendar.vim'
+"Plug 'bkad/CamelCaseMotion'
+"Plug 'mattn/benchvimrc-vim'
+"
+Plug 'tyru/open-browser.vim'
+Plug 'kannokanno/previm'
+"Plug 'thinca/vim-quickrun'
+"Plug 'godlygeek/tabular'
+"Plug 'dhruvasagar/vim-table-mode'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'junegunn/vim-easy-align'
+"Plug 'shinespark/vim-list2tree' 
+
+"Plug 'kmnk/vim-unite-giti'
+Plug 'tpope/vim-fugitive'
+Plug 'gregsexton/gitv'
+"Plug 'int3/vim-extradite'
+"Plug 'thinca/vim-vcs'
+"
+Plug 'vim-ruby/vim-ruby'
+Plug 'moqada/autoit.vim--Breland'
+Plug 'tpope/vim-cucumber'
+Plug 'PProvost/vim-ps1'
+"Plug 'aohta/blockdiag.vim'
+"Plug 'aklt/plantuml-syntax'
+Plug 'elzr/vim-json'
+Plug 'cespare/vim-toml'
+
+"Plug 'Yggdroot/indentLine'
+Plug 'itchyny/lightline.vim'
+"Plug 'w0ng/vim-hybrid'
+Plug 'joshdick/onedark.vim'
+"Plug 'vim-syntastic/syntastic'
+Plug 'vim-scripts/louver.vim'
+"Plug 'tomasr/molokai'
+
+call plug#end()
