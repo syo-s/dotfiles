@@ -17,3 +17,7 @@ pacman -S --needed VCS \
     mingw-w64-${machine}-universal-ctags-git \
     mingw-w64-${machine}-gnuplot \
     mingw-w64-${machine}-graphviz 
+
+
+
+#pacman -S ruby gcc msys2-runtime-devel pkg-config zlib-devel libffi-devel gmp-devel libcrypt-devel make
