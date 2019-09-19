@@ -29,4 +29,5 @@ scoop config proxy 'Nbr_Shimada%40shi.co.jp:05j151@yksproxy.shi.co.jp:8080'
 scoop bucket add extras
 scoop bucket add scoop-for-jp https://github.com/rkbk60/scoop-for-jp
 scoop bucket add scoop-iyokan-jp https://github.com/tetradice/scoop-iyokan-jp
+scoop bucket add scoop-wangzq https://github.com/wangzq/scoop-bucket
 

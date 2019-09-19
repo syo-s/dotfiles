@@ -25,6 +25,7 @@ echo
 #fi
 
 export PATH=$PATH:~/dotfiles/:~/../app/graphviz/bin:~/../app/MinGit-2.14.1-64-bit/cmd
+export PATH=$(ruby -r rubygems -e "puts Gem.user_dir")/bin:~/.gem/ruby:$PATH
 export LANG=ja_JP.UTF-8
 
 #system_name=$(uname -o)
@@ -69,7 +70,7 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias ll='ls -alF --color=auto --show-control-chars'
 alias ls='ls -F --color=auto --show-control-chars -N'
-alias git-tree='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
+alias git-t='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 
 # alias rxvt='rxvt -sl 1000 -fg White -bg Black -sr'
 # alias vimproccp="mv ~/.cache/dein/repos/github.com/Shougo/vimproc.vim/lib/vimproc_win32.dll ~/.dein/lib/."
