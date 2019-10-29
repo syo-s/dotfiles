@@ -8,3 +8,6 @@ lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s 
 	helper = manager
 [credential "helperselector"]
 	selected = <no helper>
+[user]
+	name = Noboru Shimada
+	email = noboru.shimada@shi-g.com

@@ -4,11 +4,34 @@ machine=$(uname -m)
 
 echo ${machine}
 
-pacman -S --needed VCS \
+pacman -S --needed \
+    VCS \
+    libraries \
     development \
-    base-devel \
+    base-devel 
+
+
+pacman -S --needed \
+    msys2-runtime-devel \
+    pkg-config \
+    zlib-devel \
+    libffi-devel \
+    gmp-devel \
+    libcrypt-devel
+
+pacman -S --needed \
+    ruby \
+    gcc \
+    msys2-runtime-devel \
+    pkg-config \
+    zlib-devel \
+    libffi-devel \
+    gmp-devel \
+    libcrypt-devel \
     fish \
-    tmux \
+    tmux 
+
+pacman -S --needed \
     mingw-w64-${machine}-gcc \
     mingw-w64-${machine}-clang \
     mingw-w64-${machine}-clang-analyzer \
@@ -20,4 +43,3 @@ pacman -S --needed VCS \
 
 
 
-#pacman -S ruby gcc msys2-runtime-devel pkg-config zlib-devel libffi-devel gmp-devel libcrypt-devel make

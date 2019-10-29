@@ -86,7 +86,7 @@ au BufNewFile,BufRead * match ZenkakuSpace /　/
 function! DispProjectorDark()
   set guifont=Myrica_M:h12:cSHIFTJIS
   set background=dark
-  colorscheme hybrid 
+  colorscheme onedark
 endfunction
 
 function! DispProjectorLight()
@@ -107,6 +107,6 @@ function! DispNormal()
   set lines=55
 
   " コマンドラインの高さ(GUI使用時)
-  set cmdheight=2
+  set cmdheight=1
 
 endfunction
