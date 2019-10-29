@@ -1,13 +1,41 @@
 Windows Registry Editor Version 5.00
 
-[HKEY_CLASSES_ROOT\Directory\Background\shell\u_msys2]
+; cmd.exe
+[HKEY_CLASSES_ROOT\Directory\Background\shell\open_cmd]
+@="cmd here"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\open_cmd\command]
+@="C:\\WINDOWS\\system32\\cmd.exe"
+;[HKEY_CLASSES_ROOT\Folder\shell\open_cmd]
+;@="cmd here"
+;[HKEY_CLASSES_ROOT\Folder\shell\open_cmd\command]
+;@="C:\\WINDOWS\\system32\\cmd.exe"
+
+; cmd.exe
+[HKEY_CLASSES_ROOT\Directory\Background\shell\open_powershell]
+@="power shell here"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\open_powershell\command]
+@="C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe"
+;[HKEY_CLASSES_ROOT\Folder\shell\open_powershell]
+;@="power shell here"
+;[HKEY_CLASSES_ROOT\Folder\shell\open_powershell\command]
+;@="C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+;msys2 
+[HKEY_CLASSES_ROOT\Directory\Background\shell\open_msys2]
 @="MSYS2 msys2 Here"
-
-[HKEY_CLASSES_ROOT\Directory\Background\shell\u_msys2\command]
+[HKEY_CLASSES_ROOT\Directory\Background\shell\open_msys2\command]
 @="C:\\msys64\\msys2.exe"
+;[HKEY_CLASSES_ROOT\Folder\shell\open_msys2]
+;@="MSYS2 msys2 Here"
+;[HKEY_CLASSES_ROOT\Folder\shell\open_msys2\command]
+;@="C:\\msys64\\msys2.exe"
 
-[HKEY_CLASSES_ROOT\Directory\Background\shell\u_mingw64]
+;mingw64
+[HKEY_CLASSES_ROOT\Directory\Background\shell\open_mingw64]
 @="MSYS2 mingw64 Here"
-
-[HKEY_CLASSES_ROOT\Directory\Background\shell\u_mingw64\command]
+[HKEY_CLASSES_ROOT\Directory\Background\shell\open_mingw64\command]
 @="C:\\msys64\\mingw64.exe"
+;[HKEY_CLASSES_ROOT\Folder\shell\open_mingw64]
+;@="MSYS2 mingw64 Here"
+;[HKEY_CLASSES_ROOT\Folder\shell\open_mingw64\command]
+;@="C:\\msys64\\mingw64.exe"
