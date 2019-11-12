@@ -24,18 +24,18 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\Background\shell\open_msys2]
 @="MSYS2 msys2 Here"
 [HKEY_CLASSES_ROOT\Directory\Background\shell\open_msys2\command]
-@="C:\\msys64\\msys2.exe"
+@="C:\\Scoop\\apps\\msys2\\current\\msys2.exe"
 ;[HKEY_CLASSES_ROOT\Folder\shell\open_msys2]
 ;@="MSYS2 msys2 Here"
 ;[HKEY_CLASSES_ROOT\Folder\shell\open_msys2\command]
-;@="C:\\msys64\\msys2.exe"
+;@="C:\\Scoop\\apps\\msys2\\current\\msys2.exe"
 
 ;mingw64
 [HKEY_CLASSES_ROOT\Directory\Background\shell\open_mingw64]
 @="MSYS2 mingw64 Here"
 [HKEY_CLASSES_ROOT\Directory\Background\shell\open_mingw64\command]
-@="C:\\msys64\\mingw64.exe"
+@="C:\\Scoop\\apps\\msys2\\current\\mingw64.exe"
 ;[HKEY_CLASSES_ROOT\Folder\shell\open_mingw64]
 ;@="MSYS2 mingw64 Here"
 ;[HKEY_CLASSES_ROOT\Folder\shell\open_mingw64\command]
-;@="C:\\msys64\\mingw64.exe"
+;@="C:\\Scoop\\apps\\msys2\\current\\mingw64.exe"

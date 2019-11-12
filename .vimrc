@@ -58,10 +58,10 @@ let $TEMPDIR = $TEMP
 let $PATH  = $VIM. ';'
   \ . $PATH
   \ . $HOME .'\..\app\bin;'
-  \ . 'C:\msys64\usr\bin;'
-  \ . 'C:\msys64\mingw64\bin;'
   \ . 'C:\Scoop\apps\msys2\current\usr\bin;'
   \ . 'C:\Scoop\apps\msys2\current\mingw64\bin;'
+"  \ . 'C:\msys64\usr\bin;'
+"  \ . 'C:\msys64\mingw64\bin;'
 "  \ . 'C:\msys32\usr\bin;'
 "  \ . 'C:\msys32\mingw32\bin;'
   \ . 'C:\windows\System32\;'
