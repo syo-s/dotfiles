@@ -24,7 +24,6 @@ let &undodir = g:backupdir    "undofile用のディレクトリ
 "let g:ref_cache_dir                 = expand(g:cache_home.'/etc/vim_ref_cache')
 let g:yankround_dir                 = expand(g:cache_home.'/etc/yankround')
 
-
 "=============================================================================
 " Plugin
 "=============================================================================
@@ -43,27 +42,11 @@ set runtimepath+=$VIM
 " オプション
 "=============================================================================
 let $TEMPDIR = $TEMP
-"let $PATH  = $VIM. ';'
-"  \ . $HOME .'\..\app\MinGit\cmd;'
-"  \ . $HOME .'\..\app\MinGit\mingw64\bin;'
-"  \ . $HOME .'\..\app\MinGit\usr\bin;'
-"  \ . $HOME .'\..\app\bin;'
-"  \ . 'C:\msys64\usr\bin;'
-"  \ . 'C:\msys64\mingw64\bin;'
-"  \ . 'C:\msys32\usr\bin;'
-"  \ . 'C:\msys32\mingw32\bin;'
-"  \ . 'C:\windows\System32\;'
-"  \ . $HOME
-"  \ . $PATH
 let $PATH  = $VIM. ';'
   \ . $PATH
   \ . $HOME .'\..\app\bin;'
   \ . 'C:\Scoop\apps\msys2\current\usr\bin;'
   \ . 'C:\Scoop\apps\msys2\current\mingw64\bin;'
-"  \ . 'C:\msys64\usr\bin;'
-"  \ . 'C:\msys64\mingw64\bin;'
-"  \ . 'C:\msys32\usr\bin;'
-"  \ . 'C:\msys32\mingw32\bin;'
   \ . 'C:\windows\System32\;'
 
 let $MSYSTEM='MINGW32'
@@ -135,6 +118,8 @@ augroup END
 
 let mapleader = ","
 "=============================================================================
+" fzf
+"=============================================================================
 if has('win32') || has('win64')
   let g:fzf_command_prefix = 'Fzf'
   command! -bang -nargs=* FzfRg
@@ -148,33 +133,6 @@ noremap <silent> <Leader>fh :<C-u>FzfHistory<CR>
 noremap <silent> <Leader>fb :<C-u>FzfBuffers<CR>
 noremap          <Leader>fg :<C-u>FzfRg
 
-"=============================================================================
-" hz_ja.vim  覚書
-"  Visualモード:
-"   gHL 可能な文字を全て半角に変換する
-"   gZL 可能な文字を全て全角に変換する
-"   gHA ASCII文字を全て半角に変換する 
-"   gHH ASCII文字を全て半角に変換する 
-"   gZA ASCII文字を全て全角に変換する 
-"   gHM 記号を全て半角に変換する      
-"   gZM 記号を全て全角に変換する      
-"   gHW 英数字を全て半角に変換する    
-"   gZW 英数字を全て全角に変換する    
-"   gHJ カタカナを全て半角に変換する  
-"   gZJ カタカナを全て全角に変換する  
-"   gZZ カタカナを全て全角に変換する  
-" :[range]HzjaConvert {target}"
-"   han_all 全ての全角文字→半角 
-"   han_ascii 全角アスキー→半角 
-"   han_kana 全角カタカナ→半角 
-"   han_eisu 全角英数→半角 
-"   han_kigou 全角記号→半角 
-"   zen_all 全ての半角文字→全角 
-"   zen_ascii 半角アスキー→全角 
-"   zen_kana 半角カタカナ→全角 
-"   zen_eisu 半角英数→全角 
-"   zen_kigou 半角記号→全角 
-"=============================================================================
 
 "=============================================================================
 "set foldtext=FoldCCtext()
@@ -198,14 +156,6 @@ nmap <Leader>a <Plug>(EasyAlign)
 
 let g:easy_align_ignore_groups = ['String']
 
-"=============================================================================
-" operator-camelize (name change)
-"   「c」は commnet outで使用しているので nameの「n」
-"=============================================================================
-map <Leader>n <plug>(operator-camelize-toggle)
-"map <leader>c <plug>(operator-camelize)
-"map <leader>C <plug>(operator-decamelize)
-
 
 "=============================================================================
 " JpFormat設定
@@ -216,6 +166,7 @@ map <Leader>n <plug>(operator-camelize-toggle)
  let JpCountLines = 17
  " 禁則処理の最大ぶら下がり字数(-1なら全てぶら下げ)
  let JpCountOverChars = 2
+
 
 "=============================================================================
 " clang-format設定
@@ -243,11 +194,13 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 " if you install vim-operator-user
 autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
 
+
 "=============================================================================
 " syntax  highligh 「key word」
 "=============================================================================
 syntax keyword xTodo todo contained
 syntax match xComment /%.*/ contains=xTodo 
+
 
 "=============================================================================
 "QuickFix Gtags
@@ -281,95 +234,26 @@ autocmd QuickFixCmdPost *grep* cwindow
 "=============================================================================
 "let g:table_mode_corner = '|'
 
+
 "=============================================================================
 "<F9>  文頭にタイムスタンプを挿入してinsertモードへ移行
 "=============================================================================
 "nmap <F8> <ESC>i<C-R>=strftime("%Y/%m/%d (%a) _") <CR><CR>----------------------<CR>00:00-00:00<CR>00:00-00:00<CR><Up><Up>
 
-""=============================================================================
-""unite.vim
-""vimfiler.vim
-""=============================================================================
-" nnoremap [unite] <Nop>
-" nmap ,u [unite]
-"    
-" ""vimfilerをデフォルトのファイルマネージャーに設定する
-" "let g:vimfiler_as_default_explorer = 1
-" "let g:vimfiler_safe_mode_by_default = 0
-" 
-" "インサートモードで開始
-" "let g:unite_enable_start_insert = 1
-" 
-" "最近開いたファイル履歴の保存数
-" let g:unite_source_file_mru_limit = 30
-"  
-" "file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
-" let g:unite_source_file_mru_filename_format = ''
-" 
-" let g:unite_update_time = 100 
-" 
-" nnoremap <silent> [unite]p :<C-u>Unite file_rec<CR>
-" nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-" nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
-" nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-" nnoremap <silent> [unite]cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-" 
-" let s:unite_ignore_file_rec_patterns=
-"       \ ''
-"       \ .'vendor/bundle\|.bundle/\|\.sass-cache/\|'
-"       \ .'node_modules/\|bower_components/\|'
-"       \ .'RELEASE/\|C2Proj/\|'
-"       \ .'\.\(bmp\|gif\|jpe\?g\|png\|webp\|ai\|psd\)"\?$'
 
-"call unite#custom#source(
-"      \ 'file_rec/async,file_rec/git',
-"      \ 'ignore_pattern',
-"      \ s:unite_ignore_file_rec_patterns)
-"
+"=============================================================================
+" operator-camelize (name change)
+"=============================================================================
+map <Leader>ca <plug>(operator-camelize-toggle)
+"map <leader>c <plug>(operator-camelize)
+"map <leader>C <plug>(operator-decamelize)
 
-""=============================================================================
-""Denite.vim
-""=============================================================================
-"nnoremap [denite] <Nop>
-"nmap ,d [denite]
-"nnoremap <silent> [denite]p :<C-u>Denite file_rec<CR>
-"nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
-"nnoremap <silent> [denite]m :<C-u>Denite file_mru<CR>
-"nnoremap <silent> [denite]g  :<C-u>Denite grep:. -buffer-name=search-buffer<CR>
-"nnoremap <silent> [denite]cg :<C-u>Denite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-
-"packadd denite
-"call denite#custom#source(
-"	\ 'file_mru', 'matchers', ['matcher/substring', 'matcher/project_files'])
-"call denite#custom#source(
-"	\ 'file/rec', 'matchers', ['matcher/cpsm'])
-"
-" call denite#custom#option('default', 'prompt', '>')
-" 
-" " unite っぽいキーバインドに近づける
-" " denite/insert モードのときは，C- で移動できるようにする
-" call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
-" call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
-" 
-" " tabopen や vsplit のキーバインドを割り当て
-" "call denite#custom#map('insert', "<C-t>", '<denite:do_action:tabopen>')
-" "call denite#custom#map('insert', "<C-v>", '<denite:do_action:vsplit>')
-" "call denite#custom#map('normal', "v", '<denite:do_action:vsplit>')
-" 
-" " jj で denite/insert を抜けるようにする
-" call denite#custom#map('insert', 'jj', '<denite:enter_mode:normal>')
-
-"===================================================================
-" VimShell
-"===================================================================
-"let g:vimshell_prompt_expr = 'getcwd()." > "'
-"let g:vimshell_prompt_pattern = '^\f\+ > '
 
 "===================================================================
 " caw コメントアウト comment の「c」
 "===================================================================
-nmap <Leader>c <Plug>(caw:i:toggle)
-vmap <Leader>c <Plug>(caw:i:toggle)
+nmap <Leader>co <Plug>(caw:i:toggle)
+vmap <Leader>co <Plug>(caw:i:toggle)
 
 
 "===================================================================
@@ -420,3 +304,30 @@ nnoremap ,u <Nop>
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 
+"=============================================================================
+" hz_ja.vim  覚書
+"  Visualモード:
+"   gHL 可能な文字を全て半角に変換する
+"   gZL 可能な文字を全て全角に変換する
+"   gHA ASCII文字を全て半角に変換する 
+"   gHH ASCII文字を全て半角に変換する 
+"   gZA ASCII文字を全て全角に変換する 
+"   gHM 記号を全て半角に変換する      
+"   gZM 記号を全て全角に変換する      
+"   gHW 英数字を全て半角に変換する    
+"   gZW 英数字を全て全角に変換する    
+"   gHJ カタカナを全て半角に変換する  
+"   gZJ カタカナを全て全角に変換する  
+"   gZZ カタカナを全て全角に変換する  
+" :[range]HzjaConvert {target}"
+"   han_all 全ての全角文字→半角 
+"   han_ascii 全角アスキー→半角 
+"   han_kana 全角カタカナ→半角 
+"   han_eisu 全角英数→半角 
+"   han_kigou 全角記号→半角 
+"   zen_all 全ての半角文字→全角 
+"   zen_ascii 半角アスキー→全角 
+"   zen_kana 半角カタカナ→全角 
+"   zen_eisu 半角英数→全角 
+"   zen_kigou 半角記号→全角 
+"=============================================================================
