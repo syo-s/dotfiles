@@ -72,6 +72,7 @@ alias rm='rm -i'
 alias ll='ls -alF --color=auto --show-control-chars'
 alias ls='ls -F --color=auto --show-control-chars -N'
 alias git-t='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
+alias ctags='ctags --output-encoding=cp932'
 
 # alias rxvt='rxvt -sl 1000 -fg White -bg Black -sr'
 # alias vimproccp="mv ~/.cache/dein/repos/github.com/Shougo/vimproc.vim/lib/vimproc_win32.dll ~/.dein/lib/."
