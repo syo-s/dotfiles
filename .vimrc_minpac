@@ -39,21 +39,23 @@ if exists('*minpac#init')
 
   "---------------------------------------------------------------
   " éQçléëóøÅFhttp://d.hatena.ne.jp/osyo-manga/20130717/1374069987
-  "call minpac#add('rhysd/vim-operator-surround')
   call minpac#add('kana/vim-textobj-user'  )
   call minpac#add('kana/vim-operator-user' )
+
   call minpac#add('kana/vim-textobj-function' )
   "call minpac#add('kana/vim-textobj-entire' )
   "call minpac#add('kana/vim-textobj-indent' )
   "call minpac#add('kana/vim-textobj-syntax' )
   "call minpac#add('kana/vim-textobj-underscore' )
+  call minpac#add('kana/vim-operator-replace' )
   call minpac#add('thinca/vim-textobj-between')
   "call minpac#add('thinca/vim-textobj-comment')
-  "call minpac#add('rhysd/textobj-wiw' )
-  call minpac#add('kana/vim-operator-replace' )
+  call minpac#add('rhysd/textobj-wiw' )
+  call minpac#add('rhysd/vim-operator-surround')
+  call minpac#add('rhysd/vim-textobj-anyblock')
   "call minpac#add('tyru/operator-reverse.vim' )
   call minpac#add('tyru/operator-camelize.vim')
-
+  call minpac#add('osyo-manga/vim-textobj-multiblock')
 
   "call minpac#add('vim-scripts/taglist.vim' )
   call minpac#add('tyru/caw.vim')
