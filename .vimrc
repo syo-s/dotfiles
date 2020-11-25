@@ -3,6 +3,7 @@
 "=============================================================================
 " _vimrcの編集
 "=============================================================================
+nnoremap <F4> :let @* = expand('%:t')<CR>
 nnoremap <F9> :<C-u>edit ~/dotfiles/.bashrc<CR>
 nnoremap <F10> :<C-u>edit$MYVIMRC<CR>
 nnoremap <F11> :<C-u>edit$MYGVIMRC<CR>
@@ -120,8 +121,11 @@ let mapleader = ","
 "=============================================================================
 " fzf
 "=============================================================================
+let g:fzf_command_prefix = 'Fzf'
+let g:fzf_layout = { 'down': '40%' }
+let g:fzf_preview_window = []
+
 if has('win32') || has('win64')
-  let g:fzf_command_prefix = 'Fzf'
   command! -bang -nargs=* FzfRg
     \ call fzf#vim#grep(
     \   'rg --column --line-number --no-heading --color=always --smart-case "'.<q-args>.'"', 1,
