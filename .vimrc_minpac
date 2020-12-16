@@ -43,6 +43,7 @@ else
   "call minpac#add('jremmen/vim-ripgrep')
   call minpac#add('thinca/vim-qfreplace')
   call minpac#add('vim-scripts/gtags.vim')
+  "call minpac#add('ctrlpvim/ctrlp.vim')
 
   "---------------------------------------------------------------
   " Ql‘—¿Fhttp://d.hatena.ne.jp/osyo-manga/20130717/1374069987

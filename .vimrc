@@ -124,6 +124,7 @@ let mapleader = ","
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'down': '40%' }
 let g:fzf_preview_window = []
+"let g:fzf_history_dir = '~/fzf-history'
 
 if has('win32') || has('win64')
   command! -bang -nargs=* FzfRg
@@ -132,8 +133,31 @@ if has('win32') || has('win64')
     \   <bang>0)
 endif
 
+
+" Simple MRU search
+command! FzfMru call fzf#run({
+      \  'source':  v:oldfiles,
+      \  'sink':    'e',
+      \  'options': '-m -x +s',
+      \  'down':    '40%'})
+
+" Filtered v:oldfiles and open buffers
+"command! FzfMru call fzf#run({
+"      \ 'source':  reverse(s:all_files()),
+"      \ 'sink':    'edit',
+"      \ 'options': '-m -x +s',
+"      \ 'down':    '40%' })
+"
+"function! s:all_files()
+"  return extend(
+"        \ filter(copy(v:oldfiles),
+"        \        "v:val !~ 'fugitive:\\|NERD_tree\\|^/tmp/\\|.git/'"),
+"        \ map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), 'bufname(v:val)'))
+"endfunction
+
 noremap <silent> <Leader>ff :<C-u>FzfFiles<CR>
-noremap <silent> <Leader>fh :<C-u>FzfHistory<CR>
+"noremap <silent> <Leader>fh :<C-u>FzfHistory<CR>
+noremap <silent> <Leader>fh :<C-u>FzfMru<CR>
 noremap <silent> <Leader>fb :<C-u>FzfBuffers<CR>
 noremap          <Leader>fg :<C-u>FzfRg
 
