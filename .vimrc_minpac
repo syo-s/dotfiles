@@ -110,7 +110,9 @@ else
   "call minpac#add('vim-syntastic/syntastic')
   call minpac#add('vim-scripts/louver.vim')
   "call minpac#add('tomasr/molokai')
-  
+  call minpac#add('cocopon/iceberg.vim')
+  call minpac#add('yasukotelin/shirotelin')
+
 endif
 
 " Plugin settings here.

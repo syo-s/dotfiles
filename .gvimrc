@@ -52,12 +52,13 @@ set lines=55
 set cmdheight=2
 
 " 画面を黒地に白にする (次行の先頭の " を削除すれば有効になる)
-"set background=dark
+set background=dark
 "colorscheme jellybeans
 "colorscheme molokai
 "colorscheme hybrid
-colorscheme onedark
+"colorscheme onedark
 "colorscheme louver
+colorscheme iceberg
 
 "let g:lightline = {
 "  \ 'colorscheme': 'onedark',
@@ -75,8 +76,8 @@ highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 "----------------------------------------------------------------------------
 "80桁目に印を付ける
-"set colorcolumn=80
-"execute "set colorcolumn=" . join(range(81, 9999), ',')
+set colorcolumn=80
+execute "set colorcolumn=" . join(range(81, 9999), ',')
 
 "----------------------------------------------------------------------------
 "全角スペースのハイライト
@@ -86,19 +87,19 @@ au BufNewFile,BufRead * match ZenkakuSpace /　/
 function! DispProjectorDark()
   set guifont=Myrica_M:h12:cSHIFTJIS
   set background=dark
-  colorscheme onedark
+  colorscheme iceberg
 endfunction
 
 function! DispProjectorLight()
   set guifont=Myrica_M:h12:cSHIFTJIS
   set background=light
-  colorscheme louver
+  colorscheme shirotelin
 endfunction
 
 function! DispNormal()
   set guifont=Myrica_M:h10:cSHIFTJIS
   set background=dark
-  colorscheme onedark
+  colorscheme iceberg
 
   " ウインドウの幅
   set columns=120
