@@ -64,6 +64,7 @@ else
   "call minpac#add('tyru/operator-reverse.vim' )
   call minpac#add('tyru/operator-camelize.vim')
   call minpac#add('osyo-manga/vim-textobj-multiblock')
+  call minpac#add('kana/vim-tabpagecd')
 
   "call minpac#add('vim-scripts/taglist.vim' )
   call minpac#add('tyru/caw.vim')
