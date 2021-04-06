@@ -66,7 +66,7 @@ else
   call minpac#add('osyo-manga/vim-textobj-multiblock')
   call minpac#add('kana/vim-tabpagecd')
 
-  "call minpac#add('vim-scripts/taglist.vim' )
+  call minpac#add('vim-scripts/taglist.vim' )
   call minpac#add('tyru/caw.vim')
   call minpac#add('fuenor/JpFormat.vim')
   call minpac#add('rhysd/vim-clang-format')
