@@ -77,7 +77,22 @@ highlight CursorLine gui=underline guifg=NONE guibg=NONE
 "----------------------------------------------------------------------------
 "80桁目に印を付ける
 set colorcolumn=80
-execute "set colorcolumn=" . join(range(81, 9999), ',')
+"execute "set colorcolumn=" . join(range(81, 9999), ',')
+
+"----------------------------------------------------------------------------
+"statusline
+nnoremap <F3> :echo cfi#format("%s", "")<CR>
+"let &statusline .= ' [%{cfi#format("%s", "")}]'
+"let g:lightline.component_function.cfi = 'StlCurrentFuncInfo'
+"function! StlCurrentFuncInfo()
+"  if exists('*cfi#format')
+"    return cfi#format('%.43s()', '')
+"  end
+"  return ''
+"endfunction
+"
+"let g:lightline.active.right = [['lineinfo'], ['percent'],
+"  \ ['fileformat', 'fileencoding'], ['cfi']]
 
 "----------------------------------------------------------------------------
 "全角スペースのハイライト

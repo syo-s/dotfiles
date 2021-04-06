@@ -2,8 +2,9 @@
 
 "=============================================================================
 " _vimrcの編集
+" <F4>はクリップボードにコピー
 "=============================================================================
-nnoremap <F4> :let @* = expand('%:t')<CR>
+nnoremap <F4> :let @* = expand('%:t')<CR> 
 nnoremap <F9> :<C-u>edit ~/dotfiles/.bashrc<CR>
 nnoremap <F10> :<C-u>edit$MYVIMRC<CR>
 nnoremap <F11> :<C-u>edit$MYGVIMRC<CR>

@@ -104,6 +104,7 @@ else
   call minpac#add('elzr/vim-json')
   call minpac#add('cespare/vim-toml')
 
+  call minpac#add('tyru/current-func-info.vim')
   "call minpac#add('Yggdroot/indentLine')
   call minpac#add('itchyny/lightline.vim')
   "call minpac#add('w0ng/vim-hybrid')
